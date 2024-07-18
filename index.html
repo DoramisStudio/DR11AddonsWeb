@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<style>
+			html {
+				--accent-color: rgb(29 115 255);
+				--bg-grad-top: rgb(99, 99, 99);
+				--bg-grad-bottom: rgb(190, 190, 190);
+				user-select: none;
+				font-family: "Rubik", sans-serif;
+			}
+
+			body {
+				background: rgb(16 16 16);
+				color: white;
+			}
+
+			::-webkit-scrollbar {
+				width: 8px;
+				height: 8px;
+				background: transparent;
+			}
+			::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			::-webkit-scrollbar-thumb {
+				background: rgb(124 124 124 / 25%);
+				border: 2px solid rgb(124 124 124 / 0%);
+				border-radius: 4px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: rgb(124 124 124 / 25%);
+				border-color: rgb(124 124 124 / 50%);
+			}
+
+			* {
+				margin: unset;
+				padding: unset;
+				box-sizing: border-box;
+			}
+
+			img[src=""] {
+				opacity: 0;
+				image-rendering: auto;
+			}
+
+			.material-symbols-rounded {
+				font-variation-settings:
+				'FILL' 0,
+				'wght' 400,
+				'GRAD' 0,
+				'opsz' 48;
+			}
+			.mat4 {
+				font-variation-settings:
+				'FILL' 0,
+				'wght' 600,
+				'GRAD' 0,
+				'opsz' 48;
+			}
+
+			.wrapper {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				overflow: hidden;
+			}
+			.wrapper .header {
+				font-family: "Noto Sans", sans-serif;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				z-index: 99;
+				display: grid;
+				grid-template-columns: auto auto auto;
+				padding: 2em 3em;
+				transition: 0.3s ease;
+			}
+			.wrapper .header::before {
+				content: "";
+				position: absolute;
+				top: 0px;
+				left: calc(-100% - 4em);
+				width: 100%;
+				height: 108px;
+				background: rgb(24 24 24);
+				color: black;
+				/*box-shadow: inset 0px -64px 64px -64px var(--accent-color);*/
+				transition: left 0.3s ease-out;
+				z-index: -1;
+			}
+			.wrapper .header.filled {
+				padding: 1em 2em;
+			}
+			.wrapper .header.filled::before {
+				left: 0%;
+			}
+			.wrapper .content .hero {
+				position: relative;
+				background: linear-gradient(180deg, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 100%);
+				height: 100vh;
+				width: 100%;
+				overflow: hidden;
+			}
+			.wrapper .content .hero #blend {
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				height: 50%;
+				background: linear-gradient(0deg, rgb(16 16 16) 0%, transparent 100%);
+				z-index: 5;
+			}
+
+			button {
+				background: rgb(24 24 24);
+				border: 1px solid rgb(64 64 64);
+				color: white;
+				border-radius: 4px;
+				outline: unset;
+				font-weight: 600;
+				font-family: "Noto Sans", sans-serif;
+				font-size: 18px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 4px;
+				padding: 8px 12px;
+			}
+			button:hover {
+				background: rgb(32 32 32);
+			}
+			button.transparent {
+				background: transparent;
+				border-color: transparent;
+				text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+			}
+			button.transparent:hover {
+				background: white;
+				color: var(--accent-color);
+				text-shadow: 0px 4px 8px transparent;
+			}
+			button.square {
+				aspect-ratio: 1 / 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			button.hyperlink {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-width: 32px;
+			}
+			button.hyperlink::after {
+				content: '';
+				position: absolute;
+				top: calc(100% - 4px);
+				left: 0px;
+				right: 0px;
+				width: 16px;
+				height: 2px;
+				margin: 0px auto;
+				background: white;
+				border-radius: 1px;
+				transition: 0.1s;
+				opacity: 0.0;
+				pointer-events: none;
+			}
+			button.hyperlink:hover {
+				background: transparent;
+				color: white;
+			}
+			button.hyperlink:hover::after {
+				opacity: 1.0;
+				width: 100%;
+			}
+
+			.loadingscr {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				width: 100vw;
+				height: 100vh;
+				background: rgb(16 16 16);
+				z-index: 100;
+				transition: opacity 1s;
+			}
+			.loadingscr.hide {
+				opacity: 0.0;
+				pointer-events: none;
+			}
+
+			.main-content {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+				max-width: 1024px;
+				padding: 12em 0em;
+				margin: 0em auto;
+			}
+			.main-content .section {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5em;
+			}
+
+			.image-grid {
+				display: flex;
+				gap: 0.5em;
+				padding: 0.5em;
+				flex-wrap: wrap;
+			}
+			.image-grid .col {
+				position: relative;
+				flex: 0%;
+			}
+			.image-grid .col .badge {
+				position: absolute;
+				right: 0px;
+				top: 2em;
+				border-radius: 4px 0px 0px 4px;
+				background: rgb(16 16 16);
+				color: white;
+				padding: 4px 8px;
+				font-weight: 600;
+			}
+			.image-grid img {
+				vertical-align: middle;
+				width: 100%;
+				border-radius: 4px;
+			}
+
+			@media (max-width: 800px) {
+				.image-grid .col {
+					flex: 45%;
+				}
+				#top_nav_btns {
+					visibility: collapse;
+				}
+			}
+		</style>
+	</head>
+	<body onload="Init();">
+		<title>DR11 Addons</title>
+
+		<div class="wrapper">
+			<div style="position: fixed; bottom: 0px; left: 0px; width: 100%; background: rgb(32 32 32); z-index: 1000; padding: 0.5em;">
+				<p style="text-align: center;">Maaf kepada semua yang akses disini ngeliat website gw di mark "Tidak Aman" soalnya masih pakai HTTP, gak ada budget buat beli Domain</p>
+			</div>
+			<div class="header" id="header">
+				<div style="grid-column: 1; display: flex; flex-direction: row; align-items: center; gap: 1em;">
+					<button class="transparent square"><span class="material-symbols-rounded" style="font-size: 24px;" translate="no">menu</span></button>
+					<img src="./assets/media/images/logo.png" onclick="location.assign('/');" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
+				</div>
+				<div style="grid-column: 3; display: flex; flex-direction: row-reverse; align-items: center; gap: 0em;" id="top_nav_btns">
+					<button class="transparent">About <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+					<button class="transparent">Feedback <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+					<button class="transparent" onclick="location.assign('/addons');">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+				</div>
+			</div>
+			<div class="content">
+				<div class="hero">
+					<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: calc(100%); object-fit: cover;" src></img>
+					<div style="position: absolute; left: 0px; bottom: 0px; margin: 3em; width: fit-content; height: fit-content;">
+						<p style="font-size: 14px; color: white;">*These image is pre-rendered and may not look like this in early version of Trainz (under TRS)</p>
+					</div>
+					<div id="blend"></div>
+				</div>
+				<div class="main-content">
+					<div class="section">
+						<h1 style="align-self: center; margin-bottom: 1em;">Versions Banner</h1>
+						<div class="image-grid">
+							<div class="col">
+								<img src="./assets/media/images/banner_jb3.jpg"></img>
+								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb3.jpg"></img>
+							</div>
+							<div class="col">
+								<img src="./assets/media/images/banner_jb4.jpg"></img>
+								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4.jpg"></img>
+								<span class="badge">LTS</span>
+							</div>
+							<div class="col">
+								<img src="./assets/media/images/banner_jb4_1.jpg"></img>
+								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4_1.jpg"></img>
+							</div>
+							<div class="col">
+								<img src="./assets/media/images/banner_jb4_1_2.png"></img>
+								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4_1_2.png"></img>
+								<span class="badge">UPCOMING <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">bolt</span></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="section">
+						<span style="align-self: center; text-align: center; opacity: 0.5;">This website is purposed to share free and non-copyrighted Trainz assets<br>Donation is closed for now</span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="loadingscr">
+			<img src="./assets/media/images/logo.png" style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: fit-content; height: fit-content; margin: auto;" height="76"></img>
+		</div>
+
+		<script>
+			const hero_top = document.querySelector("div.hero");
+			const hero_imgs = [
+				{ src: "./assets/media/images/blender render 332.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
+				{ src: "./assets/media/images/blender render 333.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "./assets/media/images/blender render 334.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "./assets/media/images/blender render 335.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" }
+			];
+			const hero_config = {
+				index: 0
+			};
+
+			window.addEventListener("scroll", checkScroll);
+
+			function checkScroll() {
+				hero_top.children[0].style.transform = `translateY(${window.scrollY / 2}px)`;
+
+				blend.style.height = Math.min(100, window.scrollY / (hero_top.clientHeight / 2) * 50) + "%";
+
+				if (window.scrollY > hero_top.clientHeight / 2) header.classList.add("filled");
+				else header.classList.remove("filled");
+			}
+
+			function Init() {
+				document.querySelector(".wrapper").style.overflow = "visible";
+				document.querySelector(".loadingscr").classList.add("hide");
+				hero_config.index = Math.floor(Math.random() * hero_imgs.length);
+				document.body.style = `--accent-color: ${hero_imgs[hero_config.index].accentColor}; --bg-grad-top: ${hero_imgs[hero_config.index].bg.top}; --bg-grad-bottom: ${hero_imgs[hero_config.index].bg.bottom};`;
+				hero_top.children[0].src = hero_imgs[hero_config.index].src;
+				checkScroll();
+			}
+		</script>
+	</body>
+</html>
