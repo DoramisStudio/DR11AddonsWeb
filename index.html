@@ -5,251 +5,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="./assets/style/style.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<style>
-			html {
-				--accent-color: rgb(29 115 255);
-				--bg-grad-top: rgb(99, 99, 99);
-				--bg-grad-bottom: rgb(190, 190, 190);
-				user-select: none;
-				font-family: "Rubik", sans-serif;
-			}
-
-			body {
-				background: rgb(16 16 16);
-				color: white;
-			}
-
-			::-webkit-scrollbar {
-				width: 8px;
-				height: 8px;
-				background: transparent;
-			}
-			::-webkit-scrollbar-track {
-				background: transparent;
-			}
-			::-webkit-scrollbar-thumb {
-				background: rgb(124 124 124 / 25%);
-				border: 2px solid rgb(124 124 124 / 0%);
-				border-radius: 4px;
-			}
-			::-webkit-scrollbar-thumb:hover {
-				background: rgb(124 124 124 / 25%);
-				border-color: rgb(124 124 124 / 50%);
-			}
-
-			* {
-				margin: unset;
-				padding: unset;
-				box-sizing: border-box;
-			}
-
-			img[src=""] {
-				opacity: 0;
-				image-rendering: auto;
-			}
-
-			.material-symbols-rounded {
-				font-variation-settings:
-				'FILL' 0,
-				'wght' 400,
-				'GRAD' 0,
-				'opsz' 48;
-			}
-			.mat4 {
-				font-variation-settings:
-				'FILL' 0,
-				'wght' 600,
-				'GRAD' 0,
-				'opsz' 48;
-			}
-
-			.wrapper {
-				position: absolute;
-				top: 0px;
-				left: 0px;
-				right: 0px;
-				bottom: 0px;
-				overflow: hidden;
-			}
-			.wrapper .header {
-				font-family: "Noto Sans", sans-serif;
-				position: fixed;
-				top: 0px;
-				left: 0px;
-				right: 0px;
-				z-index: 99;
-				display: grid;
-				grid-template-columns: auto auto auto;
-				padding: 2em 3em;
-				transition: 0.3s ease;
-			}
-			.wrapper .header::before {
-				content: "";
-				position: absolute;
-				top: 0px;
-				left: calc(-100% - 4em);
-				width: 100%;
-				height: 108px;
-				background: rgb(24 24 24);
-				color: black;
-				/*box-shadow: inset 0px -64px 64px -64px var(--accent-color);*/
-				transition: left 0.3s ease-out;
-				z-index: -1;
-			}
-			.wrapper .header.filled {
-				padding: 1em 2em;
-			}
-			.wrapper .header.filled::before {
-				left: 0%;
-			}
-			.wrapper .content .hero {
-				position: relative;
-				background: linear-gradient(180deg, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 100%);
-				height: 100vh;
-				width: 100%;
-				overflow: hidden;
-			}
-			.wrapper .content .hero #blend {
-				position: absolute;
-				left: 0px;
-				right: 0px;
-				bottom: 0px;
-				height: 50%;
-				background: linear-gradient(0deg, rgb(16 16 16) 0%, transparent 100%);
-				z-index: 5;
-			}
-
-			button {
-				background: rgb(24 24 24);
-				border: 1px solid rgb(64 64 64);
-				color: white;
-				border-radius: 4px;
-				outline: unset;
-				font-weight: 600;
-				font-family: "Noto Sans", sans-serif;
-				font-size: 18px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 4px;
-				padding: 8px 12px;
-			}
-			button:hover {
-				background: rgb(32 32 32);
-			}
-			button.transparent {
-				background: transparent;
-				border-color: transparent;
-				text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
-			}
-			button.transparent:hover {
-				background: white;
-				color: var(--accent-color);
-				text-shadow: 0px 4px 8px transparent;
-			}
-			button.square {
-				aspect-ratio: 1 / 1;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-			button.hyperlink {
-				position: relative;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				min-width: 32px;
-			}
-			button.hyperlink::after {
-				content: '';
-				position: absolute;
-				top: calc(100% - 4px);
-				left: 0px;
-				right: 0px;
-				width: 16px;
-				height: 2px;
-				margin: 0px auto;
-				background: white;
-				border-radius: 1px;
-				transition: 0.1s;
-				opacity: 0.0;
-				pointer-events: none;
-			}
-			button.hyperlink:hover {
-				background: transparent;
-				color: white;
-			}
-			button.hyperlink:hover::after {
-				opacity: 1.0;
-				width: 100%;
-			}
-
-			.loadingscr {
-				position: fixed;
-				top: 0px;
-				left: 0px;
-				width: 100vw;
-				height: 100vh;
-				background: rgb(16 16 16);
-				z-index: 100;
-				transition: opacity 1s;
-			}
-			.loadingscr.hide {
-				opacity: 0.0;
-				pointer-events: none;
-			}
-
-			.main-content {
-				display: flex;
-				flex-direction: column;
-				gap: 1em;
-				max-width: 1024px;
-				padding: 12em 0em;
-				margin: 0em auto;
-			}
-			.main-content .section {
-				display: flex;
-				flex-direction: column;
-				gap: 0.5em;
-			}
-
-			.image-grid {
-				display: flex;
-				gap: 0.5em;
-				padding: 0.5em;
-				flex-wrap: wrap;
-			}
-			.image-grid .col {
-				position: relative;
-				flex: 0%;
-			}
-			.image-grid .col .badge {
-				position: absolute;
-				right: 0px;
-				top: 2em;
-				border-radius: 4px 0px 0px 4px;
-				background: rgb(16 16 16);
-				color: white;
-				padding: 4px 8px;
-				font-weight: 600;
-			}
-			.image-grid img {
-				vertical-align: middle;
-				width: 100%;
-				border-radius: 4px;
-			}
-
-			@media (max-width: 800px) {
-				.image-grid .col {
-					flex: 45%;
-				}
-				#top_nav_btns {
-					visibility: collapse;
-				}
-			}
-		</style>
 	</head>
 	<body onload="Init();">
 		<title>DR11 Addons</title>
@@ -262,7 +20,7 @@
 				</div>
 				<div style="grid-column: 3; display: flex; flex-direction: row-reverse; align-items: center; gap: 0em;" id="top_nav_btns">
 					<button class="transparent">About <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-					<button class="transparent">Feedback <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+					<button class="transparent">WIPs <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
 					<button class="transparent">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
 				</div>
 			</div>
@@ -278,29 +36,41 @@
 					<div class="section">
 						<h1 style="align-self: center; margin-bottom: 1em;">Versions Banner</h1>
 						<div class="image-grid">
-							<div class="col">
-								<img src="./assets/media/images/banner_jb3.jpg"></img>
-								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb3.jpg"></img>
+							<div class="col button-action">
+								<div class="main" onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-3-all-in-one-v3-6`);">
+									<img src="./assets/media/images/banner_jb3.jpg"></img>
+									<span class="material-symbols-rounded mat4" style="position: absolute; right: 0px; bottom: 0px; margin: 1em; font-size: 14px; text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);" translate="no">north_east</span>
+								</div>
+								<img class="glow" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb3.jpg"></img>
 							</div>
-							<div class="col">
-								<img src="./assets/media/images/banner_jb4.jpg"></img>
-								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4.jpg"></img>
-								<span class="badge">LTS</span>
+							<div class="col button-action">
+								<div class="main" onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-0`);">
+									<img src="./assets/media/images/banner_jb4.jpg"></img>
+									<span class="material-symbols-rounded mat4" style="position: absolute; right: 0px; bottom: 0px; margin: 1em; font-size: 14px; text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);" translate="no">north_east</span>
+									<span class="badge">LTS</span>
+								</div>
+								<img class="glow" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4.jpg"></img>
 							</div>
-							<div class="col">
-								<img src="./assets/media/images/banner_jb4_1.jpg"></img>
-								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4_1.jpg"></img>
+							<div class="col button-action">
+								<div class="main" onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-1`);">
+									<img src="./assets/media/images/banner_jb4_1.jpg"></img>
+									<span class="material-symbols-rounded mat4" style="position: absolute; right: 0px; bottom: 0px; margin: 1em; font-size: 14px; text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);" translate="no">north_east</span>
+								</div>
+								<img class="glow" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4_1.jpg"></img>
 							</div>
-							<div class="col">
-								<img src="./assets/media/images/banner_jb4_1_2.png"></img>
-								<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4_1_2.png"></img>
-								<span class="badge">UPCOMING <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">bolt</span></span>
+							<div class="col button-action">
+								<div class="main" onclick="location.assign(`https://sites.google.com/view/yousoro/wip/new-shd-series-v4-2-v4-1-2`);">
+									<img src="./assets/media/images/banner_jb4_1_2.png"></img>
+									<span class="material-symbols-rounded mat4" style="position: absolute; right: 0px; bottom: 0px; margin: 1em; font-size: 14px; text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);" translate="no">north_east</span>
+									<span class="badge">UPCOMING <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">bolt</span></span>
+								</div>
+								<img class="glow" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1; filter: blur(32px);" src="./assets/media/images/banner_jb4_1_2.png"></img>
 							</div>
 						</div>
 					</div>
 					
 					<div class="section">
-						<span style="align-self: center; text-align: center; opacity: 0.5;">This website is purposed to share free and non-copyrighted Trainz assets<br>Donation is closed for now</span>
+						<span style="align-self: center; text-align: center; opacity: 0.5;">This website is purposed to share our free and non-copyrighted Trainz assets<br>Donation is closed for now</span>
 					</div>
 				</div>
 				
@@ -308,7 +78,9 @@
 		</div>
 
 		<div class="loadingscr">
-			<img src="./assets/media/images/logo.png" style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: fit-content; height: fit-content; margin: auto;" height="76"></img>
+			<div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: fit-content; height: fit-content; margin: auto; display: flex; flex-direction: column; gap: 2em;">
+				<img style="width: fit-content; height: fit-content;" src="./assets/media/images/logo.png" height="76"></img>
+			</div>
 		</div>
 
 		<script>
