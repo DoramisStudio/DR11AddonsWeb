@@ -20,8 +20,7 @@ function checkScroll() {
 
     blend.style.height = Math.min(100, window.scrollY / (hero_top.clientHeight / 2) * 50) + "%";
 
-    if (window.scrollY > hero_top.clientHeight / 2) header.classList.add("filled");
-    else header.classList.remove("filled");
+    checkHeaderScroll();
 }
 
 function Init() {
