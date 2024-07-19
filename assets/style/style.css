@@ -40,6 +40,9 @@ img[src=""] {
     opacity: 0;
     image-rendering: auto;
 }
+img {
+    pointer-events: none;
+}
 
 .material-symbols-rounded {
     font-variation-settings:
