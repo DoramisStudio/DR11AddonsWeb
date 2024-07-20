@@ -20,3 +20,4 @@ function Init() {
 	hero_top.children[0].src = hero_imgs[hero_config.index].src;
 	checkScroll();
 }
+// Desktop@RikoRiko
