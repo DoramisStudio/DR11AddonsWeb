@@ -16,7 +16,7 @@
 		<div class="wrapper">
 			<div class="header" id="header">
 				<div style="grid-column: 1; display: flex; flex-direction: row; align-items: center; gap: 1em;">
-					<button class="transparent square"><span class="material-symbols-rounded" style="font-size: 24px;" translate="no">menu</span></button>
+					<button onclick="toggleMobileMenu();" class="transparent square fullscreen-menu-button" id="fullscreen_menu"><span class="material-symbols-rounded" style="font-size: 24px;" translate="no">menu</span></button>
 					<div onclick="location.assign('/');">
 						<img src="./assets/media/images/logo.png" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
 					</div>
@@ -63,11 +63,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="header-menu">
+				<button>Addons</button>
+				<button>WIPs</button>
+				<button>About</button>
+			</div>
 			<div class="content">
 				<div class="hero">
 					<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: calc(100%); object-fit: cover;" src></img>
 					<div style="position: absolute; left: 0px; bottom: 0px; margin: 3em; width: fit-content; height: fit-content;">
-						<p style="font-size: 14px; color: white;">*These image is pre-rendered and may not look like this in early version of Trainz (under TRS)</p>
+						<p style="font-size: 14px; color: white;">*These image is pre-rendered and may not look like this</p>
 					</div>
 					<div id="blend"></div>
 				</div>
