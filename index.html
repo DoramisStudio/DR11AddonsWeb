@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="./assets/style/style.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</head>
 	<body onload="Init();">
 		<title>DR11 Addons</title>
@@ -21,11 +22,46 @@
 					</div>
 				</div>
 				<div style="grid-column: 3; display: flex; flex-direction: row-reverse; align-items: center; gap: 0em;" id="top_nav_btns">
-					<div class="drop-menu">
-						<button class="transparent">About <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-					</div>
+					<button class="transparent">About <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
 					<button class="transparent">WIPs <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-					<button class="transparent" onclick="location.assign('/addons');">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+					<div class="drop-menu">
+						<button class="transparent drop-menu-button" onclick="location.assign('/addons');">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+						<div class="drop-menu-container">
+							<h3 style="background: linear-gradient(90deg, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 100%); filter: brightness(2); background-clip: text; -webkit-text-fill-color: transparent;">Featured <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">local_fire_department</span></h3>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-3-all-in-one-v3-6`);">
+								<div class="dmc-btn-container">
+									<h1>Jetbus Aio 3.6 <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Oldest version available to Download, limited Mobile Support</p>
+								</div>
+							</button>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-0`);">
+								<div class="dmc-btn-container">
+									<h1>Jetbus SHD Series 4.0 <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Jetbus with more added accessories from JBv3.6, first supported on Mobile Trainz</p>
+								</div>
+							</button>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-1`);">
+								<div class="dmc-btn-container">
+									<h1>Jetbus SHD Series 4.1b <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Optimized for Mobile Trainz and several more fixes from JBv4</p>
+								</div>
+							</button>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/wip/new-shd-series-v4-2-v4-1-2`);">
+								<div class="dmc-btn-container">
+									<h1>SHD Series 4.2 <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Loaded with lots of updates from JBv4.1b including Script update</p>
+								</div>
+							</button>
+							<div class="footer">
+								<button onclick="location.assign('https://sites.google.com/view/yousoro/addons/addons');" class="no-stroke" style="flex: 1;">
+									<div class="dmc-btn-container">
+										<h1>Others <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+										<p>Other Addons that we released</p>
+									</div>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="content">
