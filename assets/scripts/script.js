@@ -1,18 +1,7 @@
 const hero_top = document.querySelector("div.hero");
-const hero_imgs = [
-	{ src: "./assets/media/images/blender render 332.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
-	{ src: "./assets/media/images/blender render 333.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-	{ src: "./assets/media/images/blender render 334.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-	{ src: "./assets/media/images/blender render 335.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-	{ src: "./assets/media/images/blender render 337.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)" },
-	{ src: "./assets/media/images/blender render 338.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-	{ src: "./assets/media/images/blender render 339.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
-	{ src: "./assets/media/images/blender render 340.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" }
-];
 const hero_config = {
 	index: 0
 };
-
 window.addEventListener("scroll", checkScroll);
 
 function checkScroll() {

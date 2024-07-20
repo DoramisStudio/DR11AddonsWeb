@@ -17,13 +17,50 @@
 				<div style="grid-column: 1; display: flex; flex-direction: row; align-items: center; gap: 1em;">
 					<button class="transparent square"><span class="material-symbols-rounded" style="font-size: 24px;" translate="no">menu</span></button>
 					<div onclick="location.assign('/');">
-						<img src="./assets/media/images/logo.png" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
+						<img src="../assets/media/images/logo.png" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
 					</div>
 				</div>
 				<div style="grid-column: 3; display: flex; flex-direction: row-reverse; align-items: center; gap: 0em;" id="top_nav_btns">
 					<button class="transparent">About <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
 					<button class="transparent">WIPs <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-					<button class="transparent" onclick="location.assign('/addons');">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+					<div class="drop-menu">
+						<button class="transparent drop-menu-button" onclick="location.assign('/addons');">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
+						<div class="drop-menu-container">
+							<h3 style="background: linear-gradient(90deg, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 100%); filter: brightness(2); background-clip: text; -webkit-text-fill-color: transparent;">Featured <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">local_fire_department</span></h3>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-3-all-in-one-v3-6`);">
+								<div class="dmc-btn-container">
+									<h1>Jetbus Aio 3.6 <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Oldest version available to Download, limited Mobile Support</p>
+								</div>
+							</button>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-0`);">
+								<div class="dmc-btn-container">
+									<h1>Jetbus SHD Series 4.0 <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Jetbus with more added accessories from JBv3.6, first supported on Mobile Trainz</p>
+								</div>
+							</button>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-1`);">
+								<div class="dmc-btn-container">
+									<h1>Jetbus SHD Series 4.1b <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Optimized for Mobile Trainz and several more fixes from JBv4</p>
+								</div>
+							</button>
+							<button onclick="location.assign(`https://sites.google.com/view/yousoro/wip/new-shd-series-v4-2-v4-1-2`);">
+								<div class="dmc-btn-container">
+									<h1>SHD Series 4.2 <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+									<p>Loaded with lots of updates from JBv4.1b including Script update</p>
+								</div>
+							</button>
+							<div class="footer">
+								<button onclick="location.assign('https://sites.google.com/view/yousoro/addons/addons');" class="no-stroke" style="flex: 1;">
+									<div class="dmc-btn-container">
+										<h1>Others <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
+										<p>Other Addons that we released</p>
+									</div>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="content">
@@ -85,6 +122,19 @@
 			</div>
 		</div>
 
+		<script>
+			const hero_imgs = [
+				{ src: "../assets/media/images/blender render 332.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
+				{ src: "../assets/media/images/blender render 333.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "../assets/media/images/blender render 334.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "../assets/media/images/blender render 335.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "../assets/media/images/blender render 337.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)" },
+				{ src: "../assets/media/images/blender render 338.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "../assets/media/images/blender render 339.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
+				{ src: "../assets/media/images/blender render 340.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" }
+			];
+		</script>
+		<script src="./assets/scripts/header.js"></script>
 		<script src="../assets/scripts/script.js"></script>
 	</body>
 </html>
