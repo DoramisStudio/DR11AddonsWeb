@@ -1,6 +1,46 @@
 [
 	{
-		"title": "Object Riko & Hanamaru",
+		"title": "Jetbus 3+ Voyager V3.0 \"Ratu Maher\"",
+		"status": "Ex-Free",
+		"thumbnail": "",
+		"date": 0,
+		"description": "Addons Jetbus 3+ Voyager Pertama di Trainz Simulator yang bisa dinaiki, dengan detail yang bagus, termasuk interior yang detailnya juga bagus pastinya :D",
+		"comparison": {
+			"pros": [
+				"Livery mudah diganti ( cari livery sendiri )",
+				"Poly aman ( low detail )",
+				"Aksesoris yg warna dan texture bisa diganti",
+				"dll"
+			],
+			"cons": [
+				"Masih memakai UV map mn x rpc",
+				"Tidak ber-anim",
+				"Tidak ada script",
+				"Belum ada lampu",
+				"Beberapa aksesoris dihilangkan",
+				"Kaca belakang masih belum ada"
+			]
+		},
+		"credits": [
+			"AGS design livery",
+			"Blahbloh livery"
+		],
+		"note": [
+			"Ganti texture livery di \"rtm_0011.jpg\"",
+			"Ganti texture kaca \"rtm_0001.tga\" di folder kaca (bukan folder kaca pisah)",
+			"Yg ekstraknya di PC, harus pakai winrar atau 7zip",
+			"Bila missdep, ganti enginespec sendiri",
+			"Link akan mati saat ada update, atau memang mati karena sudah exfree",
+			"Clue Password yaitu livery warna ijo, dulu dari bris trans & azkha wijaya, Contoh penulisan: angelheart"
+		],
+		"type": "release",
+		"url": {
+			"download_url": "https://drive.google.com/drive/u/0/folders/1tRBuWcEBQR9LwnLAeMooI8TakyGsdumT",
+			"page_url": ""
+		}
+	},
+	{
+		"title": "Objek Riko & Hanamaru",
 		"status": "Freeware",
 		"thumbnail": "https://images2.imgbox.com/97/98/3idnhQPz_o.jpg",
 		"date": 0,
@@ -15,7 +55,7 @@
 			]
 		},
 		"credits": [
-			"Klab"
+			"KLab"
 		],
 		"note": [
 			"Replace livery bus di texture \"_56-2.jpg\"",
@@ -29,7 +69,7 @@
 		}
 	},
 	{
-		"title": "Object Character LL!SIFAS",
+		"title": "Objek Karakter LL!SIFAS",
 		"status": "Freeware",
 		"thumbnail": "",
 		"date": 0,
@@ -45,7 +85,7 @@
 			]
 		},
 		"credits": [
-			"Klab"
+			"KLab"
 		],
 		"note": [
 			"Link ber-akses",
@@ -54,6 +94,34 @@
 		"type": "release",
 		"url": {
 			"download_url": "https://drive.google.com/drive/folders/1wy1PCQ3cTAI-8DiH-ot9sCQDs0NeoeeL",
+			"page_url": ""
+		}
+	},
+	{
+		"title": "Objek Rumah V1",
+		"status": "Freeware",
+		"thumbnail": "",
+		"date": 0,
+		"description": "Objek Rumah untuk TS, lumayan HD untuk sebuah objek dan low-poly",
+		"comparison": {
+			"pros": [
+				"HD textures",
+				"dll"
+			],
+			"cons": [
+				"Sedikit aset yang tercantum didalam"
+			]
+		},
+		"credits": [
+			"Google"
+		],
+		"note": [
+			"Arahkan link kesini bila memakai objek ini kedalam rute yang ingin dishare",
+			"Clue Password yaitu nama bus di postingan sebelumnya"
+		],
+		"type": "release",
+		"url": {
+			"download_url": "",
 			"page_url": ""
 		}
 	}
