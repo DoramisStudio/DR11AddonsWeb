@@ -37,6 +37,7 @@ function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
 	btn.append(spoff);
 	container.append(btn);
 	// Tab content
+	// On
 	const tabon = document.createElement("div");
 	tabon.classList = "tab-content on";
 	const tonul = document.createElement("ul");
@@ -47,6 +48,7 @@ function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
 	});
 	tabon.append(tonul);
 	container.append(tabon);
+	// Off
 	const taboff = document.createElement("div");
 	taboff.classList = "tab-content off";
 	const tofful = document.createElement("ul");
