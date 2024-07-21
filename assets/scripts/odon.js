@@ -1,5 +1,7 @@
 fetch("../assets/static/addons_list.json").then(async enc => {
-	buildOdonList(await enc.json());
+	buildOdonList(await enc.json().map(e => {
+		if (e.type == "release") return e;
+	}));
 });
 const nimg = [
 	"../assets/media/images/noimage_you.jpg",
@@ -139,7 +141,7 @@ function buildOdonList(json) {
 		desc.textContent = meta.description;
 		rdata.append(desc);
 		// Page toggle
-		const pgtoggle = createPageToggle("Pros", "Cost", meta.comparison.pros, meta.comparison.cons);
+		const pgtoggle = createPageToggle("Pros", "Cons", meta.comparison.pros, meta.comparison.cons);
 		rdata.append(pgtoggle);
 		// Note
 		const note = document.createElement("ul");
