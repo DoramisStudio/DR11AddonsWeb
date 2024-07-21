@@ -116,7 +116,6 @@ function toggleMobileMenu(forceState) {
 			pointerEvents: "none"
 		});
 	}
-	console.log(container);
 }
 function CheckMobile() {
 	if (window.innerWidth <= 800) header_setting.is_mobile = true;

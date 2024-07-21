@@ -1,0 +1,33 @@
+[
+	{
+		"title": "Object Riko & Hanamaru",
+		"status": "Freeware",
+		"thumbnail": [
+			""
+		],
+		"date": 0,
+		"description": "Dari judul tahulah ya",
+		"comparison": {
+			"pros": [
+				"BTT ( Bake-To-Texture )"
+			],
+			"cons": [
+				"Tidak ber-anim",
+				"Scale model Riko masih kegedean, IM yang baru ada di folder replace"
+			]
+		},
+		"credits": [
+			"Klab"
+		],
+		"note": [
+			"Replace livery bus di texture \"_56-2.jpg\"",
+			"Link bebas-akses, tetap difolder yang sama seperti sebelumnya",
+			"Ganti mesh Riko yg lama dengan yang baru, ada di folder Indexed Mesh replace, file bernama \"riko b.im\""
+		],
+		"type": "release",
+		"url": {
+			"download_url": "",
+			"page_url": ""
+		}
+	}
+]
