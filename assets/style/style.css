@@ -391,6 +391,9 @@ button.hyperlink:hover::after {
 	align-items: center;
 	gap: 0.5em;
 }
+.list-fancy .list-item .data .credits::before {
+	content: "Credits: ";
+}
 .list-fancy .list-item .data .credits span {
 	background: rgb(24 24 24);
 	border: 1px solid rgb(64 64 64);
