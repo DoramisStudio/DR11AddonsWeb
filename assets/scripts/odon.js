@@ -1,5 +1,6 @@
 fetch("../assets/static/addons_list.json").then(async enc => {
-	buildOdonList(await enc.json().map(e => {
+	const data = await enc.json();
+	buildOdonList(data.map(e => {
 		if (e.type == "release") return e;
 	}));
 });
