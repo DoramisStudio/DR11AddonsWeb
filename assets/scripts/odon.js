@@ -48,7 +48,7 @@ function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
 	tabon.append(tonul);
 	container.append(tabon);
 	const taboff = document.createElement("div");
-	taboff.classList = "tab-content on";
+	taboff.classList = "tab-content off";
 	const tofful = document.createElement("ul");
 	messageOff.forEach(msg => {
 		const li = document.createElement("li");
@@ -136,6 +136,7 @@ function buildOdonList(json) {
 		desc.classList = "desc";
 		desc.textContent = meta.description;
 		rdata.append(desc);
+		// Page toggle
 		const pgtoggle = createPageToggle("Pros", "Cost", meta.comparison.pros, meta.comparison.cons);
 		rdata.append(pgtoggle);
 		// Note
