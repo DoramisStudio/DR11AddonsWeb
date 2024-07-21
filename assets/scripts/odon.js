@@ -15,6 +15,51 @@ function createIconElement(iconName) {
 	return icon;
 }
 
+function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
+	const container = document.createElement("label");
+	container.classList = "page-toggle";
+	// Checkbox
+	const cb = document.createElement("input");
+	cb.type = "checkbox";
+	cb.classList = "checkbox";
+	cb.setAttribute("checked", "");
+	container.append(cb);
+	// Buttons
+	const btn = document.createElement("div");
+	btn.classList = "button";
+	const spon = document.createElement("span");
+	spon.classList = "on";
+	spon.textContent = labelOn;
+	btn.append(spon);
+	const spoff = document.createElement("span");
+	spoff.classList = "off";
+	spoff.textContent = labelOff;
+	btn.append(spoff);
+	container.append(btn);
+	// Tab content
+	const tabon = document.createElement("div");
+	tabon.classList = "tab-content on";
+	const tonul = document.createElement("ul");
+	messageOn.forEach(msg => {
+		const li = document.createElement("li");
+		li.textContent = msg;
+		tonul.append(li);
+	});
+	tabon.append(tonul);
+	container.append(tabon);
+	const taboff = document.createElement("div");
+	taboff.classList = "tab-content on";
+	const tofful = document.createElement("ul");
+	messageOff.forEach(msg => {
+		const li = document.createElement("li");
+		li.textContent = msg;
+		tofful.append(li);
+	});
+	taboff.append(tofful);
+	container.append(taboff);
+	return container;
+}
+
 function buildOdonList(json) {
 	odon_list.innerHTML = "";
 	json.forEach(meta => {
@@ -91,6 +136,8 @@ function buildOdonList(json) {
 		desc.classList = "desc";
 		desc.textContent = meta.description;
 		rdata.append(desc);
+		const pgtoggle = createPageToggle("Pros", "Cost", meta.comparison.pros, meta.comparison.cons);
+		rdata.append(pgtoggle);
 		// Note
 		const note = document.createElement("ul");
 		note.classList = "note";
@@ -100,6 +147,7 @@ function buildOdonList(json) {
 			note.append(li);
 		});
 		rdata.append(note);
+		container.append(rdata);
 
 		odon_list.append(container);
 	});
