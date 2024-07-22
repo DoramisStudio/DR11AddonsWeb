@@ -149,11 +149,11 @@ function createSlideshow(images, classList = "") {
 		const nav_arrow = document.createElement("div");
 		nav_arrow.classList = "nav-arrow";
 		
-		const prev_btn = document.createElement("div");
+		const prev_btn = document.createElement("button");
 		prev_btn.append(createIconElement("arrow_left"));
 		nav_arrow.append(prev_btn);
 		
-		const next_btn = document.createElement("div");
+		const next_btn = document.createElement("button");
 		next_btn.append(createIconElement("arrow_right"));
 		nav_arrow.append(next_btn);
 		control.append(nav_arrow);
@@ -162,13 +162,14 @@ function createSlideshow(images, classList = "") {
 		function UpdateImage() {
 			image.src = images[index];
 		}
+		UpdateImage();
 
 		prev_btn.addEventListener("click", () => {
-			index = index < images.length ? index + 1 : 0;
+			index = index > 0 ? index - 1 : images.length - 1;
 			UpdateImage();
 		});
 		next_btn.addEventListener("click", () => {
-			index = index > 0 ? index - 1 : images.length - 1;
+			index = index < images.length - 1 ? index + 1 : 0;
 			UpdateImage();
 		});
 	}
