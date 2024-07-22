@@ -128,14 +128,16 @@ function buildOdonList(json) {
 		title.append(status);
 		rdata.append(title);
 		// Credits
-		const credits = document.createElement("div");
-		credits.classList = "credits";
-		meta.credits.forEach(cred => {
-			const sp = document.createElement("span");
-			sp.textContent = cred;
-			credits.append(sp);
-		});
-		rdata.append(credits);
+		if (meta.credits.length > 0) {
+			const credits = document.createElement("div");
+			credits.classList = "credits";
+			meta.credits.forEach(cred => {
+				const sp = document.createElement("span");
+				sp.textContent = cred;
+				credits.append(sp);
+			});
+			rdata.append(credits);
+		}
 		// Description
 		const desc = document.createElement("p");
 		desc.classList = "desc";
@@ -145,14 +147,16 @@ function buildOdonList(json) {
 		const pgtoggle = createPageToggle("Pros", "Cons", meta.comparison.pros, meta.comparison.cons);
 		rdata.append(pgtoggle);
 		// Note
-		const note = document.createElement("ul");
-		note.classList = "note";
-		meta.note.forEach(nt => {
-			const li = document.createElement("li");
-			li.textContent = nt;
-			note.append(li);
-		});
-		rdata.append(note);
+		if (meta.note.length > 0) {
+			const note = document.createElement("ul");
+			note.classList = "note";
+			meta.note.forEach(nt => {
+				const li = document.createElement("li");
+				li.textContent = nt;
+				note.append(li);
+			});
+			rdata.append(note);
+		}
 		container.append(rdata);
 
 		odon_list.append(container);

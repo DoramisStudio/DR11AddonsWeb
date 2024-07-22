@@ -172,5 +172,29 @@
 			"download_url": "",
 			"page_url": ""
 		}
+	},
+	{
+		"title": "Attachment Basuri Corong Atas",
+		"status": "In Progress",
+		"thumbnail": "",
+		"date": 0,
+		"description": "Komponen Corong Basuri atas + cover, bisa dipasang dimana saja, tidak hanya di Addons JB3",
+		"comparison": {
+			"pros": [
+				"HD texture"
+			],
+			"cons": [
+				"Hanya berisi 3 corong atas saja"
+			]
+		},
+		"credits": [],
+		"note": [
+			"Adjust position sendiri"
+		],
+		"type": "wip",
+		"url": {
+			"download_url": "",
+			"page_url": ""
+		}
 	}
 ]
