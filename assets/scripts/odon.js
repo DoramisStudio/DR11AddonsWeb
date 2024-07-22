@@ -1,14 +1,10 @@
 fetch("../assets/static/addons_list.json").then(async enc => {
 	const data = await enc.json();
 	if (page_odon == "addons") {
-		buildOdonList(data.map(e => {
-			if (e.type == "release") return e;
-		}));
+		buildOdonList(data.filter(task => task.type === "release"));
 	}
 	else if (page_odon == "wip") {
-		buildOdonList(data.map(e => {
-			if (e.type == "wip") return e;
-		}));
+		buildOdonList(data.filter(task => task.type === "wip"));
 	}
 });
 
