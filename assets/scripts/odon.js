@@ -8,6 +8,15 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 	}
 });
 
+function isHTMLElement(element) {
+	return element && (
+		typeof element === 'object' &&
+		element.nodeType === Node.ELEMENT_NODE &&
+		typeof element.tagName === 'string' &&
+		element.tagName !== 'undefined'
+	);
+  }
+
 function createIconElement(iconName) {
 	const icon = document.createElement("span");
 	icon.classList = "material-symbols-rounded mat4";
@@ -61,6 +70,33 @@ function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
 	});
 	taboff.append(tofful);
 	container.append(taboff);
+	return container;
+}
+
+function createLabeledGroup(label, content) {
+	if (!isHTMLElement(content)) {
+		throw new TypeError('Argument 2, Expected a HTML element, but got something else.');
+	}
+	if (typeof(label) != "string") {
+		throw new TypeError('Argument 1, Expected a String.');
+	}
+	
+	// Base
+	const container = document.createElement("div");
+	container.classList = "labeled-group";
+
+	// Label
+	const lbl = document.createElement("div");
+	lbl.classList = "label";
+	lbl.textContent = label;
+	container.append(lbl);
+
+	// Content
+	const content_ = document.createElement("div");
+	content_.classList = "content";
+	content_.append(content);
+	container.append(content_);
+
 	return container;
 }
 
@@ -149,13 +185,13 @@ function buildOdonList(json) {
 		// Note
 		if (meta.note.length > 0) {
 			const note = document.createElement("ul");
-			note.classList = "note";
 			meta.note.forEach(nt => {
 				const li = document.createElement("li");
 				li.textContent = nt;
 				note.append(li);
 			});
-			rdata.append(note);
+			const labelgroup = createLabeledGroup("Note", note);
+			rdata.append(labelgroup);
 		}
 		container.append(rdata);
 

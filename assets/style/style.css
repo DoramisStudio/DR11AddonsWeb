@@ -44,8 +44,10 @@ img {
 	pointer-events: none;
 }
 
-ul li {
-	margin-left: 32px;
+ul {
+	li {
+		margin-left: 32px;
+	}
 }
 
 .material-symbols-rounded {
@@ -465,9 +467,8 @@ button.hyperlink:hover::after {
 	}
 
 	ul {
-		list-style: none;
 		li {
-			margin: unset;
+			margin-left: 1em;
 		}
 	}
 }
@@ -524,6 +525,39 @@ button.hyperlink:hover::after {
 	border: 1px solid rgb(64 24 24);
 	border-radius: 0px 4px 4px 4px;
 	padding: 1em;
+}
+
+.labeled-group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	.label {
+		z-index: 2;
+		display: flex;
+		flex-direction: row;
+		background: rgb(24 24 24);
+		border: 1px solid rgb(64 64 64);
+		border-bottom: transparent;
+		border-radius: 4px 4px 0px 0px;
+		margin-bottom: -1px;
+		font-size: 14px;
+		padding: 6px 12px;
+	}
+
+	.content {
+		width: 100%;
+		background: rgb(24 24 24);
+		border: 1px solid rgb(64 64 64);
+		border-radius: 0px 4px 4px 4px;
+		padding: 1em;
+	}
+
+	ul {
+		li {
+			margin-left: 1em;
+		}
+	}
 }
 
 .image-grid {
