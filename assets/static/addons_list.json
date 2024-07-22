@@ -167,7 +167,7 @@
 	},
 	{
 		"title": "Attachment Basuri Corong Atas",
-		"status": "In Progress",
+		"status": "Freeware",
 		"thumbnail": [],
 		"date": 0,
 		"description": "Komponen Corong Basuri atas + cover, bisa dipasang dimana saja, tidak hanya di Addons JB3",
@@ -183,7 +183,7 @@
 		"note": [
 			"Adjust position sendiri"
 		],
-		"type": "wip",
+		"type": "release",
 		"url": {
 			"download_url": "",
 			"page_url": ""
