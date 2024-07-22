@@ -114,7 +114,9 @@
 	{
 		"title": "Objek Rumah V1",
 		"status": "Freeware",
-		"thumbnail": [],
+		"thumbnail": [
+			"https://images2.imgbox.com/5d/eb/se51f2Vg_o.jpg"
+		],
 		"date": 0,
 		"description": "Objek Rumah untuk TS, lumayan HD untuk sebuah objek dan low-poly",
 		"comparison": {
