@@ -70,6 +70,7 @@ function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
 
 function buildOdonList(json) {
 	odon_list.innerHTML = "";
+	console.log(json);
 	json.forEach(meta => {
 		const container = document.createElement("div");
 		container.classList = "list-item";
