@@ -2,7 +2,15 @@
 	{
 		"title": "Jetbus 3+ Voyager V3.0 \"Ratu Maher\"",
 		"status": "Ex-Free",
-		"thumbnail": "",
+		"thumbnail": [
+			"https://images2.imgbox.com/84/7d/keXJ51Pl_o.jpg",
+			"https://images2.imgbox.com/74/44/kNoNz8qB_o.jpg",
+			"https://images2.imgbox.com/f4/ce/lBIO75ng_o.jpg",
+			"https://images2.imgbox.com/31/c6/uBJ1Ky1F_o.jpg",
+			"https://images2.imgbox.com/a7/41/zsP2bpjq_o.jpg",
+			"https://images2.imgbox.com/8e/97/UGGKC1oY_o.jpg",
+			"https://images2.imgbox.com/c3/d7/tkgjbQEM_o.jpg"
+		],
 		"date": 0,
 		"description": "Addons Jetbus 3+ Voyager Pertama di Trainz Simulator yang bisa dinaiki, dengan detail yang bagus, termasuk interior yang detailnya juga bagus pastinya :D",
 		"comparison": {
@@ -42,7 +50,9 @@
 	{
 		"title": "Objek Riko & Hanamaru",
 		"status": "Freeware",
-		"thumbnail": "https://images2.imgbox.com/97/98/3idnhQPz_o.jpg",
+		"thumbnail": [
+			"https://images2.imgbox.com/97/98/3idnhQPz_o.jpg"
+		],
 		"date": 0,
 		"description": "Dari judul tahulah ya",
 		"comparison": {
@@ -71,7 +81,11 @@
 	{
 		"title": "Objek Karakter LL!SIFAS",
 		"status": "Freeware",
-		"thumbnail": "",
+		"thumbnail": [
+			"https://images2.imgbox.com/ac/18/waQYvixT_o.jpg",
+			"https://images2.imgbox.com/07/4d/mfhW7dGt_o.jpg",
+			"https://images2.imgbox.com/f5/c2/gJxZSBZ3_o.jpg"
+		],
 		"date": 0,
 		"description": "Objek loplep untuk TS, yang pastinya imud dong c:",
 		"comparison": {
@@ -100,7 +114,7 @@
 	{
 		"title": "Objek Rumah V1",
 		"status": "Freeware",
-		"thumbnail": "",
+		"thumbnail": [],
 		"date": 0,
 		"description": "Objek Rumah untuk TS, lumayan HD untuk sebuah objek dan low-poly",
 		"comparison": {
@@ -128,7 +142,7 @@
 	{
 		"title": "Traffic Indo V1",
 		"status": "In Progress",
-		"thumbnail": "",
+		"thumbnail": [],
 		"date": 0,
 		"description": "Traffic Indo V1 ini membuat Traffic di TS lebih beragam, karena memiliki berbagai jenis kendaraan transportasi, mulai dari mobil, truk, bus, dll yang pastinya memakai realskin dan HD",
 		"comparison": {
@@ -152,7 +166,7 @@
 	{
 		"title": "Attachment Basuri Corong Atas",
 		"status": "In Progress",
-		"thumbnail": "",
+		"thumbnail": [],
 		"date": 0,
 		"description": "Komponen Corong Basuri atas + cover, bisa dipasang dimana saja, tidak hanya di Addons JB3",
 		"comparison": {

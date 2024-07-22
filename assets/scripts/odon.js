@@ -6,7 +6,28 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 	else if (page_odon == "wip") {
 		buildOdonList(data.filter(task => task.type === "wip"));
 	}
+}).catch(e => {
+	console.error(e);
+	console.log("Assuming list is offline");
 });
+
+const slideshow_images = [
+	"https://images2.imgbox.com/84/7d/keXJ51Pl_o.jpg",
+	"https://images2.imgbox.com/74/44/kNoNz8qB_o.jpg",
+	"https://images2.imgbox.com/f4/ce/lBIO75ng_o.jpg",
+	"https://images2.imgbox.com/31/c6/uBJ1Ky1F_o.jpg",
+	"https://images2.imgbox.com/a7/41/zsP2bpjq_o.jpg",
+	"https://images2.imgbox.com/8e/97/UGGKC1oY_o.jpg",
+	"https://images2.imgbox.com/c3/d7/tkgjbQEM_o.jpg"
+];
+const slideshow_opts = {
+	index: 0
+};
+
+function setslideshowimage() {
+	// const img = document.querySelector(".image-slideshow .images img");
+	// img.src = slideshow_images[Math.floor(Math.random() * slideshow_images.length)];
+}
 
 function isHTMLElement(element) {
 	return element && (
@@ -15,7 +36,7 @@ function isHTMLElement(element) {
 		typeof element.tagName === 'string' &&
 		element.tagName !== 'undefined'
 	);
-  }
+}
 
 function createIconElement(iconName) {
 	const icon = document.createElement("span");
@@ -73,13 +94,10 @@ function createPageToggle(labelOn, labelOff, messageOn, messageOff) {
 	return container;
 }
 
-function createLabeledGroup(label, content) {
-	if (!isHTMLElement(content)) {
-		throw new TypeError('Argument 2, Expected a HTML element, but got something else.');
-	}
-	if (typeof(label) != "string") {
-		throw new TypeError('Argument 1, Expected a String.');
-	}
+function createLabeledGroup(label, content, classList = "") {
+	if (typeof(label) !== "string") throw new TypeError('Argument 1, Expected a String.');
+	if (!isHTMLElement(content)) throw new TypeError('Argument 2, Expected a HTML element, but got something else.');
+	if (typeof classList !== "string") throw new TypeError('Argument 3, Expected a String.');
 	
 	// Base
 	const container = document.createElement("div");
@@ -100,6 +118,62 @@ function createLabeledGroup(label, content) {
 	return container;
 }
 
+function createSlideshow(images, classList = "") {
+	if (!Array.isArray(images)) throw new TypeError('Argument 1, Expected an Array, but got something else.');
+	if (typeof classList !== "string") throw new TypeError('Argument 2, Expected a String.');
+	const multiple = images.length > 1 ? true : false;
+	const index = 0;
+
+	// Container
+	const container = document.createElement("div");
+	container.classList = "image-slideshow " + classList;
+
+	// Images container
+	const images_container = document.createElement("div");
+	images_container.classList = "images";
+
+	const image = document.createElement("img");
+	images_container.append(image);
+	container.append(images_container);
+	
+	// Images processor
+	if (!multiple) {
+		image.src = images[0] != "" ? images[0] : nimg[Math.floor(Math.random() * nimg.length)]
+	}
+	else {
+		const control = document.createElement("div");
+		control.classList = "ui-controls";
+		
+		const nav_arrow = document.createElement("div");
+		nav_arrow.classList = "nav-arrow";
+		
+		const prev_btn = document.createElement("div");
+		prev_btn.append(createIconElement("arrow_left"));
+		nav_arrow.append(prev_btn);
+		
+		const next_btn = document.createElement("div");
+		next_btn.append(createIconElement("arrow_right"));
+		nav_arrow.append(next_btn);
+		control.append(nav_arrow);
+		container.append(control);
+		
+		function UpdateImage() {
+			image.src = images[index];
+		}
+
+		prev_btn.addEventListener("click", () => {
+			index = index < images.length ? index + 1 : 0;
+			UpdateImage();
+		});
+		next_btn.addEventListener("click", () => {
+			index = index > 0 ? index - 1 : images.length - 1;
+			UpdateImage();
+		});
+	}
+
+	return container;
+}
+
 function buildOdonList(json) {
 	odon_list.innerHTML = "";
 	console.log(json);
@@ -111,9 +185,7 @@ function buildOdonList(json) {
 		const lside = document.createElement("div");
 		lside.classList = "lside";
 		// Thumbnail
-		const thumb = document.createElement("img");
-		thumb.classList = "thumb";
-		thumb.src = meta.thumbnail != "" ? meta.thumbnail : nimg[Math.floor(Math.random() * nimg.length)];
+		const thumb = createSlideshow(meta.thumbnail, "thumb");
 		lside.append(thumb);
 		// Button group
 		const buttong = document.createElement("div");
