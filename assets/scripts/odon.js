@@ -121,13 +121,14 @@ function buildOdonList(json) {
 		// Download Button
 		const button_dl = document.createElement("button");
 		button_dl.classList = "square aspect-free download-btn";
-		button_dl.title = "Download";
 		if (meta.url.download_url != "") {
+			button_dl.title = "Download";
 			button_dl.onclick = () => {
 				location.assign(meta.url.download_url);
 			}
 		}
 		else {
+			button_dl.title = "Download (Not available)";
 			button_dl.setAttribute("disabled", "");
 		}
 		button_dl.append(createIconElement("download"));
@@ -135,13 +136,14 @@ function buildOdonList(json) {
 		// Page Button
 		const button_pg = document.createElement("button");
 		button_pg.classList = "square aspect-free page-btn";
-		button_pg.title = "Open page";
 		if (meta.url.page_url != "") {
+			button_pg.title = "Open page";
 			button_pg.onclick = () => {
 				location.assign(meta.url.page_url);
 			}
 		}
 		else {
+			button_pg.title = "Open page (Not available)";
 			button_pg.setAttribute("disabled", "");
 		}
 		button_pg.append(createIconElement("open_in_new"));
