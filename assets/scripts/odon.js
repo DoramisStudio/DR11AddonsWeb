@@ -140,7 +140,7 @@ function createSlideshow(images, classList = "") {
 	
 	// Images processor
 	if (!multiple) {
-		image.src = images[0] != "" ? images[0] : nimg[Math.floor(Math.random() * nimg.length)]
+		image.src = (images[0] && images[0] != "") ? images[0] : nimg[Math.floor(Math.random() * nimg.length)]
 	}
 	else {
 		const control = document.createElement("div");
