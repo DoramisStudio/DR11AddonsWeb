@@ -124,5 +124,53 @@
 			"download_url": "",
 			"page_url": ""
 		}
+	},
+	{
+		"title": "Traffic Indo V1",
+		"status": "In Progress",
+		"thumbnail": "",
+		"date": 0,
+		"description": "Traffic Indo V1 ini membuat Traffic di TS lebih beragam, karena memiliki berbagai jenis kendaraan transportasi, mulai dari mobil, truk, bus, dll yang pastinya memakai realskin dan HD",
+		"comparison": {
+			"pros": [
+				"Kendaraan bervariasi",
+				"Rame :v",
+				"dll"
+			],
+			"cons": [
+				"Belum BTT"
+			]
+		},
+		"credits": [],
+		"note": [],
+		"type": "wip",
+		"url": {
+			"download_url": "",
+			"page_url": ""
+		}
+	},
+	{
+		"title": "Attachment Basuri Corong Atas",
+		"status": "In Progress",
+		"thumbnail": "",
+		"date": 0,
+		"description": "Komponen Corong Basuri atas + cover, bisa dipasang dimana saja, tidak hanya di Addons JB3",
+		"comparison": {
+			"pros": [
+				"HD texture"
+			],
+			"cons": [
+				"Hanya berisi 3 corong atas saja"
+			]
+		},
+		"credits": [],
+		"note": [
+			"Adjust position sendiri"
+		],
+		"type": "wip",
+		"url": {
+			"download_url": "",
+			"page_url": ""
+		}
 	}
 ]

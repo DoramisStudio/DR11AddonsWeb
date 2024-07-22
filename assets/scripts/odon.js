@@ -1,13 +1,16 @@
 fetch("../assets/static/addons_list.json").then(async enc => {
 	const data = await enc.json();
-	buildOdonList(data.map(e => {
-		if (e.type == "release") return e;
-	}));
+	if (page_odon == "addons") {
+		buildOdonList(data.map(e => {
+			if (e.type == "release") return e;
+		}));
+	}
+	else if (page_odon == "wip") {
+		buildOdonList(data.map(e => {
+			if (e.type == "wip") return e;
+		}));
+	}
 });
-const nimg = [
-	"../assets/media/images/noimage_you.jpg",
-	"../assets/media/images/noimage_yoshiko.jpg"
-];
 
 function createIconElement(iconName) {
 	const icon = document.createElement("span");

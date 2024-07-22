@@ -69,6 +69,11 @@ ul li {
 	'GRAD' 0,
 	'opsz' 48;
 }
+accentcolor {
+	background: var(--accent-color);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 .wrapper {
 	position: absolute;
@@ -230,6 +235,18 @@ ul li {
 	height: 50%;
 	background: linear-gradient(0deg, rgb(16 16 16) 0%, transparent 100%);
 	z-index: 5;
+}
+.wrapper .content .hero .hero-text {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	margin: auto 0px;
+	height: fit-content;
+	padding: 10vw;
+	font-size: 10vw;
+	line-height: 100%;
+	filter: drop-shadow(0px 4px 12px rgb(0 0 0 / 25%));
 }
 
 button {
