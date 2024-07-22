@@ -122,7 +122,7 @@ function createSlideshow(images, classList = "") {
 	if (!Array.isArray(images)) throw new TypeError('Argument 1, Expected an Array, but got something else.');
 	if (typeof classList !== "string") throw new TypeError('Argument 2, Expected a String.');
 	const multiple = images.length > 1 ? true : false;
-	const index = 0;
+	var index = 0;
 
 	console.log(multiple);
 
