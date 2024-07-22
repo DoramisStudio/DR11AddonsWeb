@@ -5,6 +5,7 @@ const hero_config = {
 window.addEventListener("scroll", checkScroll);
 
 const nimg = [
+	"../assets/media/images/noimage_honoka.jpg",
 	"../assets/media/images/noimage_you.jpg",
 	"../assets/media/images/noimage_yoshiko.jpg"
 ];
