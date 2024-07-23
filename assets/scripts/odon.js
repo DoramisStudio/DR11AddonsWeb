@@ -1,7 +1,9 @@
 fetch("../assets/static/addons_list.json").then(async enc => {
 	const data = await enc.json();
 	if (page_odon == "addons") {
-		buildOdonList(data.filter(task => task.type === "release"));
+		const addons = data.filter(task => task.type === "release");
+		buildOdonList(addons.filter(task => !task.tags.includes("featured")));
+		console.log(addons.filter(task => task.tags.includes("featured")));
 	}
 	else if (page_odon == "wip") {
 		buildOdonList(data.filter(task => task.type === "wip"));
@@ -10,24 +12,6 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 	console.error(e);
 	console.log("Assuming list is offline");
 });
-
-const slideshow_images = [
-	"https://images2.imgbox.com/84/7d/keXJ51Pl_o.jpg",
-	"https://images2.imgbox.com/74/44/kNoNz8qB_o.jpg",
-	"https://images2.imgbox.com/f4/ce/lBIO75ng_o.jpg",
-	"https://images2.imgbox.com/31/c6/uBJ1Ky1F_o.jpg",
-	"https://images2.imgbox.com/a7/41/zsP2bpjq_o.jpg",
-	"https://images2.imgbox.com/8e/97/UGGKC1oY_o.jpg",
-	"https://images2.imgbox.com/c3/d7/tkgjbQEM_o.jpg"
-];
-const slideshow_opts = {
-	index: 0
-};
-
-function setslideshowimage() {
-	// const img = document.querySelector(".image-slideshow .images img");
-	// img.src = slideshow_images[Math.floor(Math.random() * slideshow_images.length)];
-}
 
 function isHTMLElement(element) {
 	return element && (
