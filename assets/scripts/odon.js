@@ -6,7 +6,9 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 		buildFeaturedList(addons.filter(task => task.tags.includes("featured")));
 	}
 	else if (page_odon == "wip") {
-		buildOdonList(data.filter(task => task.type === "wip"));
+		const addons = data.filter(task => task.type === "wip");
+		buildOdonList(addons.filter(task => !task.tags.includes("featured")));
+		buildFeaturedList(addons.filter(task => task.tags.includes("featured")));
 	}
 }).catch(e => {
 	console.error(e);
@@ -288,20 +290,16 @@ function buildFeaturedList(json) {
 		title.textContent = meta.title;
 		content.append(title);
 		// Download button
-		const button_dl = document.createElement("button");
-		button_dl.classList = "circle semi-opaque";
 		if (meta.url.download_url != "") {
+			const button_dl = document.createElement("button");
+			button_dl.classList = "circle semi-opaque";
 			button_dl.title = "Download";
 			button_dl.onclick = () => {
 				location.assign(meta.url.download_url);
 			}
+			button_dl.append(createIconElement("download"));
+			content.append(button_dl);
 		}
-		else {
-			button_dl.title = "Download (Not available)";
-			button_dl.setAttribute("disabled", "");
-		}
-		button_dl.append(createIconElement("download"));
-		content.append(button_dl);
 		container.append(content);
 
 		featured_odon_list.append(container);
