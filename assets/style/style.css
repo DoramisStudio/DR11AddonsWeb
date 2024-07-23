@@ -442,8 +442,7 @@ button.semi-opaque:disabled {
 
 
 .card-group {
-	margin: 0em 1em;
-	padding: 1em 0em;
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
