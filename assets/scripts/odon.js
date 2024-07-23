@@ -285,10 +285,18 @@ function buildFeaturedList(json) {
 		// Content
 		const content = document.createElement("div");
 		content.classList = "content";
+		// Texts
+		const txts = document.createElement("div");
+		txts.classList = "texts";
 		// Title
 		const title = document.createElement("h1");
 		title.textContent = meta.title;
-		content.append(title);
+		txts.append(title);
+		// Desc
+		const desc = document.createElement("p");
+		desc.textContent = meta.description;
+		txts.append(title);
+		content.append(txts);
 		// Download button
 		if (meta.url.download_url != "") {
 			const button_dl = document.createElement("button");

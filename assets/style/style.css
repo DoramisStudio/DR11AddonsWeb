@@ -481,21 +481,29 @@ button.semi-opaque:disabled {
 				left: 0px;
 				width: 100%;
 				z-index: 2;
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				justify-content: space-between;
+				display: grid;
+				grid-template-columns: auto min-content;
+				align-items: end;
 				padding: 1em;
 				background: linear-gradient(0deg, rgb(0 0 0 / 50%) 0%, transparent 100%);
-	
-				h1 {
-					display: block;
-					font-size: 14px;
+				
+				.texts {
+					position: relative;
 					overflow: hidden;
-					text-overflow: ellipsis;
-					text-wrap: nowrap;
-					padding-right: 0.5em;
-					max-width: 100%;
+
+					h1 {
+						display: block;
+						font-size: 14px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						text-wrap: nowrap;
+						padding-right: 0.5em;
+						max-width: 100%;
+					}
+
+					p {
+						font-size: 12px;
+					}
 				}
 			}
 		}
