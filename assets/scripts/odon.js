@@ -2,12 +2,12 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 	const data = await enc.json();
 	if (page_odon == "addons") {
 		const addons = data.filter(task => task.type === "release");
-		buildOdonList(addons.filter(task => !task.tags.includes("featured")));
+		buildOdonList(addons);
 		buildFeaturedList(addons.filter(task => task.tags.includes("featured")));
 	}
 	else if (page_odon == "wip") {
 		const addons = data.filter(task => task.type === "wip");
-		buildOdonList(addons.filter(task => !task.tags.includes("featured")));
+		buildOdonList(addons);
 		buildFeaturedList(addons.filter(task => task.tags.includes("featured")));
 	}
 }).catch(e => {
