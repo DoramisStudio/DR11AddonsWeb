@@ -295,7 +295,7 @@ function buildFeaturedList(json) {
 		// Desc
 		const desc = document.createElement("p");
 		desc.textContent = meta.description;
-		desc.append(title);
+		txts.append(desc);
 		content.append(txts);
 		// Download button
 		if (meta.url.download_url != "") {
