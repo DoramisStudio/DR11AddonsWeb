@@ -3,7 +3,7 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 	if (page_odon == "addons") {
 		const addons = data.filter(task => task.type === "release");
 		buildOdonList(addons.filter(task => !task.tags.includes("featured")));
-		console.log(addons.filter(task => task.tags.includes("featured")));
+		buildFeaturedList(addons.filter(task => task.tags.includes("featured")));
 	}
 	else if (page_odon == "wip") {
 		buildOdonList(data.filter(task => task.type === "wip"));
@@ -124,7 +124,7 @@ function createSlideshow(images, classList = "") {
 	
 	// Images processor
 	if (!multiple) {
-		image.src = (images[0] && images[0] != "") ? images[0] : nimg[Math.floor(Math.random() * nimg.length)]
+		image.src = (images[0] && images[0] != "") ? images[0] : nimg[Math.floor(Math.random() * nimg.length)];
 	}
 	else {
 		const control = document.createElement("div");
@@ -161,9 +161,10 @@ function createSlideshow(images, classList = "") {
 	return container;
 }
 
+// Build Addons list function
 function buildOdonList(json) {
 	odon_list.innerHTML = "";
-	console.log(json);
+	//console.log(json);
 	json.forEach(meta => {
 		const container = document.createElement("div");
 		container.classList = "list-item";
@@ -257,5 +258,52 @@ function buildOdonList(json) {
 		container.append(rdata);
 
 		odon_list.append(container);
+	});
+}
+
+// Build Featured Addons card function
+function buildFeaturedList(json) {
+	featured_odon_list.innerHTML = "";
+	json.forEach(meta => {
+		// Base
+		const container = document.createElement("div");
+		container.classList = "card";
+
+		if (meta.url.page_url != "") {
+			container.style.cursor = "pointer";
+			container.onclick = () => {
+				location.assign(meta.url.page_url);
+			}
+		}
+		// Thumbnail
+		const thumb = document.createElement("img");
+		thumb.classList = "thumb";
+		thumb.src = (meta.thumbnail && meta.thumbnail[0] != "") ? meta.thumbnail[0] : nimg[Math.floor(Math.random() * nimg.length)];
+		container.append(thumb);
+		// Content
+		const content = document.createElement("div");
+		content.classList = "content";
+		// Title
+		const title = document.createElement("h1");
+		title.textContent = meta.title;
+		content.append(title);
+		// Download button
+		const button_dl = document.createElement("button");
+		button_dl.classList = "circle semi-opaque";
+		if (meta.url.download_url != "") {
+			button_dl.title = "Download";
+			button_dl.onclick = () => {
+				location.assign(meta.url.download_url);
+			}
+		}
+		else {
+			button_dl.title = "Download (Not available)";
+			button_dl.setAttribute("disabled", "");
+		}
+		button_dl.append(createIconElement("download"));
+		content.append(button_dl);
+		container.append(content);
+
+		featured_odon_list.append(container);
 	});
 }
