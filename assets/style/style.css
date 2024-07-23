@@ -463,6 +463,7 @@ button.semi-opaque:disabled {
 			border: 1px solid rgb(64 64 64);
 			border-radius: 12px;
 			overflow: hidden;
+			box-shadow: 0px 4px 12px 0px rgb(0 0 0 / 25%);
 	
 			.thumb {
 				position: absolute;
@@ -472,7 +473,6 @@ button.semi-opaque:disabled {
 				height: 100%;
 				object-fit: cover;
 				z-index: 1;
-				filter: brightness(0.75);
 			}
 	
 			.content {
@@ -486,7 +486,7 @@ button.semi-opaque:disabled {
 				align-items: center;
 				justify-content: space-between;
 				padding: 1em;
-				background: linear-gradient(0deg, rgb(0 0 0 / 25%) 0%, transparent 100%);
+				background: linear-gradient(0deg, rgb(0 0 0 / 50%) 0%, transparent 100%);
 	
 				h1 {
 					display: block;
