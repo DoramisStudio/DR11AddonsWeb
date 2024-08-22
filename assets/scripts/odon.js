@@ -1,4 +1,4 @@
-fetch("../assets/static/addons_list.json").then(async enc => {
+fetch("/assets/static/addons_list.json").then(async enc => {
 	const data = await enc.json();
 	if (page_odon == "addons") {
 		const addons = data.filter(task => task.type === "release");
@@ -13,6 +13,13 @@ fetch("../assets/static/addons_list.json").then(async enc => {
 }).catch(e => {
 	console.error(e);
 	console.log("Assuming list is offline");
+});
+
+document.querySelectorAll("slideshow").forEach(elm => {
+	const sources = Array.from(elm.children).filter(v => v.src).map(v => v.src);
+	elm.innerHTML = "";
+	elm.append(createSlideshow(sources, "", elm.getAttribute("style")));
+	console.log(sources);
 });
 
 function isHTMLElement(element) {
@@ -104,7 +111,7 @@ function createLabeledGroup(label, content, classList = "") {
 	return container;
 }
 
-function createSlideshow(images, classList = "") {
+function createSlideshow(images, classList = "", style = "") {
 	if (!Array.isArray(images)) throw new TypeError('Argument 1, Expected an Array, but got something else.');
 	if (typeof classList !== "string") throw new TypeError('Argument 2, Expected a String.');
 	const multiple = images.length > 1 ? true : false;
@@ -115,6 +122,7 @@ function createSlideshow(images, classList = "") {
 	// Container
 	const container = document.createElement("div");
 	container.classList = "image-slideshow " + classList;
+	container.style = style;
 
 	// Images container
 	const images_container = document.createElement("div");

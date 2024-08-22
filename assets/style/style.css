@@ -35,6 +35,10 @@ body {
 	padding: unset;
 	box-sizing: border-box;
 }
+*.accent-color-bright {
+	color: var(--accent-color);
+	filter: brightness(1.5);
+}
 
 img[src=""] {
 	opacity: 0;
@@ -44,10 +48,35 @@ img {
 	pointer-events: none;
 }
 
+h1.heavy-heading {
+	font-family: Rubik;
+	font-weight: 800;
+	font-style: italic;
+	font-size: 36px;
+	letter-spacing: 2px;
+}
+
+/* Custom element */
+un {
+	text-decoration: underline;
+}
+
 ul {
+	display: flex;
+	flex-direction: column;
 	li {
 		margin-left: 32px;
 	}
+}
+
+a {
+	color: rgb(255 255 255 / 50%);
+}
+a:hover {
+	color: white;
+}
+a:visited {
+	color: var(--accent-color)!important;
 }
 
 .material-symbols-rounded {
