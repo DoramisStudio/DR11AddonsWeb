@@ -131,7 +131,9 @@
 			"cons": []
 		},
 		"credits": [],
-		"note": [],
+		"note": [
+			"Untuk download Anda harus menjadi tester."
+		],
 		"type": "wip",
 		"tags": [
 			"featured"
