@@ -8,6 +8,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<style>
+						
+			@media (max-width: 800px) {
+				#thumbnail-group {
+					grid-template-columns: unset!important;
+					grid-template-rows: auto auto auto;
+				}
+			}
+		</style>
 	</head>
 	<body onload="Init();">
 		<title>DR11 Addons</title>
@@ -89,7 +98,7 @@
 					<div id="blend"></div>
 				</div>
 				<div class="main-content" style="gap: 4em;">
-					<div class="section" style="align-items: center; gap: 4px;">
+					<div class="section" style="align-items: center; gap: 4px; text-align: center;">
 						<h1 class="heavy-heading" style="word-spacing: 16px;">JETBUS SHD SERIES <span class="accent-color-bright">V4.2</span></h1>
 						<p>Release candidate 3 - Section 3 (Tester Golongan 3)</p>
 					</div>
@@ -131,12 +140,12 @@
 						<h3>Slot Tester:</h3>
 						<p>Bila ingin menjadi Tester tinggal pm saja <a href="https://www.facebook.com/Yousifrill?mibextid=ZbWKwL">Yousifrill</a></p>
 					</div>
-					<div class="section" style="display: grid; grid-template-columns: auto auto auto; width: 100%;">
-						<img style="border-radius: 8px; grid-column: 1; width: 100%;" src="https://images2.imgbox.com/90/47/QSjlRrpV_o.png"/>
-						<img style="border-radius: 8px; grid-column: 2; width: 100%;" src="https://images2.imgbox.com/a0/f0/TnpY2rAR_o.png"/>
-						<img style="border-radius: 8px; grid-column: 3; width: 100%;" src="https://images2.imgbox.com/9f/4d/w4pvz3Uf_o.png"/>
+					<div class="section" id="thumbnail-group" style="display: grid; grid-template-columns: auto auto auto; width: 100%;">
+						<img style="border-radius: 8px; width: 100%;" src="https://images2.imgbox.com/90/47/QSjlRrpV_o.png"/>
+						<img style="border-radius: 8px; width: 100%;" src="https://images2.imgbox.com/a0/f0/TnpY2rAR_o.png"/>
+						<img style="border-radius: 8px; width: 100%;" src="https://images2.imgbox.com/9f/4d/w4pvz3Uf_o.png"/>
 					</div>
-					<div class="section" style="align-items: center;">
+					<div class="section" style="align-items: center; text-align: center;">
 						<h3 style="letter-spacing: 4px; word-spacing: 8px; font-weight: 400; font-style: italic;"><span style="color: rgb(74 134 232);">DR11</span> ADDONS X <span style="color: rgb(255 0 0);">ERURU</span> SAKURAUCHI</h3>
 						<i style="letter-spacing: 2px; word-spacing: 4px;">"Make the Unexpected happens."</i>
 					</div>
