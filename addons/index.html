@@ -5,7 +5,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-		<link rel="stylesheet" href="../assets/style/style.css"/>
+		<link rel="stylesheet" href="/assets/style/style.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -18,7 +18,7 @@
 				<div style="grid-column: 1; display: flex; flex-direction: row; align-items: center; gap: 1em;">
 					<button onclick="toggleMobileMenu();" class="transparent square fullscreen-menu-button" id="fullscreen_menu"><span class="material-symbols-rounded" style="font-size: 24px;" translate="no">menu</span></button>
 					<div onclick="location.assign('/');">
-						<img src="../assets/media/images/logo.png" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
+						<img src="/assets/media/images/logo.png" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
 					</div>
 				</div>
 				<div style="grid-column: 3; display: flex; flex-direction: row-reverse; align-items: center; gap: 0em;" id="top_nav_btns">
@@ -95,7 +95,7 @@
 						<div class="card-group">
 							<div class="container" id="featured_odon_list">
 								<div class="card">
-									<img class="thumb" src="../assets/media/images/blender render 332.png"></img>
+									<img class="thumb" src="/assets/media/images/blender render 332.png"></img>
 									<div class="content">
 										<div class="texts">
 											<h1>TEMPLATE TEMPLATE TEMPLATE</h1>
@@ -105,7 +105,7 @@
 									</div>
 								</div>
 								<div class="card">
-									<img class="thumb" src="../assets/media/images/blender render 333.png"></img>
+									<img class="thumb" src="/assets/media/images/blender render 333.png"></img>
 									<div class="content">
 										<div class="texts">
 											<h1>TEMPLATE TEMPLATE TEMPLATE</h1>
@@ -115,7 +115,7 @@
 									</div>
 								</div>
 								<div class="card">
-									<img class="thumb" src="../assets/media/images/blender render 338.png"></img>
+									<img class="thumb" src="/assets/media/images/blender render 338.png"></img>
 									<div class="content">
 										<div class="texts">
 											<h1>TEMPLATE TEMPLATE TEMPLATE TEMPE TEMPE</h1>
@@ -132,7 +132,7 @@
 						<div class="list-fancy" id="odon_list">
 							<div class="list-item">
 								<div class="lside">
-									<img src="../assets/media/images/noimage.jpg" class="thumb"></img>
+									<img src="/assets/media/images/noimage.jpg" class="thumb"></img>
 									<div class="button-group">
 										<button class="square aspect-free download-btn" title="Download" disabled><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">download</span></button>
 										<button class="square aspect-free page-btn" title="Open page"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">open_in_new</span></button>
@@ -217,26 +217,26 @@
 
 		<div class="loadingscr">
 			<div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: fit-content; height: fit-content; margin: auto; display: flex; flex-direction: column; gap: 2em;">
-				<img style="width: max-content; height: max-content; max-width: 100%; max-height: 100%; padding: 4em;" src="../assets/media/images/logo.png" height="76"></img>
+				<img style="width: max-content; height: max-content; max-width: 100%; max-height: 100%; padding: 4em;" src="/assets/media/images/logo.png" height="76"></img>
 			</div>
 		</div>
 
 		<script>
 			const hero_imgs = [
-				{ src: "../assets/media/images/blender render 332.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
-				{ src: "../assets/media/images/blender render 333.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				{ src: "../assets/media/images/blender render 334.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				{ src: "../assets/media/images/blender render 335.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				{ src: "../assets/media/images/blender render 337.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)" },
-				{ src: "../assets/media/images/blender render 338.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				{ src: "../assets/media/images/blender render 339.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
-				{ src: "../assets/media/images/blender render 340.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
-				{ src: "../assets/media/images/addons_hero/blender render 352.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" }
+				{ src: "/assets/media/images/blender render 332.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
+				{ src: "/assets/media/images/blender render 333.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "/assets/media/images/blender render 334.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "/assets/media/images/blender render 335.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "/assets/media/images/blender render 337.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)" },
+				{ src: "/assets/media/images/blender render 338.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
+				{ src: "/assets/media/images/blender render 339.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
+				{ src: "/assets/media/images/blender render 340.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
+				{ src: "/assets/media/images/addons_hero/blender render 352.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" }
 			];
 			const page_odon = "addons";
 		</script>
-		<script src="../assets/scripts/header.js"></script>
-		<script src="../assets/scripts/script.js"></script>
-		<script src="../assets/scripts/odon.js"></script>
+		<script src="/assets/scripts/header.js"></script>
+		<script src="/assets/scripts/script.js"></script>
+		<script src="/assets/scripts/odon.js"></script>
 	</body>
 </html>
