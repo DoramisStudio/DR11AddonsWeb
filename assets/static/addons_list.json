@@ -116,6 +116,32 @@
 		}
 	},
 	{
+		"title": "JETBUS SHD SERIES 4.2r",
+		"status": "Freeware",
+		"thumbnail": [
+			"https://images2.imgbox.com/9e/89/laa8Xqfo_o.png",
+			"https://images2.imgbox.com/90/47/QSjlRrpV_o.png",
+			"https://images2.imgbox.com/a0/f0/TnpY2rAR_o.png",
+			"https://images2.imgbox.com/9f/4d/w4pvz3Uf_o.png"
+		],
+		"date": 0,
+		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan kelebihan yang lebih menarik dari versi sebelumnya!",
+		"comparison": {
+			"pros": [],
+			"cons": []
+		},
+		"credits": [],
+		"note": [],
+		"type": "wip",
+		"tags": [
+			"featured"
+		],
+		"url": {
+			"download_url": "",
+			"page_url": "/pages/shd4.2"
+		}
+	},
+	{
 		"title": "Jetbus 3+ Voyager V3.0 \"Ratu Maher\"",
 		"status": "Ex-Free",
 		"thumbnail": [
