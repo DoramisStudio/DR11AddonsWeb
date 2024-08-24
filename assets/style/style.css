@@ -69,6 +69,9 @@ img[src=""] {
 img {
 	pointer-events: none;
 }
+video {
+	pointer-events: none;
+}
 
 h1.heavy-heading {
 	font-family: Rubik;
