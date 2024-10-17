@@ -8,9 +8,18 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<style>
+						
+			@media (max-width: 800px) {
+				#thumbnail-group {
+					grid-template-columns: unset!important;
+					grid-template-rows: auto auto auto;
+				}
+			}
+		</style>
 	</head>
 	<body onload="Init();">
-		<title>DR11 Addons - WIPs</title>
+		<title>DR11 Addons</title>
 
 		<div class="wrapper">
 			<div class="header" id="header">
@@ -83,26 +92,91 @@
 				<div class="hero">
 					<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: calc(100%); object-fit: cover;" src></img>
 					<div style="position: absolute; left: 0px; bottom: 0px; margin: 3em; width: fit-content; height: fit-content;">
-						<p style="font-size: 14px; color: white;"></p>
+						<p style="font-size: 14px; color: white;">*These image is pre-rendered and may not look like this</p>
 					</div>
-					<h1 class="hero-text"><accentcolor>WIP</accentcolor><br>ADDONS</h1>
+					<h1 class="hero-text"><accentcolor>SHD SERIES</accentcolor><br>V4.0</h1>
 					<div id="blend"></div>
+					<div style="position: absolute; right: 0px; bottom: 0px; margin: 3em 0em; padding: 8px 32px; padding-right: 3em; width: fit-content; height: fit-content; display: flex; flex-direction: row; gap: 1em; justify-content: center; align-items: center; z-index: 5; filter: drop-shadow(0px 2px 4px rgb(0 0 0 / 25%));">
+						<b>Unduh Addon</b>
+						<button class="circle" onclick="scrollToId('dlf')"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">download</span></button>
+					</div>
 				</div>
-				<div class="main-content">
-					<div class="section">
-						<h1 style="align-self: center;">FEATURED WIP</h1>
-						<div class="card-group">
-							<div class="container" id="featured_odon_list">
-							</div>
+				<div class="main-content" style="gap: 4em;">
+					<div class="section" style="align-items: center; gap: 4px; text-align: center;">
+						<h1 class="heavy-heading" style="font-size: 24px;">- NEW CONTENT -</h1>
+						<h1 class="heavy-heading" style="word-spacing: 4px; font-size: 36.0pt;">JETBUS SHD SERIES <span class="accent-color-bright">4.0 LTS</span></h1>
+						<p>- B -</p>
+					</div>
+					<div class="section" style="align-items: center; text-align: center;">
+						<div style="position: relative;">
+							<img style="border-radius: 8px; width: 100%;" src="https://images2.imgbox.com/d6/47/g2r90ITH_o.jpg"/>
+							<img style="position: absolute; top: 0px; left: 0px; margin: 2em; height: 15%;" src="/assets/media/images/logo.png" height="64"/>
+							<span style="position: absolute; right: 0px; bottom: 0px; margin: 2em; padding: 4px 8px; text-align: right; background: rgb(0 0 0 / 50%); border-radius: 4px;">Livery by DR11 Addons</span>
 						</div>
 					</div>
-					<div class="section">
-						<h1 style="align-self: center;">WIP Addons List</h1>
-						<div class="list-fancy" id="odon_list"></div>
+					<div class="section" style="align-items: center; text-align: center;">
+						<h1 class="heavy-heading accent-color-bright"><un>O</un>VERVIEW</h1>
+						<b>SHD Series V4.0</b>
+						<p>Update ke 4.0 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!</p>
+						<p>Satu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll. belum termasuk bagian belakang (V4.0).</p>
 					</div>
-					
 					<div class="section">
-						<span style="align-self: center; text-align: center; opacity: 0.5;">This website is purposed to share our free Trainz assets<br>Donation is closed for now</span>
+						<h1 class="heavy-heading"><span class="accent-color-bright"><un>F</un></span>EATURES</h1>
+						<ul style="gap: 8px;">
+							<li>Mudah direskin (Manual replacement)</li>
+							<li>Model Face (Face JB2 - JB5)</li>
+							<li>Model Topi (Topi JB2 - JB3)</li>
+							<li>Pembaruan Face JB3, model lampu lebih bagus dan dapat dilepas.</li>
+							<li>Medium Poly, ringan dan ramah performa.</li>
+							<li>Accesories bervariasi.</li>
+						</ul>
+					</div>
+					<div class="section">
+						<h1 class="heavy-heading"><span class="accent-color-bright"><un>M</un></span>INUS</h1>
+						<ul style="gap: 8px;">
+							<li>Belum ada script</li>
+							<li>Roda belum ber-anim</li>
+							<li>Strobo belum ber-anim (sepaket dengan pembuatan script)</li>
+						</ul>
+					</div>
+					<div class="section">
+						<h1 class="heavy-heading"><span class="accent-color-bright"><un>C</un></span>OMPATIBILITY</h1>
+						<span>Compatible with:</span>
+						<ul style="gap: 8px;">
+							<li>Trainz Simulator 2009 (Minor issue)</li>
+							<li>Trainz Driver 2, atau TSA (Minor issue)</li>
+							<li>Trainz Simulator 2012</li>
+							<li>Trainz: A New Era</li>
+							<li>Trainz Railroad Simulator 2019</li>
+							<li>Trainz Railroad Simulator 2022</li>
+							<li>dll</li>
+						</ul>
+						<span>Incompatible with:</span>
+						<ul style="gap: 8px;">
+							<li>-</li>
+						</ul>
+						<span>Unknown compatibility:</span>
+						<ul style="gap: 8px;">
+							<li>Trainz Simulator 2010 (Untested)</li>
+						</ul>
+					</div>
+					<div class="section">
+						<h3>Catatan:</h3>
+						<p>Texture livery <b>HARUS</b> 2048x</p>
+					</div>
+					<div class="section" id="dlf">
+						<div class="download-frame">
+							<div style="display: flex; flex-direction: column; gap: 4px; flex: 1;">
+								<h3>Unduh Addon</h3>
+								<p>Setelah menekan tombol dengan gambar Unduh, Anda akan diarahkan ke Website dimana Anda dapat mengunduh Addon.</p>
+								<i>Unduhan ini ber-akses</i>
+							</div>
+							<button class="square circle" title="Unduh" style="justify-self: flex-end; aspect-ratio: 1/1; border: unset;" onclick="window.open('https://www.facebook.com/Yousifrill/posts/pfbid02BNWLXT1QwpvPnpgDGUn6f3PeSqnfJLQPDWtnqKzTNNQ7V9Rdknc31mxucgG8qS6kl')"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">download</span></button>
+						</div>
+					</div>
+					<div class="section" style="align-items: center; text-align: center;">
+						<h3 style="letter-spacing: 4px; word-spacing: 8px; font-weight: 400; font-style: italic;"><span style="color: rgb(74 134 232);">DR11</span> ADDONS X <span style="color: rgb(255 0 0);">ERURU</span> SAKURAUCHI</h3>
+						<i style="letter-spacing: 2px; word-spacing: 4px;">"Make the Unexpected happens."</i>
 					</div>
 				</div>
 				
@@ -145,9 +219,8 @@
 
 		<script>
 			const hero_imgs = [
-				{ src: "/assets/media/images/wip_hero/0.png", bg: {top: "rgb(130 130 130)", bottom: "rgb(172 172 172)"}, accentColor: "rgb(29 115 255)" }
+				{ src: "https://images2.imgbox.com/b8/94/ttLJV9er_o.png", bg: {top: "rgb(209 209 209)", bottom: "rgb(177 177 177)"}, accentColor: "rgb(28 189 155)" }
 			];
-			const page_odon = "wip";
 		</script>
 		<script src="/assets/scripts/header.js"></script>
 		<script src="/assets/scripts/script.js"></script>
