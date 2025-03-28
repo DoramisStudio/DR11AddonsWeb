@@ -91,7 +91,17 @@ ul {
 	display: flex;
 	flex-direction: column;
 	li {
+		position: relative;
 		margin-left: 32px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+	li:before {
+		position: absolute;
+		content: "•";
+		left: -1em;
 	}
 }
 
@@ -489,6 +499,9 @@ button.semi-opaque:disabled {
 				a::after {
 					content: "";
 				}
+			}
+			li:before {
+				content: "";
 			}
 		}
 	}
@@ -917,6 +930,14 @@ button.semi-opaque:disabled {
 
 .fullscreen-menu-button {
 	display: none!important;
+}
+
+.badge {
+	background: color-mix(in srgb, var(--accent-color) 25%, black 75%);
+	border: 1px solid color-mix(in srgb, var(--accent-color) 75%, black 75%);
+	padding: 2px 4px;
+	border-radius: 2px;
+	font-size: 10px;
 }
 
 @media (max-width: 800px) {
