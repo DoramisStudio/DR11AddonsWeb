@@ -86,6 +86,7 @@
                     width: fit-content;
                     display: flex;
                     flex-direction: row;
+                    flex-wrap: wrap;
                     gap: 0.5rem;
                     padding: 0.75rem;
                     background: rgb(16 16 16);
@@ -96,7 +97,8 @@
                     button {
                         border-radius: 16px;
                         justify-content: center;
-                        width: 120px;
+                        min-width: 120px;
+                        flex: 1;
                     }
                 }
 
@@ -111,7 +113,7 @@
                     padding: 2rem;
                     border: 1px solid rgb(48 48 48);
                     border-radius: 16px;
-                    aspect-ratio: 5/4;
+                    height: 420px;
                     flex: 1;
                     flex-basis: 320px;
                     cursor: pointer;
@@ -378,8 +380,8 @@
                     <div onclick="location.assign('https://drive.google.com/file/d/14QVQOjkJsLpP3Afqa2CJ96uSMXmjhJBZ/view?usp=drive_link');">
                         <h2>Rumah pack</h2>
                         <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 2/3</p>
+                            <h3>Objek</h3>
+                            <p>Kumpulan rumah-rumah yang dibuat oleh DR11 Addons</p>
                             <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
                         </div>
                     </div>

@@ -939,6 +939,12 @@ button.semi-opaque:disabled {
 	border-radius: 2px;
 	font-size: 10px;
 }
+.badge.plain {
+	background: rgb(16 16 16);
+	border-color: rgb(64 64 64);
+	border-radius: 4px;
+	font-size: 16px;
+}
 
 @media (max-width: 800px) {
 	.image-grid .col {
@@ -969,4 +975,24 @@ button.semi-opaque:disabled {
 	.main-footer .site-logo {
 		width: 100%;
 	}
+}
+
+table {
+	border-radius: 4px;
+	outline: 2px solid rgb(128 128 128);
+	outline-offset: -1px;
+	overflow: hidden;
+	border-collapse: collapse;
+	tr {
+		td, th {
+			padding: 8px;
+			border: 1px solid rgb(64 64 64);
+		}
+	}
+}
+
+hr {
+	border: unset;
+	height: 2px;
+	background: rgb(255 255 255 / 25%);
 }

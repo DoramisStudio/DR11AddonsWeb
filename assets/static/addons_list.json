@@ -144,6 +144,41 @@
 		}
 	},
 	{
+		"title": "SHD SERIES V5 SE (Single Edition)",
+		"status": "Freeware",
+		"thumbnail": [
+			"https://images2.imgbox.com/78/1b/6bM6enZv_o.png",
+			"https://images2.imgbox.com/66/67/yJkCujas_o.png",
+			"https://images2.imgbox.com/6e/d4/G56exLsc_o.png",
+			"https://images2.imgbox.com/b0/fd/qzBAOJcM_o.png"
+		],
+		"date": 0,
+		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan rombakan yang lebih bagus dari versi sebelumnya. (perasaan deskripsinya sama deh)",
+		"comparison": {
+			"pros": [
+				"Android Support!",
+				"Modifikasi dengan Aksesoris yang banyak",
+				"Modul basuri lebih banyak",
+				"Rombakan desain property jauh lebih bagus"
+			],
+			"cons": [
+				"Variasi body terpisah (Jetbus 2/3 dan Jetbus 5)"
+			]
+		},
+		"credits": [],
+		"note": [
+			"Untuk download Anda harus menjadi tester."
+		],
+		"type": "wip",
+		"tags": [
+			"featured"
+		],
+		"url": {
+			"download_url": "",
+			"page_url": "/pages/shd5"
+		}
+	},
+	{
 		"title": "Jetbus 3+ Voyager V3.0 \"Ratu Maher\"",
 		"status": "Ex-Free",
 		"thumbnail": [
