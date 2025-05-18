@@ -104,7 +104,7 @@
 
                 .grid {
                     position: relative;
-                    display: none;
+                    display: flex;
                     flex-wrap: wrap;
                     gap: 1rem;
                 }
@@ -160,6 +160,7 @@
                             line-height: 120%;
                         }
                         a {
+                            position: relative;
                             display: flex;
                             flex-direction: row;
                             align-items: center;
@@ -167,7 +168,32 @@
                             gap: 0.5rem;
                             color: rgb(255, 190, 42);
                             opacity: 0;
+                            width: fit-content;
                             transition: opacity 0.5s cubic-bezier(.6,0,.3,1);
+                        }
+                        a::before {
+                            content: '';
+                            position: absolute;
+                            bottom: -4px;
+                            left: 0px;
+                            height: 2px;
+                            width: 0%;
+                            background: rgb(255, 190, 42);
+                            transition: 1s cubic-bezier(.6,0,.3,1);
+                        }
+                        a::after {
+                            content: '';
+                            position: absolute;
+                            right: -1rem;
+                            top: 0px;
+                            bottom: 0px;
+                            margin: auto;
+                            width: 4px;
+                            height: 4px;
+                            border: 1.5px solid rgb(255, 190, 42);
+                            border-left: unset;
+                            border-bottom: unset;
+                            transform: rotate(45deg);
                         }
                     }
                 }
@@ -182,7 +208,20 @@
                         a {
                             opacity: 1;
                         }
+                        a::before {
+
+                            width: 100%;
+                        }
                     }
+                }
+                .grid > div.hide-more {
+                    display: none;
+                }
+                .grid.more > div.hide-more {
+                    display: flex!important;
+                }
+                .grid.more > div.hide-at-more {
+                    display: none;
                 }
             }
 
@@ -220,7 +259,7 @@
                 <img src="https://i.idol.st/u/background/1710Background-J4hyVF.png" class="bg"></img>
                 <h1>Kumpulan Link DR11 Addons</h1>
             </div>
-            <p>Pindah sini buat sementara soalnya pastebin lagi down 😥</p>
+            <p>Tempat penampungan link DR11 Addons selain di pastebin 😅</p>
             <hr>
             <div class="grid-container">
                 <div class="menus">
@@ -230,117 +269,128 @@
                     <button name="other">Lainnya</button>
                 </div>
                 <!-- SHD Series -->
-                <div class="grid" id="shds">
-                    <div onclick="location.assign('https://drive.google.com/file/d/1jwLV93XZY8iWMG8oJmJlHsSsGMA2UNKY/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v5_jb3.png"></img>
-                        <h2>Version 5 SE (Jetbus 2/3)</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 2/3</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="shds">
+                    <p>Sebelum men-download, sebaiknya memilih versi terbaru dari Addons Bus ini 🔥🔥🔥</p>
+                    <div class="grid" id="shds_pg">
+                        <div onclick="location.assign('https://drive.google.com/file/d/1jwLV93XZY8iWMG8oJmJlHsSsGMA2UNKY/view?usp=drive_link');">
+                            <img src="../assets/media/images/link_pack/shd_series/v5_jb3.png"></img>
+                            <h2>Version 5 SE (Jetbus 2/3)</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 2/3</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/10qJZGpcJJwlYHVDaQJ6L8rilmExvESWm/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v5_jb5.png"></img>
-                        <h2>Version 5 SE (Jetbus 5)</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 5</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/file/d/10qJZGpcJJwlYHVDaQJ6L8rilmExvESWm/view?usp=drive_link');">
+                            <img src="../assets/media/images/link_pack/shd_series/v5_jb5.png"></img>
+                            <h2>Version 5 SE (Jetbus 5)</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 5</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/132qIQwsYNxtsFdbB6J2lg_17ETH71Rfz?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v42r5.png"></img>
-                        <h2>Version 4.2 revision 5</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.2 revisi 5 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="shds_pg.classList.add('more');" class="hide-at-more">
+                            <h2></h2>
+                            <div class="desc">
+                                <h3>Grid</h3>
+                                <p>Addons yang lebih lama</p>
+                                <a>Tampilkan</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/1m18caKHRRUdqKyKCEPbWNGPuA2YwNoxE?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v42r4.png"></img>
-                        <h2>Version 4.2 revision 4</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.2 revisi 4 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/drive/folders/132qIQwsYNxtsFdbB6J2lg_17ETH71Rfz?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v42r5.png"></img>
+                            <h2>Version 4.2 revision 5</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.2 revisi 5 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/1q0iaoAWg45AqPBcwoHIOC1uA6l6xFXbe?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v42r3.png"></img>
-                        <h2>Version 4.2 revision 3</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.2 revisi 3 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/drive/folders/1m18caKHRRUdqKyKCEPbWNGPuA2YwNoxE?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v42r4.png"></img>
+                            <h2>Version 4.2 revision 4</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.2 revisi 4 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/1TqmiSPR-EolNEzOguie-4xFHK5oetNWT?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v42r2.jpg"></img>
-                        <h2>Version 4.2 revision 2</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.2 revisi 2 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/drive/folders/1q0iaoAWg45AqPBcwoHIOC1uA6l6xFXbe?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v42r3.png"></img>
+                            <h2>Version 4.2 revision 3</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.2 revisi 3 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/18j-q0jfSYjA7vAQwEoX_DjQwTeidChAW/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v42.jpg"></img>
-                        <h2>Version 4.2 revision 1</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.2 revisi 1 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/drive/folders/1TqmiSPR-EolNEzOguie-4xFHK5oetNWT?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v42r2.jpg"></img>
+                            <h2>Version 4.2 revision 2</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.2 revisi 2 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/1KiAPUm1EkUFrK9qm8f6pbOLpjuRUHAbB?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v41.jpg"></img>
-                        <h2>Version 4.1b</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.1b dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/file/d/18j-q0jfSYjA7vAQwEoX_DjQwTeidChAW/view?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v42.jpg"></img>
+                            <h2>Version 4.2 revision 1</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.2 revisi 1 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1YUp4NCwyWxRFFq-anSDfh-G-X1XN_qqc/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v4.jpg"></img>
-                        <h2>Version 4.0</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 4.0 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/drive/folders/1KiAPUm1EkUFrK9qm8f6pbOLpjuRUHAbB?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v41.jpg"></img>
+                            <h2>Version 4.1b</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.1b dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1ScW-T5CMIOLqdUMWjtVLycKNyDfDSgCK/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/shd_series/v36.jpg"></img>
-                        <h2>SHD Series 3.6 AIO</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Versi 3.6 dari addon SHD Series AIO</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                        <div onclick="location.assign('https://drive.google.com/file/d/1YUp4NCwyWxRFFq-anSDfh-G-X1XN_qqc/view?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v4.jpg"></img>
+                            <h2>Version 4.0</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 4.0 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
+                        </div>
+                        <div onclick="location.assign('https://drive.google.com/file/d/1ScW-T5CMIOLqdUMWjtVLycKNyDfDSgCK/view?usp=drive_link');" class="hide-more">
+                            <img src="../assets/media/images/link_pack/shd_series/v36.jpg"></img>
+                            <h2>SHD Series 3.6 AIO</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 3.6 dari addon SHD Series AIO</p>
+                                <a>Kunjungi link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Character -->
-                <div class="grid" id="char">
+                <div class="grid selectables" id="char">
                     <div onclick="location.assign('https://drive.google.com/drive/folders/1kHt5gMtKzlkSirJvq-W7dmbi19YL5TPu?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/doramis11_20230802_0006.jpg"></img>
                         <h2>SIFAS small collection</h2>
                         <div class="desc">
                             <h3>Karakter</h3>
                             <p>Koleksi kecil dari game School Idol Festival! All Stars!! (SIFAS)</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/drive/folders/1tRBuWcEBQR9LwnLAeMooI8TakyGsdumT?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/maru_riko.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Riko & Hanamaru Love Live!</h2>
+                        <h2>Hanamaru & Riko Love Live!</h2>
                         <div class="desc">
                             <h3>Karakter</h3>
-                            <p>Objek karakter Riko & Hanamaru yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <p>Objek karakter Hanamaru & Riko yang sudah diconvert ke Trainz</p>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/17pg_QeJGgz8vDk42XUmysEJkQjqhK4Pd/view?usp=drive_link');">
@@ -349,7 +399,7 @@
                         <div class="desc">
                             <h3>Karakter</h3>
                             <p>Koleksi kostum dari game School Idol Festival! All Stars!! (SIFAS)</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/1w0Q4rSzGZygOIRmnhdIY2HeY9BuwJ2cj/view?usp=drive_link');">
@@ -358,7 +408,7 @@
                         <div class="desc">
                             <h3>Karakter</h3>
                             <p>Koleksi kostum dari game School Idol Festival! All Stars!! (SIFAS)</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/1UNB_zmxoBaKU9IOPo1VFfZc-vXR5kstt/view?usp=drive_link');">
@@ -366,8 +416,8 @@
                         <h2>VTuber - Moona Hoshinova</h2>
                         <div class="desc">
                             <h3>Karakter</h3>
-                            <p>Objek karakter Moona Hoshinova yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <p>Objek karakter VTuber, Moona Hoshinova yang sudah diconvert ke Trainz</p>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/1bb5lHWnzMjJBvbBWGot18B6KKG67Jg6V/view?usp=drive_link');">
@@ -375,8 +425,8 @@
                         <h2>VTuber - Nekomata Okayu</h2>
                         <div class="desc">
                             <h3>Karakter</h3>
-                            <p>Objek karakter Nekomata Okayu yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <p>Objek karakter VTuber, Nekomata Okayu yang sudah diconvert ke Trainz</p>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/1-aa_qjZ73rbQN_NxMJDrOTSvdCxWLPS5/view?usp=drive_link');">
@@ -385,7 +435,7 @@
                         <div class="desc">
                             <h3>Karakter</h3>
                             <p>Objek karakter dari Genshin Impact, Kirara yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/1PO0zTxofFvDuqpiKk2qjloiG8DINKbwe/view?usp=drive_link');">
@@ -394,7 +444,7 @@
                         <div class="desc">
                             <h3>Karakter</h3>
                             <p>Objek karakter dari MiSide, Cappie yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                     <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
@@ -403,32 +453,33 @@
                         <div class="desc">
                             <h3>Karakter</h3>
                             <p>Objek karakter dari MiSide, Mila yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Object -->
-                <div class="grid" id="object">
+                <div class="grid selectables" id="object">
                     <div onclick="location.assign('https://drive.google.com/file/d/14QVQOjkJsLpP3Afqa2CJ96uSMXmjhJBZ/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/object/omah.jpg"></img>
                         <h2>Rumah pack</h2>
                         <div class="desc">
                             <h3>Objek</h3>
                             <p>Kumpulan rumah-rumah yang dibuat oleh DR11 Addons</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Other -->
-                <div class="grid" id="other">
-                    <div onclick="location.assign('https://drive.google.com/file/d/1jwLV93XZY8iWMG8oJmJlHsSsGMA2UNKY/view?usp=drive_link');">
-                        <h2>Other</h2>
+                <div class="grid selectables" id="other">
+                    <div onclick="location.assign('../pages/shd5/');">
+                        <img src="../assets/media/images/link_pack/other/v5.jpg"></img>
+                        <h2>Paket livery V5</h2>
                         <div class="desc">
                             <h3>Kendaraan</h3>
-                            <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 2/3</p>
-                            <a>Kunjungi link <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></a>
+                            <p>Paket livery yang dapat digunakan pada SHD Series V5</p>
+                            <a>Kunjungi link</a>
                         </div>
                     </div>
                 </div>
@@ -438,11 +489,14 @@
         <script>
             Array.from(document.querySelector(".menus").children).forEach((e, i) => {
                 if (e.classList.contains("selected")) {
-                    document.querySelectorAll(".grid")[i].style.display = "flex";
+                    document.querySelectorAll(".selectables")[i].style.display = "flex";
+                }
+                else {
+                    document.querySelectorAll(".selectables")[i].style.display = "none";
                 }
                 e.onclick = _ => {
                     const att = e.getAttribute("name");
-                    Array.from(document.querySelectorAll(".grid")).forEach(f => {
+                    Array.from(document.querySelectorAll(".selectables")).forEach(f => {
                         if (f.id == att) {
                             f.style.display = "flex";
                             e.classList.add("selected");
