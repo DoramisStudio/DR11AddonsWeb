@@ -117,7 +117,7 @@ function createSlideshow(images, classList = "", style = "") {
 	const multiple = images.length > 1 ? true : false;
 	var index = 0;
 
-	console.log(multiple);
+	// console.log(multiple);
 
 	// Container
 	const container = document.createElement("div");

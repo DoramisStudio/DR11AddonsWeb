@@ -1,6 +1,144 @@
 [
 	{
-		"title": "JETBUS 3 ALL IN ONE LITE v3.6",
+		"title": "SHD 5 (SE)",
+		"status": "Freeware",
+		"thumbnail": [
+			"https://images2.imgbox.com/78/1b/6bM6enZv_o.png",
+			"https://images2.imgbox.com/66/67/yJkCujas_o.png",
+			"https://images2.imgbox.com/6e/d4/G56exLsc_o.png",
+			"https://images2.imgbox.com/b0/fd/qzBAOJcM_o.png"
+		],
+		"date": 0,
+		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan rombakan yang lebih bagus dari versi sebelumnya. (perasaan deskripsinya sama deh)",
+		"short_desc": "All new SHD Series V5 SE (Single Edition)",
+		"comparison": {
+			"pros": [
+				"Android Support!",
+				"Modifikasi dengan Aksesoris yang banyak",
+				"Modul basuri lebih banyak",
+				"Rombakan desain property jauh lebih bagus"
+			],
+			"cons": [
+				"Variasi body terpisah (Jetbus 2/3 dan Jetbus 5)",
+				"Versi terpisah, membuat memori mengsedih :sadface:"
+			]
+		},
+		"credits": ["ES"],
+		"note": [
+			"Download eksklusif untuk member DR11 Addons. Join grup dulu ya untuk download ;p"
+		],
+		"type": "release",
+		"tags": [
+			"featured"
+		],
+		"url": {
+			"download_url": "",
+			"page_url": "/pages/shd5"
+		}
+	},
+	{
+		"title": "SHD 4.2",
+		"status": "Freeware",
+		"thumbnail": [
+			"https://images2.imgbox.com/9e/89/laa8Xqfo_o.png",
+			"https://images2.imgbox.com/90/47/QSjlRrpV_o.png",
+			"https://images2.imgbox.com/a0/f0/TnpY2rAR_o.png",
+			"https://images2.imgbox.com/9f/4d/w4pvz3Uf_o.png"
+		],
+		"date": 0,
+		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan kelebihan yang lebih menarik dari versi sebelumnya!",
+		"short_desc": "Loaded with lots of updates from SHD 4.1 including Script update",
+		"comparison": {
+			"pros": [
+				"Update script besar-besaran!"
+			],
+			"cons": [
+				"Tidak kompatibel dengan TSA (Kurang lebih yang dialami Player TSA)"
+			]
+		},
+		"credits": ["ES"],
+		"note": [
+			"Download eksklusif untuk member DR11 Addons. Join grup dulu ya untuk download ;p"
+		],
+		"type": "release",
+		"tags": [
+			"featured"
+		],
+		"url": {
+			"download_url": "",
+			"page_url": "/pages/shd4.2"
+		}
+	},
+	{
+		"title": "SHD 4.1",
+		"status": "Freeware",
+		"thumbnail": [
+			"https://images2.imgbox.com/db/63/jcJyWVB4_o.jpg",
+			"https://images2.imgbox.com/3f/64/7geQjkEQ_o.jpg"
+		],
+		"date": 0,
+		"description": "Update ke 4.1 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!\nSatu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll.  Sekarang termasuk Face belakang.",
+		"short_desc": "Optimized for Mobile Trainz and several more fixes from JBv4",
+		"comparison": {
+			"pros": [],
+			"cons": []
+		},
+		"credits": [],
+		"note": [
+			"Download eksklusif untuk member DR11 Addons. Join grup dulu ya untuk download ;p",
+			"Tested on TSA, TS12, T:ANE, TRS19 - 22. issue(s) may present on android version",
+			"Use the lite version if you're an android user"
+		],
+		"type": "release",
+		"tags": [],
+		"url": {
+			"download_url": "",
+			"page_url": "https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-1"
+		}
+	},
+	{
+		"title": "SHD 4",
+		"status": "Freeware",
+		"thumbnail": [
+			"https://images2.imgbox.com/90/b4/wT4uMk1d_o.png",
+			"https://images2.imgbox.com/13/f8/qQ7Om0qS_o.png",
+			"https://images2.imgbox.com/d9/1a/e5GvKGwo_o.png",
+			"https://images2.imgbox.com/c9/3c/g1bM1k3U_o.png",
+			"https://images2.imgbox.com/bb/94/qI4ZP004_o.png"
+		],
+		"date": 0,
+		"description": "Update ke 4.0 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!\nSatu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll. belum termasuk bagian belakang (V4.0).",
+		"short_desc": "Jetbus with more added accessories from SHD 3, first supported on Mobile Trainz",
+		"comparison": {
+			"pros": [
+				"Mudah direskin (Manual replacement)",
+				"Model Face JB2 - JB5",
+				"Pembaruan Face JB3, Model lampu lebih bagus, dapat dilepas",
+				"Model Topi JB2 - JB3",
+				"Medium Poly, Ringan dan ramah performa",
+				"Aksesoris bervariasi"
+			],
+			"cons": [
+				"Belum ada script (Masih dalam tahap fix)",
+				"Roda belum ber-anim",
+				"Strobo belum ber-anim (Satu paket dengan script rework)"
+			]
+		},
+		"credits": [],
+		"note": [
+			"Support untuk berbagai versi Trainz untuk versi addons saat ini"
+		],
+		"type": "release",
+		"tags": [
+			"featured"
+		],
+		"url": {
+			"download_url": "https://www.facebook.com/Yousifrill/posts/pfbid02BNWLXT1QwpvPnpgDGUn6f3PeSqnfJLQPDWtnqKzTNNQ7V9Rdknc31mxucgG8qS6kl",
+			"page_url": "/pages/shd4.0"
+		}
+	},
+	{
+		"title": "SHD 3 (AIO)",
 		"status": "Freeware",
 		"thumbnail": [
 			"https://images2.imgbox.com/66/cc/ytdeqFjo_o.jpg",
@@ -8,7 +146,8 @@
 			"https://images2.imgbox.com/7c/9e/T0N6Es1Z_o.png"
 		],
 		"date": 0,
-		"description": "Update ke 3.6 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator, sudah termasuk beberapa generasi dan tipe selendang yang bervariasi",
+		"description": "Update ke 3 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator, sudah termasuk beberapa generasi dan tipe selendang yang bervariasi",
+		"short_desc": "Oldest version available to Download, limited Mobile Support",
 		"comparison": {
 			"pros": [
 				"3 Faces",
@@ -48,137 +187,6 @@
 		}
 	},
 	{
-		"title": "JETBUS SHD SERIES 4.0 LTS",
-		"status": "Freeware",
-		"thumbnail": [
-			"https://images2.imgbox.com/90/b4/wT4uMk1d_o.png",
-			"https://images2.imgbox.com/13/f8/qQ7Om0qS_o.png",
-			"https://images2.imgbox.com/d9/1a/e5GvKGwo_o.png",
-			"https://images2.imgbox.com/c9/3c/g1bM1k3U_o.png",
-			"https://images2.imgbox.com/bb/94/qI4ZP004_o.png"
-		],
-		"date": 0,
-		"description": "Update ke 4.0 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!\nSatu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll. belum termasuk bagian belakang (V4.0).",
-		"comparison": {
-			"pros": [
-				"Mudah direskin (Manual replacement)",
-				"Model Face JB2 - JB5",
-				"Pembaruan Face JB3, Model lampu lebih bagus, dapat dilepas",
-				"Model Topi JB2 - JB3",
-				"Medium Poly, Ringan dan ramah performa",
-				"Aksesoris bervariasi"
-			],
-			"cons": [
-				"Belum ada script (Masih dalam tahap fix)",
-				"Roda belum ber-anim",
-				"Strobo belum ber-anim (Satu paket dengan script rework)"
-			]
-		},
-		"credits": [],
-		"note": [
-			"Support untuk berbagai versi Trainz untuk versi addons saat ini"
-		],
-		"type": "release",
-		"tags": [
-			"featured"
-		],
-		"url": {
-			"download_url": "https://www.facebook.com/Yousifrill/posts/pfbid02BNWLXT1QwpvPnpgDGUn6f3PeSqnfJLQPDWtnqKzTNNQ7V9Rdknc31mxucgG8qS6kl",
-			"page_url": "/pages/shd4.0"
-		}
-	},
-	{
-		"title": "JETBUS SHD SERIES 4.1β",
-		"status": "Freeware",
-		"thumbnail": [
-			"https://images2.imgbox.com/db/63/jcJyWVB4_o.jpg",
-			"https://images2.imgbox.com/3f/64/7geQjkEQ_o.jpg"
-		],
-		"date": 0,
-		"description": "Update ke 4.1 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!\nSatu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll.  Sekarang termasuk Face belakang.",
-		"comparison": {
-			"pros": [],
-			"cons": []
-		},
-		"credits": [],
-		"note": [
-			"Untuk bisa memakai addons ini, bisa cek profile saya di facebook",
-			"Tested on TSA, TS12, T:ANE, TRS19 - 22. issue(s) may present on android version",
-			"Use the lite version if you're an android user"
-		],
-		"type": "release",
-		"tags": [
-			"featured"
-		],
-		"url": {
-			"download_url": "",
-			"page_url": ""
-		}
-	},
-	{
-		"title": "JETBUS SHD SERIES 4.2r",
-		"status": "Freeware",
-		"thumbnail": [
-			"https://images2.imgbox.com/9e/89/laa8Xqfo_o.png",
-			"https://images2.imgbox.com/90/47/QSjlRrpV_o.png",
-			"https://images2.imgbox.com/a0/f0/TnpY2rAR_o.png",
-			"https://images2.imgbox.com/9f/4d/w4pvz3Uf_o.png"
-		],
-		"date": 0,
-		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan kelebihan yang lebih menarik dari versi sebelumnya!",
-		"comparison": {
-			"pros": [],
-			"cons": []
-		},
-		"credits": [],
-		"note": [
-			"Untuk download Anda harus menjadi tester."
-		],
-		"type": "wip",
-		"tags": [
-			"featured"
-		],
-		"url": {
-			"download_url": "",
-			"page_url": "/pages/shd4.2"
-		}
-	},
-	{
-		"title": "SHD SERIES V5 SE (Single Edition)",
-		"status": "Freeware",
-		"thumbnail": [
-			"https://images2.imgbox.com/78/1b/6bM6enZv_o.png",
-			"https://images2.imgbox.com/66/67/yJkCujas_o.png",
-			"https://images2.imgbox.com/6e/d4/G56exLsc_o.png",
-			"https://images2.imgbox.com/b0/fd/qzBAOJcM_o.png"
-		],
-		"date": 0,
-		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan rombakan yang lebih bagus dari versi sebelumnya. (perasaan deskripsinya sama deh)",
-		"comparison": {
-			"pros": [
-				"Android Support!",
-				"Modifikasi dengan Aksesoris yang banyak",
-				"Modul basuri lebih banyak",
-				"Rombakan desain property jauh lebih bagus"
-			],
-			"cons": [
-				"Variasi body terpisah (Jetbus 2/3 dan Jetbus 5)"
-			]
-		},
-		"credits": [],
-		"note": [
-			"Untuk download Anda harus menjadi tester."
-		],
-		"type": "wip",
-		"tags": [
-			"featured"
-		],
-		"url": {
-			"download_url": "",
-			"page_url": "/pages/shd5"
-		}
-	},
-	{
 		"title": "Jetbus 3+ Voyager V3.0 \"Ratu Maher\"",
 		"status": "Ex-Free",
 		"thumbnail": [
@@ -192,6 +200,7 @@
 		],
 		"date": 0,
 		"description": "Addons Jetbus 3+ Voyager Pertama di Trainz Simulator yang bisa dinaiki, dengan detail yang bagus, termasuk interior yang detailnya juga bagus pastinya :D",
+		"short_desc": "",
 		"comparison": {
 			"pros": [
 				"Livery mudah diganti ( cari livery sendiri )",
@@ -235,6 +244,7 @@
 		],
 		"date": 0,
 		"description": "Dari judul tahulah ya",
+		"short_desc": "",
 		"comparison": {
 			"pros": [
 				"BTT ( Bake-To-Texture )"
@@ -269,6 +279,7 @@
 		],
 		"date": 0,
 		"description": "Objek loplep untuk TS, yang pastinya imud dong c:",
+		"short_desc": "",
 		"comparison": {
 			"pros": [
 				"Ada waifumu di game",
@@ -301,6 +312,7 @@
 		],
 		"date": 0,
 		"description": "Objek Rumah untuk TS, lumayan HD untuk sebuah objek dan low-poly",
+		"short_desc": "",
 		"comparison": {
 			"pros": [
 				"HD textures",
@@ -325,11 +337,12 @@
 		}
 	},
 	{
-		"title": "Traffic Indo V1",
+		"title": "Traffic Indo",
 		"status": "In Progress",
 		"thumbnail": [],
 		"date": 0,
 		"description": "Traffic Indo V1 ini membuat Traffic di TS lebih beragam, karena memiliki berbagai jenis kendaraan transportasi, mulai dari mobil, truk, bus, dll yang pastinya memakai realskin dan HD",
+		"short_desc": "An Indonesian region pack for Trainz filled with Cars, Bus, Trucks, etc.",
 		"comparison": {
 			"pros": [
 				"Kendaraan bervariasi",
@@ -343,10 +356,12 @@
 		"credits": [],
 		"note": [],
 		"type": "wip",
-		"tags": [],
+		"tags": [
+			"featured"
+		],
 		"url": {
 			"download_url": "",
-			"page_url": ""
+			"page_url": "#"
 		}
 	},
 	{
@@ -355,6 +370,7 @@
 		"thumbnail": [],
 		"date": 0,
 		"description": "Komponen Corong Basuri atas + cover, bisa dipasang dimana saja, tidak hanya di Addons JB3",
+		"short_desc": "",
 		"comparison": {
 			"pros": [
 				"HD texture"

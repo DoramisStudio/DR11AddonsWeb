@@ -4,79 +4,63 @@ const header_setting = {
 };
 anime.suspendWhenDocumentHidden = false;
 
+function createIcon(name) {
+	const icon = document.createElement("span");
+	icon.classList = "material-symbols-rounded mat4";
+	icon.style = "font-size: 14px;";
+	icon.translate = "no";
+	icon.textContent = name;
+	return icon;
+}
+
+function createHeaderButton(v, el) {
+	v.forEach(v => {
+		const btnContainer = document.createElement("button");
+		btnContainer.onclick = e => {
+			location.assign(v.url.page_url);
+		};
+		const container = document.createElement("div");
+		container.classList = "dmc-btn-container";
+		btnContainer.appendChild(container);
+
+		const title = document.createElement("h1");
+		const icon = createIcon("chevron_right");
+		title.textContent = v.title;
+		title.appendChild(icon);
+		container.appendChild(title);
+
+		const desc = document.createElement("p");
+		desc.textContent = v.short_desc;
+		container.appendChild(desc);
+		el.appendChild(btnContainer);
+	});
+}
+
+async function refreshHeaderButtons() {
+	const addonsContainer = document.getElementById("addonsHeaderButtons");
+	const wipContainer = document.getElementById("wipHeaderButtons");
+
+	if (addonsContainer && wipContainer) {
+		addonsContainer.innerHTML = "";
+		wipContainer.innerHTML = "";
+		const res = await fetch("/assets/static/addons_list.json");
+		
+		if (res.ok) {
+			const items = await res.json();
+			const mainAddons = items.filter(p => p.tags.includes("featured") && p.type == "release" && p.url.page_url != "");
+			const wipAddons = items.filter(p => p.tags.includes("featured") && p.type == "wip" && p.url.page_url != "");
+			createHeaderButton(mainAddons, addonsContainer);
+			createHeaderButton(wipAddons, wipContainer);
+		}
+	}
+}
+
 function checkHeaderScroll() {
 	const hero_top = document.querySelector("div.hero");
 
 	if (window.scrollY > hero_top.clientHeight / 2) header.classList.add("filled");
 	else header.classList.remove("filled");
 }
-
-// Header drop menu
-document.querySelectorAll(".header .drop-menu").forEach((e) => {
-	var anim;
-	var buttonanim;
-	var leave_timer;
-	var is_container = false;
-	var is_shown = false;
-	const button = e.querySelector(".drop-menu-button");
-	const container = e.querySelector(".drop-menu-container");
-	const buttons = container.querySelectorAll("button");
-	
-	button.addEventListener("mouseenter", (e_) => {
-		changeState(true);
-		window.clearTimeout(leave_timer);
-	});
-	button.addEventListener("mouseleave", (e_) => {
-		if (!is_container) {
-			leave_timer = setTimeout(() => {changeState(false);}, 100);
-		}
-	});
-	container.addEventListener("mouseenter", (e_) => {
-		changeState(true);
-		window.clearTimeout(leave_timer);
-		is_container = true;
-	});
-	container.addEventListener("mouseleave", (e_) => {
-		is_container = false;
-		leave_timer = setTimeout(() => {changeState(false);}, 100);
-	});
-
-	function changeState(state) {
-		if (state) {
-			if (!is_shown) {
-				is_shown = true;
-				anim = anime({
-					targets: container,
-					opacity: 1,
-					duration: 100,
-					easing: "linear"
-				});
-				anime.set(container, {
-					pointerEvents: "all"
-				})
-				buttonanim = anime({
-					targets: buttons,
-					opacity: [0, 1],
-					translateX: [-20, 0],
-					delay: anime.stagger(100),
-					duration: 1000
-				});
-			}
-		}
-		else {
-			is_shown = false;
-			anim = anime({
-				targets: container,
-				opacity: 0,
-				duration: 100,
-				easing: "linear"
-			});
-			anime.set(container, {
-				pointerEvents: "none"
-			})
-		}
-	}
-});
 
 var mobile_menu_anim;
 function toggleMobileMenu(forceState) {
