@@ -248,6 +248,103 @@
             button.selected {
                 border-color: rgb(128 128 128);
             }
+
+
+            .dialog {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                z-index: 25;
+                transition: .1s ease;
+
+                .bbox {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    background: rgb(0 0 0 / .5);
+                    z-index: 1;
+                }
+
+                .dialog-content {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    z-index: 2;
+                    width: 24rem;
+                    height: fit-content;
+                    margin: auto;
+                    background: rgb(24 24 24);
+                    border: 1px solid rgb(255 255 255 / .05);
+                    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / .25);
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    a {
+                        color: gray;
+                    }
+                    a:hover {
+                        color: white;
+                    }
+
+                    hr {
+                        opacity: .15;
+                    }
+                }
+            }
+            .dialog.hidden {
+                opacity: 0;
+                transform: scale(.95);
+                pointer-events: none;
+            }
+
+            .link-list {
+                display: flex;
+                flex-direction: column;
+                background: rgb(0 0 0 / .25);
+                border: 1px solid rgb(255 255 255 / .1);
+                padding: .5rem;
+                border-radius: .5rem;
+
+                .item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: .5rem;
+                    border-radius: .25rem;
+                    gap: .5rem;
+                    cursor: pointer;
+                }
+                .item:hover {
+                    background: rgb(255 255 255 / .05);
+
+                    .underline-hover {
+                        text-decoration: underline;
+                    }
+                }
+                .item * {
+                    white-space: pre;
+                }
+
+                .overflow {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                p.link-small {
+                    font-size: small;
+                    opacity: .25;
+                }
+            }
         </style>
     </head>
     <body>
@@ -456,58 +553,58 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Umamusume - Silence Suzuka (3 pose)</h2>
+                    <div onclick="openMoreLinksDialog('Silence Suzuka', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/1BzF0eugIUAsfD6-lJdZ39FMpVmdbKDPS/view?usp=drive_link' }, { name: 'Pose 2', url: 'https://drive.google.com/file/d/15VTOgapsU1-ZLq2ILAyNvZpHa1AeLzCV/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1CDIzMEf_cGbxQCypI6e8JG5hEVBcAIRa/view?usp=drive_link' } ], 'Daftar pose Silence Suzuka yang tersedia:');">
+                        <img src="https://images2.imgbox.com/7e/91/1ARrPrmu_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Silence Suzuka (3 pose)</h2>
                         <div class="desc">
-                            <h3>Karakter</h3>
+                            <h3>Umamusume / Karakter</h3>
                             <p>Objek karakter Uma Musume, Silence Suzuka yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
+                            <a>Buka daftar</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Umamusume - Matikanetannhauser (3 pose)</h2>
+                    <div onclick="openMoreLinksDialog('Matikanetannhauser', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/174oy47qoCoKfI7Z_aX3abYypkMHLLMLI/view?usp=drive_link' }, { name: 'Pose 4', url: 'https://drive.google.com/file/d/1sW2tcmOMVblEjKQo6Vml3XqbENowu6b2/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1EzFpHoqDNnnhNbogSJGGscLMirH_dbY7/view?usp=drive_link' } ], 'Daftar pose Matikanetannhauser yang tersedia:');">
+                        <img src="https://images2.imgbox.com/46/6c/dxoyw0yo_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Matikanetannhauser (3 pose)</h2>
                         <div class="desc">
-                            <h3>Karakter</h3>
+                            <h3>Umamusume / Karakter</h3>
                             <p>Objek karakter Uma Musume, Matikanetannhauser yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
+                            <a>Buka daftar</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Umamusume - Gold Ship (3 pose)</h2>
+                    <div onclick="openMoreLinksDialog('Gold Ship', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/1fc62xFRFMgs_bcl6U7pmNIVPX9x3dPM4/view?usp=drive_link' }, { name: 'Pose 2', url: 'https://drive.google.com/file/d/1Mtkm5pK-uW6_HIH_nuTDdemuAkEjhFxf/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1xPznOo8Ma9iP2ziLPfRDXtgB-mNdGDlr/view?usp=drive_link' } ], 'Daftar pose Gold Ship yang tersedia:');">
+                        <img src="https://images2.imgbox.com/ea/63/EALGpBgR_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Gold Ship (3 pose)</h2>
                         <div class="desc">
-                            <h3>Karakter</h3>
+                            <h3>Umamusume / Karakter</h3>
                             <p>Objek karakter Uma Musume, Gold Ship yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
+                            <a>Buka daftar</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Umamusume - Mejiro McQueen (3 pose)</h2>
+                    <div onclick="openMoreLinksDialog('Mejiro McQueen', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/1lbTFDvPys04kdOuHGF975BERokpTFWuS/view?usp=drive_link' }, { name: 'Pose 2', url: 'https://drive.google.com/file/d/1l-4BhTdy3lwJO5I0AiG8Ul9erIyx0aq2/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1zxcZ60SXUeKTiHz0ZvyZzc6MfVwB_VW2/view?usp=drive_link' } ], 'Daftar pose Mejiro McQueen yang tersedia:');">
+                        <img src="https://images2.imgbox.com/6f/6e/txIgG8WM_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Mejiro McQueen (3 pose)</h2>
                         <div class="desc">
-                            <h3>Karakter</h3>
+                            <h3>Umamusume / Karakter</h3>
                             <p>Objek karakter Uma Musume, Mejiro McQueen yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
+                            <a>Buka daftar</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Umamusume - Special Week (3 pose)</h2>
+                    <div onclick="openMoreLinksDialog('Special Week', [ { name: 'Pose 1', url: '' }, { name: 'Pose 2', url: '' }, { name: 'Pose 3', url: '' } ], 'Daftar pose Special Week yang tersedia:');">
+                        <img src="https://images2.imgbox.com/ff/fb/mfcwpzPk_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Special Week (3 pose)</h2>
                         <div class="desc">
-                            <h3>Karakter</h3>
+                            <h3>Umamusume / Karakter</h3>
                             <p>Objek karakter Uma Musume, Special Week yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
+                            <a>Buka daftar</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Umamusume - Tokai Teio (3 pose)</h2>
+                    <div onclick="openMoreLinksDialog('Tokai Teio', [ { name: 'Pose 1', url: '' }, { name: 'Pose 2', url: '' }, { name: 'Pose 3', url: '' } ], 'Daftar pose Tokai Teio yang tersedia:');">
+                        <img src="https://images2.imgbox.com/dd/74/mLLpDi9o_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Tokai Teio (3 pose)</h2>
                         <div class="desc">
-                            <h3>Karakter</h3>
+                            <h3>Umamusume / Karakter</h3>
                             <p>Objek karakter Uma Musume, Tokai Teio yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
+                            <a>Buka daftar</a>
                         </div>
                     </div>
                 </div>
@@ -540,6 +637,31 @@
             </div>
         </div>
 
+        <div class="dialog hidden" id="dialog_linkList">
+            <div class="bbox"></div>
+            <div class="dialog-content">
+                <div>
+                    <p>Daftar Link / <b id="dialog_linkListTitle">Matikanetannhauser</b></p>
+                </div>
+                <hr class="w">
+                <p id="dialog_linkListDesc">Anda dapat memilih salah satu dari link berikut</p>
+                <div class="link-list" id="dialog_linkListList">
+                    <a class="item">
+                        <p class="underline-hover">Matikanetannhauser</p>
+                        <p class="overflow link-small">https://blablabla.ble/umamusume</p>
+                    </a>
+                    <a class="item">
+                        <p class="underline-hover">Silence Suzuka</p>
+                        <p class="overflow link-small">https://blablabla.ble/umamusume</p>
+                    </a>
+                    <a class="item">
+                        <p class="underline-hover">Silence Suzuka</p>
+                        <p class="overflow link-small">https://blablabla.ble/umamusume</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <script>
             Array.from(document.querySelector(".menus").children).forEach((e, i) => {
                 if (e.classList.contains("selected")) {
@@ -564,6 +686,88 @@
                     });
                 };
             });
+
+            function prepareDialog(dialog, hideOnOffsideTouch = true) {
+                var _events = {};
+
+                function on(event, listener) {
+                    if (!_events[event]) {
+                        _events[event] = [];
+                    }
+                    _events[event].push(listener);
+                }
+                function off(event, listener) {
+                    if (!_events[event]) return;
+                    _events[event] = _events[event].filter(l => l !== listener);
+                }
+                function emit(event, data) {
+                    if (!_events[event]) return;
+                    _events[event].forEach(listener => listener(data));
+                }
+
+                Object.defineProperties(dialog, {
+                    on: {
+                        value: on,
+                        writable: false,
+                        configurable: false
+                    },
+                    off: {
+                        value: off,
+                        writable: false,
+                        configurable: false
+                    }
+                });
+                Object.defineProperty(dialog, "showDialog", {
+                    value: _ => {
+                        dialog.classList.remove("hidden");
+                        emit("visibilitychange", true);
+                    },
+                    writable: false,
+                    configurable: false
+                });
+                Object.defineProperty(dialog, "hideDialog", {
+                    value: _ => {
+                        dialog.classList.add("hidden");
+                        emit("visibilitychange", false);
+                    },
+                    writable: false,
+                    configurable: false
+                });
+
+                const bbox = dialog.querySelector("div.bbox");
+                
+                if (hideOnOffsideTouch) {
+                    bbox.onclick = _ => {
+                        dialog.hideDialog();
+                    };
+                }
+            }
+            prepareDialog(dialog_linkList);
+
+            function openMoreLinksDialog(title, links = [], desc) {
+                dialog_linkList.showDialog();
+                
+                dialog_linkListTitle.textContent = title;
+                if (desc) dialog_linkListDesc.textContent = desc;
+                dialog_linkListList.innerHTML = "";
+                links.filter(p => p.url != "").forEach(v => {
+                    const container = document.createElement("a");
+                    container.classList = "item";
+                    container.href = v.url;
+
+                    const name = document.createElement("p");
+                    name.classList = "underline-hover";
+                    name.textContent = v.name;
+                    container.appendChild(name);
+
+                    const urlp = document.createElement("p");
+                    urlp.classList = "overflow link-small";
+                    urlp.textContent = v.url;
+                    container.appendChild(urlp);
+
+                    dialog_linkListList.appendChild(container);
+                });
+            }
         </script>
     </body>
 </html>
