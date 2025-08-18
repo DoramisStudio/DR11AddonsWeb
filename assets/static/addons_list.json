@@ -1,5 +1,35 @@
 [
 	{
+		"title": "SHD5.B1",
+		"status": "Ex",
+		"thumbnail": [
+			"/assets/media/images/blender render 419.png"
+		],
+		"date": 0,
+		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan rombakan yang lebih bagus dari versi sebelumnya. (perasaan deskripsinya sama deh)",
+		"short_desc": "Upcoming SHD5.B1, will include more contents from SHD5.",
+		"comparison": {
+			"pros": [
+				"-"
+			],
+			"cons": [
+				"-"
+			]
+		},
+		"credits": ["ES"],
+		"note": [
+			"Addon belum lahir."
+		],
+		"type": "wip",
+		"tags": [
+			"featured"
+		],
+		"url": {
+			"download_url": "",
+			"page_url": "#"
+		}
+	},
+	{
 		"title": "SHD 5 (SE)",
 		"status": "Freeware",
 		"thumbnail": [
