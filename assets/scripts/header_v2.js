@@ -3,6 +3,10 @@ var __data_addons = [];
 function headerLoop() {
     if (window.scrollY > window.innerHeight/2) pageHeader.classList.remove("top");
     else pageHeader.classList.add("top");
+    
+    if (__pause_background_on_zero != undefined && __pause_background != undefined) {
+        if (__pause_background_on_zero) __pause_background = window.scrollY <= 0;
+    }
     requestAnimationFrame(headerLoop);
 }
 requestAnimationFrame(headerLoop);

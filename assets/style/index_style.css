@@ -120,6 +120,7 @@ button.link-button {
     justify-content: space-between;
     align-items: center;
     text-decoration: unset;
+    z-index: 0;
     cursor: pointer;
     transition: .3s ease;
 
@@ -504,6 +505,13 @@ div.wrapper > header {
     }
 }
 
+.mobile-view {
+    display: none;
+}
+.desktop-view {
+    display: inherit;
+}
+
 @media only screen and (max-width: 720px) {
     .hero-content {
         padding: 4rem!important;
@@ -530,8 +538,20 @@ div.wrapper > header {
         padding: 2rem!important;
     }
 
+    header {
+        .mobile-view {
+            display: inherit;
+        }
+        .desktop-view {
+            display: none;
+        }
+    }
+
     footer {
         --global-gap: 1rem!important;
+        .content {
+            padding: 2rem!important;
+        }
         .content > .row-group:nth-child(1) > .row-group:nth-child(1) {
             flex-direction: column;
         }
@@ -559,7 +579,16 @@ div.wrapper > header {
 
     p {
         transform: skewX(15deg);
-        text-shadow: rgb(144, 144, 144) 2px 0px 0px, rgb(144, 144, 144) 1.75517px 0.958851px 0px, rgb(144, 144, 144) 1.0806px 1.68294px 0px, rgb(144, 144, 144) 0.141474px 1.99499px 0px, rgb(144, 144, 144) -0.832294px 1.81859px 0px, rgb(144, 144, 144) -1.60229px 1.19694px 0px, rgb(144, 144, 144) -1.97998px 0.28224px 0px, rgb(144, 144, 144) -1.87291px -0.701566px 0px, rgb(144, 144, 144) -1.30729px -1.5136px 0px, rgb(144, 144, 144) -0.421592px -1.95506px 0px, rgb(144, 144, 144) 0.567324px -1.91785px 0px, rgb(144, 144, 144) 1.41734px -1.41108px 0px, rgb(144, 144, 144) 1.92034px -0.558831px 0px;
+        
+        * {
+            --outline-color: rgb(144, 144, 144);
+            text-shadow: var(--outline-color) 2px 0px 0px, var(--outline-color) 1.75517px 0.958851px 0px, var(--outline-color) 1.0806px 1.68294px 0px, var(--outline-color) 0.141474px 1.99499px 0px, var(--outline-color) -0.832294px 1.81859px 0px, var(--outline-color) -1.60229px 1.19694px 0px, var(--outline-color) -1.97998px 0.28224px 0px, var(--outline-color) -1.87291px -0.701566px 0px, var(--outline-color) -1.30729px -1.5136px 0px, var(--outline-color) -0.421592px -1.95506px 0px, var(--outline-color) 0.567324px -1.91785px 0px, var(--outline-color) 1.41734px -1.41108px 0px, var(--outline-color) 1.92034px -0.558831px 0px;
+        }
+
+        .f-red {
+            color: rgb(255 200 200);
+            --outline-color: rgb(200 0 0)!important;
+        }
     }
 }
 
@@ -567,4 +596,14 @@ div.wrapper > header {
     background-color: rgb(128 128 128 / .5);
     background-image: linear-gradient(45deg, transparent 50%,white 50%);
     background-size: 4px 4px;
+}
+
+canvas#cvs_bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    pointer-events: none;
 }
