@@ -1,13 +1,15 @@
 [
 	{
-		"title": "SHD5.B1",
+		"title": "SDD SERIES",
 		"status": "Ex",
 		"thumbnail": [
-			"/assets/media/images/blender render 419.png"
+			"/assets/media/images/sdd0.jpg"
 		],
 		"date": 0,
-		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan rombakan yang lebih bagus dari versi sebelumnya. (perasaan deskripsinya sama deh)",
-		"short_desc": "Upcoming SHD5.B1, will include more contents from SHD5.",
+		"description": "Addon bus terbaru yang dirilis oleh DR11 Addons. Versi ini akan menghadirkan tipe bodi SDD (Super Double Deck), jadi tunggu kelanjutannya!",
+		"short_desc": "Upcoming SDD SERIES, will include SDD Variant.",
+		"very_short_desc": "Upcoming SDD SERIES",
+		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [
 				"-"
@@ -41,6 +43,8 @@
 		"date": 0,
 		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan rombakan yang lebih bagus dari versi sebelumnya. (perasaan deskripsinya sama deh)",
 		"short_desc": "All new SHD Series V5 SE (Single Edition)",
+		"very_short_desc": "SHD Series 5 SE",
+		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [
 				"Android Support!",
@@ -78,6 +82,8 @@
 		"date": 0,
 		"description": "Addons Jetbus beserta rombakannya untuk Trainz, kamu bisa mengkustomisasi semua sesuai yang kamu mau, mau dari bumper depan, belakang, selendang, dll. Versi kali ini dibekali dengan banyak sekali fitur dan kelebihan yang lebih menarik dari versi sebelumnya!",
 		"short_desc": "Loaded with lots of updates from SHD 4.1 including Script update",
+		"very_short_desc": "General updates",
+		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [
 				"Update script besar-besaran!"
@@ -109,6 +115,8 @@
 		"date": 0,
 		"description": "Update ke 4.1 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!\nSatu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll.  Sekarang termasuk Face belakang.",
 		"short_desc": "Optimized for Mobile Trainz and several more fixes from JBv4",
+		"very_short_desc": "SHD 4 Fixes",
+		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [],
 			"cons": []
@@ -139,6 +147,8 @@
 		"date": 0,
 		"description": "Update ke 4.0 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator!\nSatu set Jetbus SHD series, mulai dari Jetbus 2, jetbus 3, dan Jetbus 5 yang bisa dikustomisasi sendiri seperti selendang, topi, muka, acc, dll. belum termasuk bagian belakang (V4.0).",
 		"short_desc": "Jetbus with more added accessories from SHD 3, first supported on Mobile Trainz",
+		"very_short_desc": "Upgrade from SHD 3",
+		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [
 				"Mudah direskin (Manual replacement)",
@@ -169,7 +179,7 @@
 	},
 	{
 		"title": "SHD 3",
-		"status": "Freeware",
+		"status": "Freeware Deprecreated",
 		"thumbnail": [
 			"https://images2.imgbox.com/66/cc/ytdeqFjo_o.jpg",
 			"https://images2.imgbox.com/18/b6/5WvfvYHg_o.jpg",
@@ -178,6 +188,8 @@
 		"date": 0,
 		"description": "Update ke 3 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator, sudah termasuk beberapa generasi dan tipe selendang yang bervariasi",
 		"short_desc": "Oldest version available to Download, limited Mobile Support",
+		"very_short_desc": "Deprecreated version",
+		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [
 				"3 Faces",
@@ -373,6 +385,8 @@
 		"date": 0,
 		"description": "Traffic Indo V1 ini membuat Traffic di TS lebih beragam, karena memiliki berbagai jenis kendaraan transportasi, mulai dari mobil, truk, bus, dll yang pastinya memakai realskin dan HD",
 		"short_desc": "An Indonesian region pack for Trainz filled with Cars, Bus, Trucks, etc.",
+		"very_short_desc": "Indonesian Region Pack",
+		"icon": "traffic",
 		"comparison": {
 			"pros": [
 				"Kendaraan bervariasi",
