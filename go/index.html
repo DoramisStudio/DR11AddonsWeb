@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>redirect</title>
+	</head>
+	<body>
+		<script>
+			const q = new URLSearchParams(location.search);
+			const a = q.get("dest");
+			const b = q.get("ref");
+			const c = q.get("pid");
+
+
+			sessionStorage.setItem("dr11k", btoa(a)+btoa(c));
+			if (!a || !b || !c) location.replace("/");
+			else location.assign("/"+a+"/");
+		</script>
+	</body>
+</html>

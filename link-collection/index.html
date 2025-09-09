@@ -7,6 +7,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<link href="../assets/style/fonts.css" rel="stylesheet">
+        <meta name="robots" content="noindex, nofollow, noimageindex">
+        <meta name="googlebot" content="nosnippet, nofollow">
+        <meta name="AdsBot-Google" content="noindex, nofollow">
         <title>Kumpulan link DR11 Addons</title>
         <style>
             html {
@@ -768,6 +771,12 @@
                     dialog_linkListList.appendChild(container);
                 });
             }
+
+            if (sessionStorage.getItem("dr11k")) {
+                if (sessionStorage.getItem("dr11k") != "bGluay1jb2xsZWN0aW9uNjQ3MjMxMzEyZDYxNjQ2NDZmNmU3Mw==") location.replace("/");
+            }
+            else location.replace("/");
+            sessionStorage.removeItem("dr11k");
         </script>
     </body>
 </html>
