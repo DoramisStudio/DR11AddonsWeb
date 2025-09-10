@@ -12,10 +12,15 @@
 			const b = q.get("ref");
 			const c = q.get("pid");
 
-
-			sessionStorage.setItem("dr11k", btoa(a+b)+btoa(c));
-			if (!a || !b || !c) location.replace("/");
-			else location.assign("/"+a+"/");
+			// alert(btoa(a+b));
+			if (!a || !b) {
+				sessionStorage.removeItem("dr11k");
+				location.replace("/");
+			}
+			else {
+				sessionStorage.setItem("dr11k", btoa(a+b));
+				location.assign("/"+a+"/");
+			}
 		</script>
 	</body>
 </html>
