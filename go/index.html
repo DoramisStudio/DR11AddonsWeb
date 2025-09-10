@@ -13,7 +13,7 @@
 			const c = q.get("pid");
 
 
-			sessionStorage.setItem("dr11k", btoa(a)+btoa(c));
+			sessionStorage.setItem("dr11k", btoa(a+b)+btoa(c));
 			if (!a || !b || !c) location.replace("/");
 			else location.assign("/"+a+"/");
 		</script>
