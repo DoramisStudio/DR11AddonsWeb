@@ -1,4 +1,4 @@
-const heroContents = [
+const heroContents = __banner_image_list || [
     { imageSrc: "/assets/media/images/blender render 419.png", duration: 10, title: "SHD 5", desc: "Versi ke 5 dari SHD Series, mencangkup interior dan eksterior yang lebih detail.", viewMoreUrl: "/pages/shd5/" },
     { imageSrc: "/assets/media/images/shd42_4.png", duration: 10, title: "SHD 4.2", desc: "Versi ke 4.2 dari SHD Series, dari pembaruan skrip, aksesoris hingga modul basuri.", viewMoreUrl: "/pages/shd4.2/" },
     { imageSrc: "/assets/media/images/shd41.jpg", duration: 10, title: "SHD 4", desc: "Versi ke 4 dari SHD Series, penambahan aksesoris dan pembaruan interior yang lebih detail.", viewMoreUrl: "/pages/shd4.0/" },
@@ -12,7 +12,7 @@ var heroSlideshowTime = 0;
 var heroBtnHover = false;
 var heroSlideshowTimeHalt = false;
 
-heroOpenLink.onclick = _ => {
+if (document.getElementById("heroOpenLink")) heroOpenLink.onclick = _ => {
     const selected = heroContents[heroIdx];
     if (selected.viewMoreUrl) {
         location.assign(selected.viewMoreUrl);
@@ -28,8 +28,8 @@ function setSlideshowPoint(index) {
         anime.remove(heroAnimTemp);
     }
 
-    heroTitle.textContent = selected.title;
-    heroDesc.textContent = selected.desc;
+    if (document.getElementById("heroTitle")) heroTitle.textContent = selected.title;
+    if (document.getElementById("heroDesc")) heroDesc.textContent = selected.desc;
 
     if (!heroImg.naturalWidth) {
         anime.set(heroImg, { opacity: 0 });

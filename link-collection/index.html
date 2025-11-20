@@ -231,6 +231,8 @@
             button {
                 background: rgb(24 24 24);
                 border: 1px solid rgb(64 64 64);
+                outline: 16px solid transparent;
+                outline-offset: -1px;
                 box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 15%);
                 color: white;
                 padding: 0.5rem 0.8rem;
@@ -241,7 +243,7 @@
                 align-items: center;
                 gap: 0.5rem;
                 cursor: pointer;
-                transition: 0.1s;
+                transition: 0.1s, outline .2s ease-out;
             }
             button:hover {
                 background: rgb(48 48 48);
@@ -250,6 +252,8 @@
             }
             button.selected {
                 border-color: rgb(128 128 128);
+                outline-width: 1px;
+                outline-color: rgb(128 128 128);
             }
 
 
@@ -363,16 +367,43 @@
             <hr>
             <div class="grid-container">
                 <div class="menus">
-                    <button name="shds" class="selected">SHD Series</button>
+                    <button name="sdds" class="selected">SDD Series</button>
+                    <button name="shds">SHD Series</button>
+                    <button name="vehicle">Kendaraan</button>
                     <button name="char">Karakter</button>
                     <button name="object">Objek</button>
                     <button name="other">Lainnya</button>
                 </div>
+                <!-- SDD Series -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="sdds">
+                    <p>Katalog Addons Bus versi SDD 🔥🔥🔥</p>
+                    <div class="grid" id="sdds_pg">
+                        <div onclick="window.open('https://drive.google.com/file/d/19rLMNQ_wczGOHRsylr-fQ3EekOOuDk5v/view?usp=sharing');">
+                            <img src="https://images2.imgbox.com/95/0e/ZDyDOYgM_o.png"></img>
+                            <h2>SDD.5 Version 1</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 1 dari addon SDD.5 Series</p>
+                                <a>Kunjungi link</a>
+                            </div>
+                        </div>
+                        <div onclick="">
+                            <img src="https://images2.imgbox.com/39/41/4Far27zH_o.png"></img>
+                            <h2>SDD.5 Version 1 (Scania K450CB)</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Versi 1 dari addon SDD.5 Series</p>
+                                <a>Kunjungi link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- SHD Series -->
                 <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="shds">
-                    <p>Sebelum men-download, sebaiknya memilih versi terbaru dari Addons Bus ini 🔥🔥🔥</p>
+                    <p>Katalog Addons Bus versi SHD (All Version) 🔥🔥🔥</p>
                     <div class="grid" id="shds_pg">
-                        <div onclick="location.assign('https://drive.google.com/file/d/1jwLV93XZY8iWMG8oJmJlHsSsGMA2UNKY/view?usp=drive_link');">
+                        <div onclick="window.open('https://drive.google.com/file/d/1jwLV93XZY8iWMG8oJmJlHsSsGMA2UNKY/view?usp=drive_link');">
                             <img src="../assets/media/images/link_pack/shd_series/v5_jb3.png"></img>
                             <h2>Version 5 SE (Jetbus 2/3)</h2>
                             <div class="desc">
@@ -381,7 +412,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/file/d/10qJZGpcJJwlYHVDaQJ6L8rilmExvESWm/view?usp=drive_link');">
+                        <div onclick="window.open('https://drive.google.com/file/d/10qJZGpcJJwlYHVDaQJ6L8rilmExvESWm/view?usp=drive_link');">
                             <img src="../assets/media/images/link_pack/shd_series/v5_jb5.png"></img>
                             <h2>Version 5 SE (Jetbus 5)</h2>
                             <div class="desc">
@@ -398,7 +429,7 @@
                                 <a>Tampilkan</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/drive/folders/132qIQwsYNxtsFdbB6J2lg_17ETH71Rfz?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/drive/folders/132qIQwsYNxtsFdbB6J2lg_17ETH71Rfz?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v42r5.png"></img>
                             <h2>Version 4.2 revision 5</h2>
                             <div class="desc">
@@ -407,7 +438,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/drive/folders/1m18caKHRRUdqKyKCEPbWNGPuA2YwNoxE?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/drive/folders/1m18caKHRRUdqKyKCEPbWNGPuA2YwNoxE?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v42r4.png"></img>
                             <h2>Version 4.2 revision 4</h2>
                             <div class="desc">
@@ -416,7 +447,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/drive/folders/1q0iaoAWg45AqPBcwoHIOC1uA6l6xFXbe?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/drive/folders/1q0iaoAWg45AqPBcwoHIOC1uA6l6xFXbe?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v42r3.png"></img>
                             <h2>Version 4.2 revision 3</h2>
                             <div class="desc">
@@ -425,7 +456,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/drive/folders/1TqmiSPR-EolNEzOguie-4xFHK5oetNWT?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/drive/folders/1TqmiSPR-EolNEzOguie-4xFHK5oetNWT?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v42r2.jpg"></img>
                             <h2>Version 4.2 revision 2</h2>
                             <div class="desc">
@@ -434,7 +465,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/file/d/18j-q0jfSYjA7vAQwEoX_DjQwTeidChAW/view?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/file/d/18j-q0jfSYjA7vAQwEoX_DjQwTeidChAW/view?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v42.jpg"></img>
                             <h2>Version 4.2 revision 1</h2>
                             <div class="desc">
@@ -443,7 +474,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/drive/folders/1KiAPUm1EkUFrK9qm8f6pbOLpjuRUHAbB?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/drive/folders/1KiAPUm1EkUFrK9qm8f6pbOLpjuRUHAbB?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v41.jpg"></img>
                             <h2>Version 4.1b</h2>
                             <div class="desc">
@@ -452,7 +483,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/file/d/1YUp4NCwyWxRFFq-anSDfh-G-X1XN_qqc/view?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/file/d/1YUp4NCwyWxRFFq-anSDfh-G-X1XN_qqc/view?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v4.jpg"></img>
                             <h2>Version 4.0</h2>
                             <div class="desc">
@@ -461,7 +492,7 @@
                                 <a>Kunjungi link</a>
                             </div>
                         </div>
-                        <div onclick="location.assign('https://drive.google.com/file/d/1ScW-T5CMIOLqdUMWjtVLycKNyDfDSgCK/view?usp=drive_link');" class="hide-more">
+                        <div onclick="window.open('https://drive.google.com/file/d/1ScW-T5CMIOLqdUMWjtVLycKNyDfDSgCK/view?usp=drive_link');" class="hide-more">
                             <img src="../assets/media/images/link_pack/shd_series/v36.jpg"></img>
                             <h2>SHD Series 3.6 AIO</h2>
                             <div class="desc">
@@ -472,10 +503,35 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Vehicles -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="vehicle">
+                    <p>Katalog Addons Kendaraan (selain bus)</p>
+                    <div class="grid" id="vehicle_pg">
+                        <div onclick="window.open('https://drive.google.com/file/d/1y1N5xMXQo8ANlHz0MhuDshX_orICUvPl/view?usp=drive_link');">
+                            <img src="https://images2.imgbox.com/66/af/WidHX6wG_o.png"></img>
+                            <h2>Porsche GT3-RS</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Addon mobil Porsche GT3-RS</p>
+                                <a>Kunjungi link</a>
+                            </div>
+                        </div>
+                        <div onclick="https://drive.google.com/file/d/1ZOphEavXJ2VyVa1a9gm1d5tBhDlKOQN_/view?usp=drive_link">
+                            <img src="https://images2.imgbox.com/56/2e/SX7lodYk_o.png"></img>
+                            <h2>Porsche Carrera S</h2>
+                            <div class="desc">
+                                <h3>Kendaraan</h3>
+                                <p>Addon mobil Porsche Carrera tipe S</p>
+                                <a>Kunjungi link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Character -->
                 <div class="grid selectables" id="char">
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/1kHt5gMtKzlkSirJvq-W7dmbi19YL5TPu?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/drive/folders/1kHt5gMtKzlkSirJvq-W7dmbi19YL5TPu?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/doramis11_20230802_0006.jpg"></img>
                         <h2>SIFAS small collection</h2>
                         <div class="desc">
@@ -484,7 +540,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/drive/folders/1tRBuWcEBQR9LwnLAeMooI8TakyGsdumT?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/drive/folders/1tRBuWcEBQR9LwnLAeMooI8TakyGsdumT?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/maru_riko.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>Hanamaru & Riko Love Live!</h2>
                         <div class="desc">
@@ -493,7 +549,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/17pg_QeJGgz8vDk42XUmysEJkQjqhK4Pd/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/17pg_QeJGgz8vDk42XUmysEJkQjqhK4Pd/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/bokura_pt1.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>Bokura Wa Ima No Naka De costume part 1</h2>
                         <div class="desc">
@@ -502,7 +558,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1w0Q4rSzGZygOIRmnhdIY2HeY9BuwJ2cj/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/1w0Q4rSzGZygOIRmnhdIY2HeY9BuwJ2cj/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/bokura_pt2.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>Bokura Wa Ima No Naka De costume part 2</h2>
                         <div class="desc">
@@ -511,7 +567,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1UNB_zmxoBaKU9IOPo1VFfZc-vXR5kstt/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/1UNB_zmxoBaKU9IOPo1VFfZc-vXR5kstt/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/moona.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>VTuber - Moona Hoshinova</h2>
                         <div class="desc">
@@ -520,7 +576,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1bb5lHWnzMjJBvbBWGot18B6KKG67Jg6V/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/1bb5lHWnzMjJBvbBWGot18B6KKG67Jg6V/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/okayu.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>VTuber - Nekomata Okayu</h2>
                         <div class="desc">
@@ -529,7 +585,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1-aa_qjZ73rbQN_NxMJDrOTSvdCxWLPS5/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/1-aa_qjZ73rbQN_NxMJDrOTSvdCxWLPS5/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/kirara.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>Genshin Impact - Kirara</h2>
                         <div class="desc">
@@ -538,7 +594,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1PO0zTxofFvDuqpiKk2qjloiG8DINKbwe/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/1PO0zTxofFvDuqpiKk2qjloiG8DINKbwe/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/cappie.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>MiSide - Cappie</h2>
                         <div class="desc">
@@ -547,7 +603,7 @@
                             <a>Kunjungi link</a>
                         </div>
                     </div>
-                    <div onclick="location.assign('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
                         <h2>MiSide - Mila</h2>
                         <div class="desc">
@@ -610,11 +666,128 @@
                             <a>Buka daftar</a>
                         </div>
                     </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1vXWGlFxRwbl45Y6uObYPHmqeflWXhs_N/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/45/e6/xAjbngpt_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Special Week (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Special Week!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1tEzoOvCQCXdF-fZpezjuxU5xhbMVhA1e/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/7b/2b/nxELCPVY_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>El Condor Pasa (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, El Condor Pasa!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/19DevmNLU3EHGPfCvVYOcG-cRx0q9cgEv/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/0f/05/jcbSGBFo_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Mejiro McQueen (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Mejiro McQueen!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1TDQnhCnq7hiUSXfEwJEsWHe2TPpA-koU/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/d1/c1/njW0zM7C_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Gold Ship (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Gold Ship!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1b2vvVOePsdH-KOzDR_s_LPmXvpnKIFfS/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/c5/df/m0olSSVJ_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Super Creek (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Super Creek!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1TKm8bR88-lbNyzIsiM8ilkKeKAFzsaz9/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/5e/ce/UYJnp93x_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Maruzensky (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Maruzensky!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1Ele6ftCDok8PrkRwJAYm7V1Uhgpxe2gJ/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/ad/cb/YREHnEWU_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Still In Love (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Still In Love!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1UrKC186CY9DlBTZWGp844sRf40-8wfo8/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/ae/c1/tv6innHr_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Symboli Rudolf (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Symboli Rudolf!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1QzRWxQ_z9RWIec-_vCTq7TSkldyChmOB/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/c9/47/BG4MCN4B_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Manhattan Cafe (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Manhattan Cafe!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/10p9PMZoLNd2FWIIBnbVUkmbZAOAJhsuX/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/3b/24/VoqxOxa2_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Agnes Tachyon (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Agnes Tachyon!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1Hk4MVH9GlSaSX--Ti0zOriiU316iWLDG/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/22/2d/f8KzPKnc_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Haru Urara (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Haru Urara!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1G5lRuY3dWUVhD8CSsuePP_bO9B_fmuA7/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/46/c3/QB70IS3z_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>King Halo (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, King Halo!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
+                    <div onclick="window.open('https://drive.google.com/file/d/1RM32fU-eodUpoMRN4gyrgLk116mXsKuB/view?usp=drive_link');">
+                        <img src="https://images2.imgbox.com/dd/0a/ctYWX8T8_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
+                        <h2>Grass Wonder (Original)</h2>
+                        <div class="desc">
+                            <h3>Karakter</h3>
+                            <p>A character from Umamusume: Pretty Derby, Grass Wonder!</p>
+                            <a>Kunjungi link</a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Object -->
                 <div class="grid selectables" id="object">
-                    <div onclick="location.assign('https://drive.google.com/file/d/14QVQOjkJsLpP3Afqa2CJ96uSMXmjhJBZ/view?usp=drive_link');">
+                    <div onclick="window.open('https://drive.google.com/file/d/14QVQOjkJsLpP3Afqa2CJ96uSMXmjhJBZ/view?usp=drive_link');">
                         <img src="../assets/media/images/link_pack/object/omah.jpg"></img>
                         <h2>Rumah pack</h2>
                         <div class="desc">
@@ -627,7 +800,7 @@
 
                 <!-- Other -->
                 <div class="grid selectables" id="other">
-                    <div onclick="location.assign('../pages/shd5/');">
+                    <div onclick="window.open('../pages/shd5/');">
                         <img src="../assets/media/images/link_pack/other/v5.jpg"></img>
                         <h2>Paket livery V5</h2>
                         <div class="desc">
@@ -757,6 +930,7 @@
                     const container = document.createElement("a");
                     container.classList = "item";
                     container.href = v.url;
+                    container.target = "_blank";
 
                     const name = document.createElement("p");
                     name.classList = "underline-hover";
@@ -780,3 +954,7 @@
         </script>
     </body>
 </html>
+<!--
+    What things should be updated:
+    - Get catalog/categories from Database.
+-->

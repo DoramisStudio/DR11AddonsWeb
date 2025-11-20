@@ -1,431 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/assets/style/style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="/assets/style/index_style.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <title>Addons / DR11 Addons</title>
 	</head>
-	<body onload="Init();">
-		<title>DR11 Addons - Addons list</title>
-
+	<body>
+		<canvas id="cvs_bg"></canvas>
 		<div class="wrapper">
-			<div class="header" id="header">
-				<div style="grid-column: 1; display: flex; flex-direction: row; align-items: center; gap: 1em;">
-					<button onclick="toggleMobileMenu();" class="transparent square fullscreen-menu-button" id="fullscreen_menu"><span class="material-symbols-rounded" style="font-size: 24px;" translate="no">menu</span></button>
-					<div onclick="location.assign('/');">
-						<img src="/assets/media/images/logo.png" style="filter: drop-shadow(0px 8px 16px rgb(0 0 0 / 25%)); image-rendering: pixelated;" height="76"></img>
-					</div>
-				</div>
-				<div style="grid-column: 3; display: flex; flex-direction: row-reverse; align-items: center; gap: 0em;" id="top_nav_btns">
-					<button class="transparent">About <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-					<div class="drop-menu">
-						<button class="transparent drop-menu-button" onclick="location.assign('/wip');">WIPs <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-						<div class="drop-menu-container">
-							<div id="wipHeaderButtons"></div>
-							<div class="footer">
-								<button onclick="location.assign('/wip');" class="no-stroke" style="flex: 1;">
-									<div class="dmc-btn-container">
-										<h1>More <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
-										<p>More Work In Progress Addons</p>
+            <header class="page-header desktop-view top">
+                <div class="row-group align-center" style="gap: 1rem;">
+                    <a href="/"><img class="logo" src="/assets/media/images/logo.svg" alt="DR11 Addons Logo"></a>
+                </div>
+
+                <div class="row-group desktop-view" style="align-items: center; gap: 1.5rem;">
+                    <div class="col-group collapsible-main">
+                        <!-- <div class="row-group collapsible" style="gap: .5rem;">
+                            <div class="link-button"><a href="/faq" class="fs-s">FAQs</a></div>
+                            <div class="link-button"><a href="/faq" class="fs-s">Manuals</a></div>
+                        </div> -->
+                        <div class="row-group" style="gap: 0rem;">
+                            <div class="page-header-btn-container">
+                                <div class="link-button"><a href="/addons">Addons</a> <img src="/assets/media/images/icon/arrow.svg" class="arrow-icon"></div>
+
+                                <div class="floating-menu" id="addonsHeaderMenus"></div>
+                            </div>
+                            <div class="page-header-btn-container">
+                                <div class="link-button"><a href="/wip">WIPs</a> <img src="/assets/media/images/icon/arrow.svg" class="arrow-icon"></div>
+
+                                <div class="floating-menu" id="wipsHeaderMenus"></div>
+                            </div>
+                            <div class="link-button"><a href="/faq">FAQ</a></div>
+                            <div class="link-button"><a href="/about">About</a></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <header class="page-header mobile-view top">
+                <a href="/" style="margin: auto;"><img class="logo" src="/assets/media/images/logo.svg" alt="DR11 Addons Logo"></a>
+            </header>
+
+			<main>
+                <div class="hero-container">
+                    <img class="hero-image" src="">
+                    <div class="shadow"></div>
+                    <div class="hero-content">
+                        <div style="gap: .5rem; align-items: flex-start; max-width: 360px;">
+                            <!-- <h2 id="heroTitle"></h2>
+                            <p id="heroDesc" class="fs-s"></p>
+                            <hr class="flat" style="width: 100%; margin: 1rem 0rem;">
+                            <a class="button-main light" id="heroOpenLink"><p>View Addon</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a> -->
+                            <!-- <div id="heroOpenLink" class="link-button filled" style="margin: 0rem -.5rem;"><a>View Addon</a> <img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></div> -->
+							<h1 style="font-size: 48pt;">Addons</h1>
+                        </div>
+                        <div style="align-items: flex-end;">
+                            <div class="eventBox hidden">
+                                <b>EVENT!</b>
+                                <p><span>Gaada sih</span></p>
+                            </div>
+                            <div class="slideshow-nav">
+                                <button><div><span></span></div></button>
+                                <button><div><span></span></div></button>
+                                <button><div><span></span></div></button>
+                                <button><div><span></span></div></button>
+                                <button><div><span></span></div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-container">
+                    <div class="row-group" style="justify-content: center; gap: 2rem;">
+                        <b>DR11</b>
+                        <hr style="flex: unset; margin: -1rem 0rem;" class="flat">
+                        <p style="text-align: center; font-style: italic;">Make the <b>Unexpected</b> happens.</p>
+                        <hr style="flex: unset; margin: -1rem 0rem;" class="flat">
+                        <b>ES</b>
+                    </div>
+                    <hr style="flex: unset;" class="flat">
+
+                    <h1 style="text-align: center;">Daftar Addons</h1>
+
+                    <hr style="flex: 0;" class="flat">
+					<div class="col-group" style="gap: 0;">
+						<hr style="flex: 0;" class="flat">
+						<div class="row-group" style="max-width: 1280px; width: 100%; margin: 0rem auto; gap: 0rem;">
+							<hr style="flex: unset; margin: -2rem 0rem;" class="flat">
+							<div class="col-group" style="width: 100%; box-sizing: border-box;">
+								<div class="addons-grid">
+									<img src="https://images2.imgbox.com/78/1b/6bM6enZv_o.png" class="image-label">
+									<div>
+										
 									</div>
-								</button>
+								</div>
 							</div>
+							<hr style="flex: unset; margin: -2rem 0rem;" class="flat">
+						</div>
+						<hr style="flex: 0;" class="flat">
+					</div>
+                    <hr style="flex: 0;" class="flat">
+
+                    <div class="col-group" style="justify-content: center; gap: 1rem; margin: 2rem;">
+                        <p style="text-align: center;">Ingin mencari addons yang masih belum selesai?</p>
+                        <div class="row-group" style="margin: 0rem auto;">
+                            <a class="button-main" href="/wip" target="_parent"><p>Lihat WIP</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
+                        </div>
+                    </div>
+
+                    <hr style="flex: 0;" class="flat">
+
+					<div class="col-group" style="justify-content: center; gap: 1rem; margin: 2rem;">
+						<p style="text-align: center;">Dukung kami dengan donasi supaya kami dapat membuat addons gratis lainnya!</p>
+						<div class="row-group" style="margin: 0rem auto;">
+							<a class="button-main" href="https://saweria.co/aacreation" target="_parent"><p>Saweria</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
+							<a class="button-main" style="--hover-bg: rgb(172, 0, 0);"><p>Trakteer</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
 						</div>
 					</div>
-					<div class="drop-menu">
-						<button class="transparent drop-menu-button" onclick="location.assign('/addons');">Addons <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">north_east</span></button>
-						<div class="drop-menu-container">
-							<div id="addonsHeaderButtons"></div>
-							<div class="footer">
-								<button onclick="location.assign('/addons');" class="no-stroke" style="flex: 1;">
-									<div class="dmc-btn-container">
-										<h1>More <span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_right</span></h1>
-										<p>More Addons that we released</p>
-									</div>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="header-menu">
-				<button onclick="location.assign('/addons');">Addons</button>
-				<button onclick="location.assign('/wip');">WIPs</button>
-				<button>About</button>
-			</div>
-			<div class="content">
-				<div class="hero">
-					<img style="position: absolute; left: 0px; top: 0px; width: 100%; height: calc(100%); object-fit: cover; z-index: 2; opacity: 0;" src></img>
-					<div style="position: absolute; left: 0px; bottom: 0px; margin: 3em; width: fit-content; height: fit-content;">
-						<p style="font-size: 14px; color: white;">*These image is pre-rendered and may not look like this</p>
-					</div>
-					<div id="customElementContainer" style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 1; opacity: 0;"></div>
-					<p id="heroLabel" style="position: absolute; right: 3rem; bottom: 3rem; z-index: 3; font-style: italic;"></p>
-					<h1 class="hero-text" style="z-index: 3;"><accentcolor>A</accentcolor>DDONS</h1>
-					<div id="blend"></div>
-				</div>
-				<div class="main-content">
-					<div class="section">
-						<h1 style="align-self: center;">FEATURED</h1>
-						<div class="card-group">
-							<div class="container" id="featured_odon_list">
-								<div class="card">
-									<img class="thumb" src="/assets/media/images/blender render 332.png"></img>
-									<div class="content">
-										<div class="texts">
-											<h1>TEMPLATE TEMPLATE TEMPLATE</h1>
-											<p>Template</p>
-										</div>
-										<button class="circle semi-opaque" disabled><span class="material-symbols-rounded" style="font-size: 14px;" translate="no">download</span></button>
-									</div>
-								</div>
-								<div class="card">
-									<img class="thumb" src="/assets/media/images/blender render 333.png"></img>
-									<div class="content">
-										<div class="texts">
-											<h1>TEMPLATE TEMPLATE TEMPLATE</h1>
-											<p>Template</p>
-										</div>
-										<button class="circle semi-opaque" disabled><span class="material-symbols-rounded" style="font-size: 14px;" translate="no">download</span></button>
-									</div>
-								</div>
-								<div class="card">
-									<img class="thumb" src="/assets/media/images/blender render 338.png"></img>
-									<div class="content">
-										<div class="texts">
-											<h1>TEMPLATE TEMPLATE TEMPLATE TEMPE TEMPE</h1>
-											<p>Template tempe tempe tempe tempe tempe</p>
-										</div>
-										<button class="circle semi-opaque" disabled><span class="material-symbols-rounded" style="font-size: 14px;" translate="no">download</span></button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="section">
-						<h1 style="align-self: center;">Addons List</h1>
-						<div class="list-fancy" id="odon_list">
-							<div class="list-item">
-								<div class="lside">
-									<img src="/assets/media/images/noimage.jpg" class="thumb"></img>
-									<div class="button-group">
-										<button class="square aspect-free download-btn" title="Download" disabled><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">download</span></button>
-										<button class="square aspect-free page-btn" title="Open page"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">open_in_new</span></button>
-									</div>
-								</div>
-								<div class="data">
-									<h1 class="title">Template text <span class="status">Freeware</span></h1>
-									<div class="credits">
-										<span>KLab</span>
-									</div>
-									<p class="desc">Ini hanyalah template</p>
-									<label class="page-toggle">
-										<input type="checkbox" class="checkbox" checked/>
-										<div class="button">
-											<span class="on">Pros</span>
-											<span class="off">Cons</span>
-										</div>
-										<div class="tab-content on">
-											<ul>
-												<li>Full content ACC</li>
-												<li>Update script</li>
-											</ul>
-										</div>
-										<div class="tab-content off">
-											<ul>
-												<li>Lawas</li>
-												<li>Update script</li>
-											</ul>
-										</div>
-									</label>
-									<ul class="note">
-										<li>Ini hanyalah fiksi</li>
-									</ul>
-								</div>
-							</div>
-							<div class="list-item">
-								<div class="lside">
-									<div class="image-slideshow thumb">
-										<div class="images">
-											<img src="https://images2.imgbox.com/84/7d/keXJ51Pl_o.jpg"></img>
-										</div>
-										<div class="ui-controls">
-											<div class="nav-arrow">
-												<button><span class="material-symbols-rounded mat4" translate="no">arrow_left</span></button>
-												<button><span class="material-symbols-rounded mat4" translate="no">arrow_right</span></button>
+						
+					<hr style="flex: 0;" class="flat">
+
+					<footer class="col-group">
+						<hr style="flex: 0;" class="flat">
+						<div class="row-group gray-triangle-bg" style="max-width: 1280px; width: 100%; margin: 0rem auto; gap: 0rem;">
+							<hr style="flex: unset; margin: -2rem 0rem;" class="flat">
+							<div class="content col-group">
+								<div class="row-group" style="width: 100%; gap: var(--global-gap);">
+									<div class="row-group" style="align-items: unset; gap: var(--global-gap); justify-content: space-between; flex: 1;">
+										<a href="/" style="height: fit-content;"><img class="logo" height="64" style="filter: invert(1);" src="/assets/media/images/logo.svg" alt="DR11 Addons Logo"></a>
+										<div class="gray-triangle-bg" style="flex: 1; border-radius: 1rem 2rem; opacity: .25;"></div>
+										<div class="row-group" style="gap: var(--global-gap);">
+											<div class="col-group">
+												<b>DR11 Addons</b>
+												<div class="link-button"><a href="/">Home</a></div>
+												<div class="link-button"><a href="/addons">Addons</a></div>
+												<div class="link-button"><a href="/wip">WIPs</a></div>
+												<div class="link-button"><a href="/about">About</a></div>
+											</div>
+											<div class="col-group">
+												<b>Addons</b>
+												<div class="col-group" id="m_footer_addonsList">
+												</div>
+											</div>
+											<div class="col-group">
+												<b>WIPs</b>
+												<div class="col-group" id="m_footer_wipAddonsList">
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="button-group">
-										<button class="square aspect-free download-btn" title="Download"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">download</span></button>
-										<button class="square aspect-free page-btn" title="Open page"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">open_in_new</span></button>
-									</div>
-								</div>
-								<div class="data">
-									<h1 class="title">Template text <span class="status">Freeware</span></h1>
-									<div class="credits">
-										<p>Credits: </p>
-										<span>KLab</span>
-									</div>
-									<p class="desc">Ini hanyalah template</p>
-									<div class="labeled-group">
-										<div class="label">Note</div>
-										<div class="content">
-											<ul>
-												<li>Content</li>
-												<li>Content</li>
-											</ul>
+									<hr style="flex: 0;" class="flat">
+									<div class="row-group" style="gap: var(--global-gap); height: -webkit-fill-available;">
+										<div class="col-group">
+											<b>Dukung kami!</b>
+											<a class="button-main" href="https://saweria.co/aacreation" target="_parent"><p>Saweria</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
+											<a class="button-main" style="--hover-bg: rgb(172, 0, 0);"><p>Trakteer</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
 										</div>
 									</div>
 								</div>
+								<div class="row-group" style="width: 100%; gap: 1rem;">
+									<p style="font-size: smaller; margin: 0rem auto;">Halaman dibuat dengan ❤ oleh pengembang DR11</p>
+								</div>
 							</div>
+							<hr style="flex: unset; margin: -2rem 0rem;" class="flat">
 						</div>
-					</div>
-					
-					<div class="section">
-						<span style="align-self: center; text-align: center; opacity: 0.5;">This website is purposed to share our free Trainz assets<br>Donation is closed for now</span>
-					</div>
+						<hr style="flex: 0;" class="flat">
+					</footer>
 				</div>
-				
-				<div class="main-footer">
-					<div class="site-logo">
-						<img src="/assets/media/images/logo.png" width="160"></img>
-					</div>
-					<div class="col">
-						<h5 class="col-title">DR11 Addons</h5>
-						<ul class="col-items">
-							<li><a href="/">Home</a></li>
-							<li><a href="/addons">Addons</a></li>
-							<li><a href="/wip">WIP Addons</a></li>
-							<li><a>About</a></li>
-						</ul>
-					</div>
-					<div class="col">
-						<h5 class="col-title">Addons</h5>
-						<ul class="col-items">
-							<li><a href="/pages/jb3.6">Jetbus Aio 3.6</a></li>
-							<li><a href="/pages/shd4.0">Jetbus SHD Series 4.0</a></li>
-							<li><a href="https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-1">Jetbus SHD Series 4.1b</a></li>
-						</ul>
-					</div>
-					<div class="col">
-						<h5 class="col-title">WIPs</h5>
-						<ul class="col-items">
-							<li><a href="/pages/shd4.2">SHD Series 4.2</a></li>
-							<li><a href="/pages/shd5">SHD Series V5 SE</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			</main>
 		</div>
 
-		<div class="loadingscr">
-			<div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: fit-content; height: fit-content; margin: auto; display: flex; flex-direction: column; gap: 2em;">
-				<img style="width: max-content; height: max-content; max-width: 100%; max-height: 100%; padding: 4em;" src="/assets/media/images/logo.png" height="76"></img>
-			</div>
-		</div>
-
-		<script>
-			const hero_imgs = [
-				{ src: "/assets/media/images/addons_hero/blender render 352.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
-				// { src: "/assets/media/images/blender render 332.png", bg: {top: "rgb(0 49 107)", bottom: "rgb(15 150 221)"}, accentColor: "rgb(29 115 255)" },
-				// { src: "/assets/media/images/blender render 333.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				// { src: "/assets/media/images/blender render 334.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				// { src: "/assets/media/images/blender render 335.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				{ src: "/assets/media/images/v5/blender render 456.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 457.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 458.png", bg: {top: "rgb(0 59 38)", bottom: "rgb(0 102 65)"}, accentColor: "rgb(0 142 90)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				// { src: "/assets/media/images/blender render 338.png", bg: {top: "rgb(71 0 107)", bottom: "rgb(142 15 221)"}, accentColor: "rgb(157 0 255)" },
-				// { src: "/assets/media/images/blender render 339.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
-				// { src: "/assets/media/images/blender render 340.png", bg: {top: "rgb(52 0 46)", bottom: "rgb(102 0 90)"}, accentColor: "rgb(130 0 114)" },
-				{ src: "/assets/media/images/v5/blender render 444.png", bg: {top: "rgb(154 42 31)", bottom: "rgb(171 43 31)"}, accentColor: "rgb(254 81 0)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 445.png", bg: {top: "rgb(154 42 31)", bottom: "rgb(171 43 31)"}, accentColor: "rgb(254 81 0)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 446.png", bg: {top: "rgb(154 42 31)", bottom: "rgb(171 43 31)"}, accentColor: "rgb(254 81 0)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 447.png", bg: {top: "rgb(0 133 255)", bottom: "rgb(0 63 121)"}, accentColor: "rgb(0 133 255)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 448.png", bg: {top: "rgb(0 133 255)", bottom: "rgb(0 63 121)"}, accentColor: "rgb(0 133 255)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 449.png", bg: {top: "rgb(0 133 255)", bottom: "rgb(0 63 121)"}, accentColor: "rgb(0 133 255)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 450.png", bg: {top: "rgb(1 254 185)", bottom: "rgb(28 78 64)"}, accentColor: "rgb(1 254 185)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 451.png", bg: {top: "rgb(1 254 185)", bottom: "rgb(28 78 64)"}, accentColor: "rgb(1 254 185)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 452.png", bg: {top: "rgb(1 254 185)", bottom: "rgb(28 78 64)"}, accentColor: "rgb(1 254 185)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 453.png", bg: {top: "rgb(255 0 158)", bottom: "rgb(123 0 76)"}, accentColor: "rgb(255 0 158)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 454.png", bg: {top: "rgb(255 0 158)", bottom: "rgb(123 0 76)"}, accentColor: "rgb(255 0 158)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 455.png", bg: {top: "rgb(255 0 158)", bottom: "rgb(123 0 76)"}, accentColor: "rgb(255 0 158)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-
-				{ src: "/assets/media/images/v5/blender render 459.png", bg: {top: "rgb(31 148 255)", bottom: "rgb(34 115 205)"}, accentColor: "rgb(31 148 255)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 460.png", bg: {top: "rgb(31 148 255)", bottom: "rgb(34 115 205)"}, accentColor: "rgb(31 148 255)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 461.png", bg: {top: "rgb(31 148 255)", bottom: "rgb(34 115 205)"}, accentColor: "rgb(31 148 255)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 462.png", bg: {top: "rgb(156 114 102)", bottom: "rgb(97 79 74)"}, accentColor: "rgb(156 114 102)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 463.png", bg: {top: "rgb(156 114 102)", bottom: "rgb(97 79 74)"}, accentColor: "rgb(156 114 102)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 464.png", bg: {top: "rgb(156 114 102)", bottom: "rgb(97 79 74)"}, accentColor: "rgb(156 114 102)", label: "SHD5 Series - Jetbus 5 appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 465.png", bg: {top: "rgb(246 140 5)", bottom: "rgb(148 87 19)"}, accentColor: "rgb(246 140 5)", label: "SHD5 Series - Jetbus 3 3rd Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 466.png", bg: {top: "rgb(246 140 5)", bottom: "rgb(148 87 19)"}, accentColor: "rgb(246 140 5)", label: "SHD5 Series - Jetbus 3 3rd Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 467.png", bg: {top: "rgb(246 140 5)", bottom: "rgb(148 87 19)"}, accentColor: "rgb(246 140 5)", label: "SHD5 Series - Jetbus 3 3rd Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 471.png", bg: {top: "rgb(175 255 5)", bottom: "rgb(149 213 27)"}, accentColor: "rgb(175 255 5)", label: "SHD5 Series - Jetbus 3 2nd Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 472.png", bg: {top: "rgb(175 255 5)", bottom: "rgb(149 213 27)"}, accentColor: "rgb(175 255 5)", label: "SHD5 Series - Jetbus 3 2nd Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 473.png", bg: {top: "rgb(175 255 5)", bottom: "rgb(149 213 27)"}, accentColor: "rgb(175 255 5)", label: "SHD5 Series - Jetbus 3 2nd Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 474.png", bg: {top: "rgb(241 30 6)", bottom: "rgb(183 26 6)"}, accentColor: "rgb(241 30 6)", label: "SHD5 Series - Jetbus 3 1st Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 475.png", bg: {top: "rgb(241 30 6)", bottom: "rgb(183 26 6)"}, accentColor: "rgb(241 30 6)", label: "SHD5 Series - Jetbus 3 1st Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/blender render 476.png", bg: {top: "rgb(241 30 6)", bottom: "rgb(183 26 6)"}, accentColor: "rgb(241 30 6)", label: "SHD5 Series - Jetbus 3 1st Generation appearance", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-
-				{ src: "/assets/media/images/v5/t0.png", bg: {top: "rgb(255 0 158)", bottom: "rgb(123 0 76)"}, accentColor: "rgb(255 0 158)", label: "Dashboard view of Jetbus 3", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 3", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-				{ src: "/assets/media/images/v5/t1.png", bg: {top: "rgb(255 0 158)", bottom: "rgb(123 0 76)"}, accentColor: "rgb(255 0 158)", label: "Dashboard view of Jetbus 5", elements: [
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-					// { type: "text", position: [2, 29], size: [96, -1], font: {size: 19, align: "center", color: "white"}, anchor: [0, 0], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [2, 0], size: [96, -1], font: {size: 19, align: "center"}, anchor: [0, 1], weight: 800, text: "JETBUS 5", outline: { width: .25, color: "rgb(255 255 255 / .5)" } },
-				] },
-
-				{ src: "/assets/media/images/!C6 recreated 8.png", bg: {top: "rgb(24 24 24)", bottom: "rgb(32 32 32)"}, accentColor: "rgb(255 133 21)", label: "Upcoming CC 206 Locomotive", elements: [
-					{ type: "text", position: [5, 5], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 15], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 25], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-				] },
-				{ src: "/assets/media/images/blender render 548.png", bg: {top: "rgb(24 24 24)", bottom: "rgb(32 32 32)"}, accentColor: "rgb(255 133 21)", label: "Upcoming CC 206 Locomotive", elements: [
-					{ type: "text", position: [5, 5], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 15], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 25], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-				] },
-				{ src: "/assets/media/images/blender render 549.png", bg: {top: "rgb(24 24 24)", bottom: "rgb(32 32 32)"}, accentColor: "rgb(255 133 21)", label: "Upcoming CC 206 Locomotive", elements: [
-					{ type: "text", position: [5, 5], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 15], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 25], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-				] },
-				{ src: "/assets/media/images/blender render 550.png", bg: {top: "rgb(24 24 24)", bottom: "rgb(32 32 32)"}, accentColor: "rgb(255 133 21)", label: "Upcoming CC 206 Locomotive", elements: [
-					{ type: "text", position: [5, 5], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-					{ type: "text", position: [5, 15], positionUnits: ["vw", "vw"], font: {size: 12.2}, anchor: [0, 0], weight: 800, text: "COMING SOON", outline: { width: .25, color: "white" } },
-				] },
+        <script>
+			const urlq = new URLSearchParams(location.search);
+			console.log(urlq.get("openbeta"));
+			if (!Boolean(urlq.get("openbeta"))) {
+				alert("Page still in development");
+			}
+            var __pause_background_on_zero = true;
+			var __banner_image_list = [
+			{ imageSrc: "/assets/media/images/blender render 419.png", duration: 10, title: "SHD 5", desc: "Versi ke 5 dari SHD Series, mencangkup interior dan eksterior yang lebih detail.", viewMoreUrl: "/pages/shd5/" },
+                { imageSrc: "/assets/media/images/shd42_4.png", duration: 10, title: "SHD 4.2", desc: "Versi ke 4.2 dari SHD Series, dari pembaruan skrip, aksesoris hingga modul basuri.", viewMoreUrl: "/pages/shd4.2/" },
+                { imageSrc: "/assets/media/images/shd41.jpg", duration: 10, title: "SHD 4", desc: "Versi ke 4 dari SHD Series, penambahan aksesoris dan pembaruan interior yang lebih detail.", viewMoreUrl: "/pages/shd4.0/" },
 			];
-			const page_odon = "addons";
-		</script>
-		<script src="/assets/scripts/header.js"></script>
-		<script src="/assets/scripts/script.js"></script>
-		<script src="/assets/scripts/odon.js"></script>
+        </script>
+        <script src="/assets/scripts/background_v2.js"></script>
+        <script src="/assets/scripts/index_script.js"></script>
+        <script src="/assets/scripts/header_v2.js"></script>
 	</body>
 </html>
