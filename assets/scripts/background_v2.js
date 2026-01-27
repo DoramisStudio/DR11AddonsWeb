@@ -2,7 +2,7 @@ const bg_canvas = document.getElementById("cvs_bg");
 const bg_ctx = bg_canvas.getContext("2d");
 const __scene_root = bg_canvas;
 const bg_imgs = [
-    { name: "tpk", image: "/assets/media/images/icon/tpk.png" }
+    { name: "tpk", image: "/assets/media/images/icon/mitsubishi.png" }
 ];
 const bg_scene = [];
 const tpk_particles = [];
@@ -102,7 +102,7 @@ function sceneLoop() {
             v.__size.x = innerHeight/8 * v.__properties.speed_mod;
             v.__size.y = innerHeight/8 * v.__properties.speed_mod;
     
-            if (v.__position.x < -128 || v.__position.y > innerHeight+128) {
+            if (v.__position.x < -256 || v.__position.y > innerHeight+256) {
                 bg_scene.splice(bg_scene.findIndex(p => p.__id == v.__id), 1);
                 tpk_particles.splice(tpk_particles.findIndex(p => p.__id == v.__id), 1);
             }
@@ -113,8 +113,8 @@ function sceneLoop() {
     
         if (chooseRandom(1)) {
             const spawnpos = Math.random();
-            const img = addImage(bg_imgs[0], [Math.min(innerWidth*(spawnpos*2), innerWidth) + 128, Math.max(innerHeight*(spawnpos*2)-(innerHeight),0) - 128], [128,128], Math.random()*360, .1);
-            img.__properties.speed_mod = 0.5+Math.random()*0.5;
+            const img = addImage(bg_imgs[0], [Math.min(innerWidth*(spawnpos*2), innerWidth) + 256, Math.max(innerHeight*(spawnpos*2)-(innerHeight),0) - 256], [256,256], Math.random()*360, .1);
+            img.__properties.speed_mod = 0.5+Math.random()*2;
             tpk_particles.push(img);
         }
     }

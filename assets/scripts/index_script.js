@@ -4,6 +4,7 @@ const heroContents = __banner_image_list || [
     { imageSrc: "/assets/media/images/shd41.jpg", duration: 10, title: "SHD 4", desc: "Versi ke 4 dari SHD Series, penambahan aksesoris dan pembaruan interior yang lebih detail.", viewMoreUrl: "/pages/shd4.0/" },
 ];
 var heroIdx = 0;
+const heroC = document.querySelector("div.hero-container");
 const heroImg = document.querySelector("img.hero-image");
 const slideshowBtnContainer = document.querySelector("div.slideshow-nav");
 var heroAnimTemp = null;
@@ -30,6 +31,9 @@ function setSlideshowPoint(index) {
 
     if (document.getElementById("heroTitle")) heroTitle.textContent = selected.title;
     if (document.getElementById("heroDesc")) heroDesc.textContent = selected.desc;
+    if (!selected.viewMoreUrl) document.getElementById("heroOpenLink").classList.add("hidden");
+    else document.getElementById("heroOpenLink").classList.remove("hidden");
+    // document.getElementById("heroOpenLink").textContent = selected.viewMoreUrl ? "View Addon" : "Unavailable";
 
     if (!heroImg.naturalWidth) {
         anime.set(heroImg, { opacity: 0 });
@@ -86,6 +90,7 @@ function initHeroSlideshow() {
             duration: 1000,
             easing: "easeOutCubic"
         });
+        heroC.style.background = heroContents[heroIdx].background || "black";
     };
     anime.set(heroImg, { opacity: 0 });
     setSlideshowPoint(0);

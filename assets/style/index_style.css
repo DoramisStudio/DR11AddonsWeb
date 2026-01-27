@@ -143,6 +143,9 @@ button.link-button {
 
     overflow: hidden;
 }
+.button-main.hidden {
+    display: none;
+}
 .button-main::before {
     content: '';
     position: absolute;
