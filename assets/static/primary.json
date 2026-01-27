@@ -1,0 +1,14 @@
+{
+    "main_logo": {
+        "normal": {
+            "png": "/assets/media/images/primary/logo_new.png",
+            "svg": "/assets/media/images/primary/logo.svg"
+        }
+    },
+    "main_logo_accessory": {
+        "normal": {
+            "png": "/assets/media/images/primary/logo_christmas_accessory.png"
+        },
+        "show": false
+    }
+}

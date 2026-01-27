@@ -8,8 +8,8 @@ const bg_scene = [];
 const tpk_particles = [];
 var __pause_background = false;
 
-bg_canvas.width = innerWidth;
-bg_canvas.height = innerHeight;
+bg_canvas.width = document.querySelector("div.screen").clientWidth;
+bg_canvas.height = document.querySelector("div.screen").clientHeight;
 
 async function loadImage(img) {
     return new Promise(res => {
@@ -93,7 +93,7 @@ function sceneLoop() {
         bg_ctx.fillStyle = "#ffffff";
         bg_ctx.fillRect(0,0,__scene_root.width,__scene_root.height);
         
-        const screenScale = Math.min(innerWidth, innerHeight) / 640; // 800 is your base/reference screen size
+        const screenScale = Math.min(document.querySelector("div.screen").clientWidth, document.querySelector("div.screen").clientHeight) / 640; // 800 is your base/reference screen size
     
         tpk_particles.forEach(v => {
             v.__position.x -= (tdiff / 25) * screenScale * v.__properties.speed_mod;
@@ -136,6 +136,6 @@ function sceneLoop() {
 })();
 
 window.onresize = _ => {
-    bg_canvas.width = innerWidth;
-    bg_canvas.height = innerHeight;
+    bg_canvas.width = document.querySelector("div.screen").clientWidth;
+    bg_canvas.height = document.querySelector("div.screen").clientHeight;
 };
