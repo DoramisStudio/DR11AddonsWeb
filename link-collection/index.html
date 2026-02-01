@@ -19,6 +19,10 @@
                 font-family: "Rubik", sans-serif;
             }
 
+            ::-webkit-scrollbar {
+                width: 0px;
+            }
+
             body {
                 margin: 4rem;
                 padding: unset;
@@ -83,8 +87,9 @@
                 flex-direction: column;
                 gap: 1rem;
 
-                .menus {
-                    position: relative;
+                .tab-buttons {
+                    position: sticky;
+                    top: 1rem;
                     margin: auto;
                     width: fit-content;
                     display: flex;
@@ -92,7 +97,8 @@
                     flex-wrap: wrap;
                     gap: 0.5rem;
                     padding: 0.75rem;
-                    background: rgb(16 16 16);
+                    background: rgb(16 16 16 / 0.75);
+                    backdrop-filter: blur(20px);
                     border: 1px solid rgb(32 32 32);
                     border-radius: 28px;
                     z-index: 1;
@@ -102,6 +108,22 @@
                         justify-content: center;
                         min-width: 120px;
                         flex: 1;
+                        outline: unset;
+                    }
+                }
+
+                .tab-pages {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    
+                    .page {
+                        display: none;
+                    }
+                    .page.active {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
                     }
                 }
 
@@ -113,7 +135,7 @@
                 }
                 .grid > div {
                     position: relative;
-                    padding: 2rem;
+                    padding: 2rem 0rem;
                     border: 1px solid rgb(48 48 48);
                     border-radius: 16px;
                     height: 420px;
@@ -137,10 +159,12 @@
                         opacity: 0.5;
                         z-index: -1;
                         object-fit: cover;
+                        transition: 0.5s;
                     }
 
                     h2 {
                         flex: 1;
+                        margin: 0rem 2rem;
                     }
 
                     .desc {
@@ -148,9 +172,11 @@
                         flex-direction: column;
                         justify-content: center;
                         gap: 1rem;
+                        padding: 0rem 2rem;
                         line-height: 140%;
                         transform: translateY(2rem);
-                        transition: transform 0.5s cubic-bezier(.6,0,.3,1);
+                        transition: padding 0.5s cubic-bezier(.6,0,.3,1);
+                        background-image: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 0.75) 100%);
 
                         h3 {
                             opacity: 0.5;
@@ -207,7 +233,8 @@
                     box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 25%);
 
                     .desc {
-                        transform: translateY(0rem);
+                        padding-bottom: 2rem;
+                        /* transform: translateY(0rem); */
                         a {
                             opacity: 1;
                         }
@@ -215,6 +242,10 @@
 
                             width: 100%;
                         }
+                    }
+
+                    img {
+                        opacity: 1;
                     }
                 }
                 .grid > div.hide-more {
@@ -226,13 +257,25 @@
                 .grid.more > div.hide-at-more {
                     display: none;
                 }
+                
+                .grid > div.nofill-image {
+                    img {
+                        object-fit: unset;
+                        padding: 0%;
+                        width: fit-content;
+                        max-width: 100%;
+                        object-fit: cover;
+                        margin: 0px auto;
+                    }
+                }
             }
 
             button {
-                background: rgb(24 24 24);
+                position: relative;
+                background: transparent;
                 border: 1px solid rgb(64 64 64);
-                outline: 16px solid transparent;
-                outline-offset: -1px;
+                /* outline: 16px solid transparent;
+                outline-offset: -1px; */
                 box-shadow: 0px 4px 8px 0px rgb(0 0 0 / 15%);
                 color: white;
                 padding: 0.5rem 0.8rem;
@@ -243,6 +286,8 @@
                 align-items: center;
                 gap: 0.5rem;
                 cursor: pointer;
+                overflow: hidden;
+                z-index: 0;
                 transition: 0.1s, outline .2s ease-out;
             }
             button:hover {
@@ -250,10 +295,26 @@
                 border-color: rgb(128 128 128);
                 box-shadow: 0px 0px 24px 0px rgb(255 255 255 / 10%);
             }
+            button::before {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: -1rem;
+                right: 100%;
+                bottom: 0px;
+                border-radius: 1rem;
+                background: white;
+                transition: 0.1s linear;
+                z-index: -1;
+            }
             button.selected {
                 border-color: rgb(128 128 128);
-                outline-width: 1px;
-                outline-color: rgb(128 128 128);
+                color: black;
+                /* outline-width: 1px;
+                outline-color: rgb(128 128 128); */
+            }
+            button.selected::before {
+                right: 0%;
             }
 
 
@@ -352,9 +413,23 @@
                     opacity: .25;
                 }
             }
+
+            .bg-top {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0.1;
+            }
         </style>
     </head>
     <body>
+        <img class="bg-top" src="https://i.idol.st/u/sif2/card/art/566UR-Emma-Verde-Pure-%E3%83%91%E3%83%B3%E3%81%AA%E3%82%89%E3%81%84%E3%81%8F%E3%82%89%E3%81%A7%E3%82%82-qmGvS6.png">
         <div class="wrapper">
             <div>
                 <button onclick="location.assign('/');"><span class="material-symbols-rounded mat4" style="font-size: 14px;" translate="no">chevron_left</span> Kembali ke halaman utama</button>
@@ -366,476 +441,10 @@
             <p>Tempat penampungan link DR11 Addons selain di pastebin 😅</p>
             <hr>
             <div class="grid-container">
-                <div class="menus">
-                    <button name="sdds" class="selected">SDD Series</button>
-                    <button name="shds">SHD Series</button>
-                    <button name="vehicle">Kendaraan</button>
-                    <button name="char">Karakter</button>
-                    <button name="object">Objek</button>
-                    <button name="other">Lainnya</button>
+                <div class="tab-buttons">
                 </div>
-                <!-- SDD Series -->
-                <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="sdds">
-                    <p>Katalog Addons Bus versi SDD 🔥🔥🔥</p>
-                    <div class="grid" id="sdds_pg">
-                        <div onclick="window.open('https://drive.google.com/file/d/19rLMNQ_wczGOHRsylr-fQ3EekOOuDk5v/view?usp=sharing');">
-                            <img src="https://images2.imgbox.com/95/0e/ZDyDOYgM_o.png"></img>
-                            <h2>SDD.5 Version 1</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 1 dari addon SDD.5 Series</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="">
-                            <img src="https://images2.imgbox.com/39/41/4Far27zH_o.png"></img>
-                            <h2>SDD.5 Version 1 (Scania K450CB)</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 1 dari addon SDD.5 Series</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="tab-pages">
 
-                <!-- SHD Series -->
-                <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="shds">
-                    <p>Katalog Addons Bus versi SHD (All Version) 🔥🔥🔥</p>
-                    <div class="grid" id="shds_pg">
-                        <div onclick="window.open('https://drive.google.com/file/d/1jwLV93XZY8iWMG8oJmJlHsSsGMA2UNKY/view?usp=drive_link');">
-                            <img src="../assets/media/images/link_pack/shd_series/v5_jb3.png"></img>
-                            <h2>Version 5 SE (Jetbus 2/3)</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 2/3</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/file/d/10qJZGpcJJwlYHVDaQJ6L8rilmExvESWm/view?usp=drive_link');">
-                            <img src="../assets/media/images/link_pack/shd_series/v5_jb5.png"></img>
-                            <h2>Version 5 SE (Jetbus 5)</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 5 dari addon SHD Series Single Edition, khusus Jetbus 5</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="shds_pg.classList.add('more');" class="hide-at-more">
-                            <h2></h2>
-                            <div class="desc">
-                                <h3>Grid</h3>
-                                <p>Addons yang lebih lama</p>
-                                <a>Tampilkan</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/drive/folders/132qIQwsYNxtsFdbB6J2lg_17ETH71Rfz?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v42r5.png"></img>
-                            <h2>Version 4.2 revision 5</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.2 revisi 5 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/drive/folders/1m18caKHRRUdqKyKCEPbWNGPuA2YwNoxE?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v42r4.png"></img>
-                            <h2>Version 4.2 revision 4</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.2 revisi 4 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/drive/folders/1q0iaoAWg45AqPBcwoHIOC1uA6l6xFXbe?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v42r3.png"></img>
-                            <h2>Version 4.2 revision 3</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.2 revisi 3 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/drive/folders/1TqmiSPR-EolNEzOguie-4xFHK5oetNWT?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v42r2.jpg"></img>
-                            <h2>Version 4.2 revision 2</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.2 revisi 2 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/file/d/18j-q0jfSYjA7vAQwEoX_DjQwTeidChAW/view?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v42.jpg"></img>
-                            <h2>Version 4.2 revision 1</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.2 revisi 1 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/drive/folders/1KiAPUm1EkUFrK9qm8f6pbOLpjuRUHAbB?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v41.jpg"></img>
-                            <h2>Version 4.1b</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.1b dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/file/d/1YUp4NCwyWxRFFq-anSDfh-G-X1XN_qqc/view?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v4.jpg"></img>
-                            <h2>Version 4.0</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 4.0 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="window.open('https://drive.google.com/file/d/1ScW-T5CMIOLqdUMWjtVLycKNyDfDSgCK/view?usp=drive_link');" class="hide-more">
-                            <img src="../assets/media/images/link_pack/shd_series/v36.jpg"></img>
-                            <h2>SHD Series 3.6 AIO</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Versi 3.6 dari addon SHD Series AIO</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Vehicles -->
-                <div style="display: flex; flex-direction: column; gap: 1rem;" class="selectables" id="vehicle">
-                    <p>Katalog Addons Kendaraan (selain bus)</p>
-                    <div class="grid" id="vehicle_pg">
-                        <div onclick="window.open('https://drive.google.com/file/d/1y1N5xMXQo8ANlHz0MhuDshX_orICUvPl/view?usp=drive_link');">
-                            <img src="https://images2.imgbox.com/66/af/WidHX6wG_o.png"></img>
-                            <h2>Porsche GT3-RS</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Addon mobil Porsche GT3-RS</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                        <div onclick="https://drive.google.com/file/d/1ZOphEavXJ2VyVa1a9gm1d5tBhDlKOQN_/view?usp=drive_link">
-                            <img src="https://images2.imgbox.com/56/2e/SX7lodYk_o.png"></img>
-                            <h2>Porsche Carrera S</h2>
-                            <div class="desc">
-                                <h3>Kendaraan</h3>
-                                <p>Addon mobil Porsche Carrera tipe S</p>
-                                <a>Kunjungi link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Character -->
-                <div class="grid selectables" id="char">
-                    <div onclick="window.open('https://drive.google.com/drive/folders/1kHt5gMtKzlkSirJvq-W7dmbi19YL5TPu?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/doramis11_20230802_0006.jpg"></img>
-                        <h2>SIFAS small collection</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Koleksi kecil dari game School Idol Festival! All Stars!! (SIFAS)</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/drive/folders/1tRBuWcEBQR9LwnLAeMooI8TakyGsdumT?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/maru_riko.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Hanamaru & Riko Love Live!</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Objek karakter Hanamaru & Riko yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/17pg_QeJGgz8vDk42XUmysEJkQjqhK4Pd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/bokura_pt1.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Bokura Wa Ima No Naka De costume part 1</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Koleksi kostum dari game School Idol Festival! All Stars!! (SIFAS)</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1w0Q4rSzGZygOIRmnhdIY2HeY9BuwJ2cj/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/bokura_pt2.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Bokura Wa Ima No Naka De costume part 2</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Koleksi kostum dari game School Idol Festival! All Stars!! (SIFAS)</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1UNB_zmxoBaKU9IOPo1VFfZc-vXR5kstt/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/moona.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>VTuber - Moona Hoshinova</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Objek karakter VTuber, Moona Hoshinova yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1bb5lHWnzMjJBvbBWGot18B6KKG67Jg6V/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/okayu.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>VTuber - Nekomata Okayu</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Objek karakter VTuber, Nekomata Okayu yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1-aa_qjZ73rbQN_NxMJDrOTSvdCxWLPS5/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/kirara.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Genshin Impact - Kirara</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Objek karakter dari Genshin Impact, Kirara yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1PO0zTxofFvDuqpiKk2qjloiG8DINKbwe/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/cappie.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>MiSide - Cappie</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Objek karakter dari MiSide, Cappie yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1OtuDpcwWBemsNqPeNnFsQtjJgPm4HzUd/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/char/mila.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>MiSide - Mila</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>Objek karakter dari MiSide, Mila yang sudah diconvert ke Trainz</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="openMoreLinksDialog('Silence Suzuka', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/1BzF0eugIUAsfD6-lJdZ39FMpVmdbKDPS/view?usp=drive_link' }, { name: 'Pose 2', url: 'https://drive.google.com/file/d/15VTOgapsU1-ZLq2ILAyNvZpHa1AeLzCV/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1CDIzMEf_cGbxQCypI6e8JG5hEVBcAIRa/view?usp=drive_link' } ], 'Daftar pose Silence Suzuka yang tersedia:');">
-                        <img src="https://images2.imgbox.com/7e/91/1ARrPrmu_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Silence Suzuka (3 pose)</h2>
-                        <div class="desc">
-                            <h3>Umamusume / Karakter</h3>
-                            <p>Objek karakter Uma Musume, Silence Suzuka yang sudah diconvert ke Trainz</p>
-                            <a>Buka daftar</a>
-                        </div>
-                    </div>
-                    <div onclick="openMoreLinksDialog('Matikanetannhauser', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/174oy47qoCoKfI7Z_aX3abYypkMHLLMLI/view?usp=drive_link' }, { name: 'Pose 4', url: 'https://drive.google.com/file/d/1sW2tcmOMVblEjKQo6Vml3XqbENowu6b2/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1EzFpHoqDNnnhNbogSJGGscLMirH_dbY7/view?usp=drive_link' } ], 'Daftar pose Matikanetannhauser yang tersedia:');">
-                        <img src="https://images2.imgbox.com/46/6c/dxoyw0yo_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Matikanetannhauser (3 pose)</h2>
-                        <div class="desc">
-                            <h3>Umamusume / Karakter</h3>
-                            <p>Objek karakter Uma Musume, Matikanetannhauser yang sudah diconvert ke Trainz</p>
-                            <a>Buka daftar</a>
-                        </div>
-                    </div>
-                    <div onclick="openMoreLinksDialog('Gold Ship', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/1fc62xFRFMgs_bcl6U7pmNIVPX9x3dPM4/view?usp=drive_link' }, { name: 'Pose 2', url: 'https://drive.google.com/file/d/1Mtkm5pK-uW6_HIH_nuTDdemuAkEjhFxf/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1xPznOo8Ma9iP2ziLPfRDXtgB-mNdGDlr/view?usp=drive_link' } ], 'Daftar pose Gold Ship yang tersedia:');">
-                        <img src="https://images2.imgbox.com/ea/63/EALGpBgR_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Gold Ship (3 pose)</h2>
-                        <div class="desc">
-                            <h3>Umamusume / Karakter</h3>
-                            <p>Objek karakter Uma Musume, Gold Ship yang sudah diconvert ke Trainz</p>
-                            <a>Buka daftar</a>
-                        </div>
-                    </div>
-                    <div onclick="openMoreLinksDialog('Mejiro McQueen', [ { name: 'Pose 1', url: 'https://drive.google.com/file/d/1lbTFDvPys04kdOuHGF975BERokpTFWuS/view?usp=drive_link' }, { name: 'Pose 2', url: 'https://drive.google.com/file/d/1l-4BhTdy3lwJO5I0AiG8Ul9erIyx0aq2/view?usp=drive_link' }, { name: 'Pose 3', url: 'https://drive.google.com/file/d/1zxcZ60SXUeKTiHz0ZvyZzc6MfVwB_VW2/view?usp=drive_link' } ], 'Daftar pose Mejiro McQueen yang tersedia:');">
-                        <img src="https://images2.imgbox.com/6f/6e/txIgG8WM_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Mejiro McQueen (3 pose)</h2>
-                        <div class="desc">
-                            <h3>Umamusume / Karakter</h3>
-                            <p>Objek karakter Uma Musume, Mejiro McQueen yang sudah diconvert ke Trainz</p>
-                            <a>Buka daftar</a>
-                        </div>
-                    </div>
-                    <div onclick="openMoreLinksDialog('Special Week', [ { name: 'Pose 1', url: '' }, { name: 'Pose 2', url: '' }, { name: 'Pose 3', url: '' } ], 'Daftar pose Special Week yang tersedia:');">
-                        <img src="https://images2.imgbox.com/ff/fb/mfcwpzPk_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Special Week (3 pose)</h2>
-                        <div class="desc">
-                            <h3>Umamusume / Karakter</h3>
-                            <p>Objek karakter Uma Musume, Special Week yang sudah diconvert ke Trainz</p>
-                            <a>Buka daftar</a>
-                        </div>
-                    </div>
-                    <div onclick="openMoreLinksDialog('Tokai Teio', [ { name: 'Pose 1', url: '' }, { name: 'Pose 2', url: '' }, { name: 'Pose 3', url: '' } ], 'Daftar pose Tokai Teio yang tersedia:');">
-                        <img src="https://images2.imgbox.com/dd/74/mLLpDi9o_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Tokai Teio (3 pose)</h2>
-                        <div class="desc">
-                            <h3>Umamusume / Karakter</h3>
-                            <p>Objek karakter Uma Musume, Tokai Teio yang sudah diconvert ke Trainz</p>
-                            <a>Buka daftar</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1vXWGlFxRwbl45Y6uObYPHmqeflWXhs_N/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/45/e6/xAjbngpt_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Special Week (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Special Week!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1fIxlq4w1D1fLF7K8eDCKbsY4tyTHx1SE/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/8f/73/EX5vHM6R_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Tokai Teio (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Tokai Teio!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1TKm8bR88-lbNyzIsiM8ilkKeKAFzsaz9/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/5e/ce/UYJnp93x_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Maruzensky (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Maruzensky!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1TDQnhCnq7hiUSXfEwJEsWHe2TPpA-koU/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/d1/c1/njW0zM7C_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Gold Ship (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Gold Ship!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1zsGVwjW9Q9YO3p2IdlVePAhTnKb6i_lW/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/dd/0a/ctYWX8T8_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Grass Wonder (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Grass Wonder!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/19DevmNLU3EHGPfCvVYOcG-cRx0q9cgEv/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/0f/05/jcbSGBFo_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Mejiro McQueen (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Mejiro McQueen!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1tEzoOvCQCXdF-fZpezjuxU5xhbMVhA1e/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/7b/2b/nxELCPVY_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>El Condor Pasa (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, El Condor Pasa!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1UrKC186CY9DlBTZWGp844sRf40-8wfo8/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/ae/c1/tv6innHr_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Symboli Rudolf (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Symboli Rudolf!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1yuO-lodVITvFLixxG48m_i7r485CVX9S/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/c9/47/BG4MCN4B_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Manhattan Cafe (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Manhattan Cafe!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1MkhMCNrro5GmgBvIO5uOfdAE-bENjxIY/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/3b/24/VoqxOxa2_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Agnes Tachyon (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Agnes Tachyon!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1b2vvVOePsdH-KOzDR_s_LPmXvpnKIFfS/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/c5/df/m0olSSVJ_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Super Creek (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Super Creek!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1n0RaW2Zjp7wZs8lTxpG3Il4pde_z-Vez/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/22/2d/f8KzPKnc_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Haru Urara (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Haru Urara!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1ldfvuX25-DWYCZ7FMhOXndUzfgkxqZ1T/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/46/c3/QB70IS3z_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>King Halo (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, King Halo!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1Ele6ftCDok8PrkRwJAYm7V1Uhgpxe2gJ/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/ad/cb/YREHnEWU_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Still In Love (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Still In Love!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/18dhXfRNWHXP1k6WkAxF0jDF9_cNqVdLK/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/0a/d0/ejG51g0O_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Rhein Kraft (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Rhein Kraft!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                    <div onclick="window.open('https://drive.google.com/file/d/1dA8NST9jtr9lar2mbWqjZkVcJ-PejCBv/view?usp=drive_link');">
-                        <img src="https://images2.imgbox.com/d2/21/VUpxHgiQ_o.png" style="object-fit: unset; padding: 0%; width: fit-content; max-width: 100%; object-fit: cover; margin: 0px auto;"></img>
-                        <h2>Fusaichi Pandora (New Model)</h2>
-                        <div class="desc">
-                            <h3>Karakter</h3>
-                            <p>A character from Umamusume: Pretty Derby, Fusaichi Pandora!</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Object -->
-                <div class="grid selectables" id="object">
-                    <div onclick="window.open('https://drive.google.com/file/d/14QVQOjkJsLpP3Afqa2CJ96uSMXmjhJBZ/view?usp=drive_link');">
-                        <img src="../assets/media/images/link_pack/object/omah.jpg"></img>
-                        <h2>Rumah pack</h2>
-                        <div class="desc">
-                            <h3>Objek</h3>
-                            <p>Kumpulan rumah-rumah yang dibuat oleh DR11 Addons</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other -->
-                <div class="grid selectables" id="other">
-                    <div onclick="window.open('../pages/shd5/');">
-                        <img src="../assets/media/images/link_pack/other/v5.jpg"></img>
-                        <h2>Paket livery V5</h2>
-                        <div class="desc">
-                            <h3>Kendaraan</h3>
-                            <p>Paket livery yang dapat digunakan pada SHD Series V5</p>
-                            <a>Kunjungi link</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -844,50 +453,38 @@
             <div class="bbox"></div>
             <div class="dialog-content">
                 <div>
-                    <p>Daftar Link / <b id="dialog_linkListTitle">Matikanetannhauser</b></p>
+                    <p>Daftar Link / <b id="dialog_linkListTitle"></b></p>
                 </div>
                 <hr class="w">
-                <p id="dialog_linkListDesc">Anda dapat memilih salah satu dari link berikut</p>
+                <p id="dialog_linkListDesc"></p>
                 <div class="link-list" id="dialog_linkListList">
-                    <a class="item">
-                        <p class="underline-hover">Matikanetannhauser</p>
-                        <p class="overflow link-small">https://blablabla.ble/umamusume</p>
-                    </a>
-                    <a class="item">
-                        <p class="underline-hover">Silence Suzuka</p>
-                        <p class="overflow link-small">https://blablabla.ble/umamusume</p>
-                    </a>
-                    <a class="item">
-                        <p class="underline-hover">Silence Suzuka</p>
-                        <p class="overflow link-small">https://blablabla.ble/umamusume</p>
-                    </a>
                 </div>
             </div>
         </div>
 
         <script>
-            Array.from(document.querySelector(".menus").children).forEach((e, i) => {
-                if (e.classList.contains("selected")) {
-                    document.querySelectorAll(".selectables")[i].style.display = "flex";
-                }
-                else {
-                    document.querySelectorAll(".selectables")[i].style.display = "none";
-                }
-                e.onclick = _ => {
-                    const att = e.getAttribute("name");
-                    Array.from(document.querySelectorAll(".selectables")).forEach(f => {
-                        if (f.id == att) {
-                            f.style.display = "flex";
-                            e.classList.add("selected");
-                        }
-                        else {
-                            f.style.display = "none";
-                            Array.from(document.querySelector(".menus").children).filter(p => p.getAttribute("name") != att).forEach(g => {
-                                g.classList.remove("selected");
-                            });
-                        }
-                    });
-                };
+            Array.from(document.querySelector(".tab-buttons").children).forEach((e, i) => {
+                // if (e.classList.contains("selected")) {
+                //     document.querySelectorAll(".selectables")[i].style.display = "flex";
+                // }
+                // else {
+                //     document.querySelectorAll(".selectables")[i].style.display = "none";
+                // }
+                // e.onclick = _ => {
+                //     const att = e.getAttribute("name");
+                //     Array.from(document.querySelectorAll(".selectables")).forEach(f => {
+                //         if (f.id == att) {
+                //             f.style.display = "flex";
+                //             e.classList.add("selected");
+                //         }
+                //         else {
+                //             f.style.display = "none";
+                //             Array.from(document.querySelector(".tab-buttons").children).filter(p => p.getAttribute("name") != att).forEach(g => {
+                //                 g.classList.remove("selected");
+                //             });
+                //         }
+                //     });
+                // };
             });
 
             function prepareDialog(dialog, hideOnOffsideTouch = true) {
@@ -972,16 +569,11 @@
                     dialog_linkListList.appendChild(container);
                 });
             }
-
-            if (sessionStorage.getItem("dr11k")) {
-                if (sessionStorage.getItem("dr11k") != "bGluay1jb2xsZWN0aW9ud2hhdHNhcHA=") location.replace("/");
-            }
-            else location.replace("/");
-            sessionStorage.removeItem("dr11k");
         </script>
+        <script type="module" src="/assets/scripts/lnk_v2.mjs"></script>
     </body>
 </html>
 <!--
     What things should be updated:
-    - Get catalog/categories from Database.
+    [done] - Get catalog/categories from Database.
 -->
