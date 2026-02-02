@@ -128,7 +128,9 @@
 			"Use the lite version if you're an android user"
 		],
 		"type": "release",
-		"tags": [],
+		"tags": [
+			"deprecated"
+		],
 		"url": {
 			"download_url": "",
 			"page_url": "https://sites.google.com/view/yousoro/addons/jetbus-shd-series-v4-1"
@@ -170,7 +172,7 @@
 		],
 		"type": "release",
 		"tags": [
-			"featured"
+			"deprecated"
 		],
 		"url": {
 			"download_url": "https://www.facebook.com/Yousifrill/posts/pfbid02BNWLXT1QwpvPnpgDGUn6f3PeSqnfJLQPDWtnqKzTNNQ7V9Rdknc31mxucgG8qS6kl",
@@ -179,7 +181,7 @@
 	},
 	{
 		"title": "SHD 3",
-		"status": "Freeware Deprecreated",
+		"status": "Freeware",
 		"thumbnail": [
 			"https://images2.imgbox.com/66/cc/ytdeqFjo_o.jpg",
 			"https://images2.imgbox.com/18/b6/5WvfvYHg_o.jpg",
@@ -188,7 +190,7 @@
 		"date": 0,
 		"description": "Update ke 3 untuk Addons Jetbus 3 All In One lite untuk Trainz Simulator, sudah termasuk beberapa generasi dan tipe selendang yang bervariasi",
 		"short_desc": "Oldest version available to Download, limited Mobile Support",
-		"very_short_desc": "Deprecreated version",
+		"very_short_desc": "Deprecated version",
 		"icon": "airport_shuttle",
 		"comparison": {
 			"pros": [
@@ -221,7 +223,8 @@
 		],
 		"type": "release",
 		"tags": [
-			"featured"
+			"deprecated",
+			"not maintained"
 		],
 		"url": {
 			"download_url": "https://drive.google.com/file/d/1ScW-T5CMIOLqdUMWjtVLycKNyDfDSgCK/view?usp=sharing",
@@ -272,7 +275,9 @@
 			"Clue Password yaitu livery warna ijo, dulu dari bris trans & azkha wijaya, Contoh penulisan: angelheart"
 		],
 		"type": "release",
-		"tags": [],
+		"tags": [
+			"not maintained"
+		],
 		"url": {
 			"download_url": "",
 			"page_url": ""
@@ -401,7 +406,8 @@
 		"note": [],
 		"type": "wip",
 		"tags": [
-			"featured"
+			"featured",
+			"not maintained"
 		],
 		"url": {
 			"download_url": "",
@@ -428,7 +434,9 @@
 			"Adjust position sendiri"
 		],
 		"type": "release",
-		"tags": [],
+		"tags": [
+			"not maintained"
+		],
 		"url": {
 			"download_url": "https://drive.google.com/file/d/1n6XVBwS60463tXgenIpSno3ODo43LEMa/view?usp=sharing",
 			"page_url": ""

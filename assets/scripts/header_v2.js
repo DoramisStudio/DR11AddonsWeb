@@ -106,7 +106,7 @@ fetch("/assets/static/addons_list.json").then(async d => {
     
         img.src = `${mainResourcesPaths.main_logo[size][type]}`;
         img.removeAttribute("aria-hidden");
-        console.log(img);
+        // console.log(img);
     });
     logo_images_accessory.forEach(img => {
         const data_args = img.dataset.logoAccessory.split("/");
@@ -120,11 +120,13 @@ fetch("/assets/static/addons_list.json").then(async d => {
     });
 })();
 
-fullscreenBtn.onclick = _ => {
-    if (!document.fullscreenElement) {
-        document.body.requestFullscreen();
-    }
-    else {
-        document.exitFullscreen();
-    }
-};
+if (document.getElementById("fullscreenBtn")) {
+    fullscreenBtn.onclick = _ => {
+        if (!document.fullscreenElement) {
+            document.body.requestFullscreen();
+        }
+        else {
+            document.exitFullscreen();
+        }
+    };
+}

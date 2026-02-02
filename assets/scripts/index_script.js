@@ -31,8 +31,10 @@ function setSlideshowPoint(index) {
 
     if (document.getElementById("heroTitle")) heroTitle.textContent = selected.title;
     if (document.getElementById("heroDesc")) heroDesc.textContent = selected.desc;
-    if (!selected.viewMoreUrl) document.getElementById("heroOpenLink").classList.add("hidden");
-    else document.getElementById("heroOpenLink").classList.remove("hidden");
+    if (document.getElementById("heroOpenLink")) {
+        if (!selected.viewMoreUrl) document.getElementById("heroOpenLink").classList.add("hidden");
+        else document.getElementById("heroOpenLink").classList.remove("hidden");
+    }
     // document.getElementById("heroOpenLink").textContent = selected.viewMoreUrl ? "View Addon" : "Unavailable";
 
     if (!heroImg.naturalWidth) {

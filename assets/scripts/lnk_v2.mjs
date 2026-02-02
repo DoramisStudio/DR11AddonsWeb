@@ -1,6 +1,6 @@
 var _categories = [];
 var _contents = [];
-const dbg = true;
+const dbg = false;
 
 const tabButtonElement = document.querySelector("div.tab-buttons");
 const tabPages = document.querySelector("div.tab-pages");

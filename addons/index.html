@@ -104,7 +104,7 @@
 							<hr style="flex: 0;" class="flat">
 							<div class="row-group" style="max-width: 1280px; width: 100%; margin: 0rem auto; gap: 0rem;">
 								<hr style="flex: unset; margin: -2rem 0rem;" class="flat">
-								<div class="col-group" style="width: 100%; box-sizing: border-box;">
+								<div id="addons-grid" class="col-group" style="width: 100%; box-sizing: border-box; gap: 0rem;">
 									<div class="addons-grid">
 										<img src="https://images2.imgbox.com/78/1b/6bM6enZv_o.png" class="image-label">
 										<div>
@@ -196,19 +196,23 @@
 
         <script>
 			const urlq = new URLSearchParams(location.search);
-			console.log(urlq.get("openbeta"));
+			// console.log(urlq.get("openbeta"));
 			if (!Boolean(urlq.get("openbeta"))) {
 				alert("Page still in development");
 			}
             var __pause_background_on_zero = true;
-			var __banner_image_list = [
-				{ imageSrc: "/assets/media/images/blender render 419.png", duration: 10, title: "SHD 5", desc: "Versi ke 5 dari SHD Series, mencangkup interior dan eksterior yang lebih detail.", viewMoreUrl: "/pages/shd5/" },
+            const __banner_image_list = [
+                { imageSrc: "https://images2.imgbox.com/af/12/JQMy6d40_o.png", duration: 10, title: "Skylander R25 Tronton", desc: "Kendaraan New Armada Skylander R25 Tronton untuk Trainz.", background: "rgb(32 32 32)", viewMoreUrl: null },
+                { imageSrc: "https://images2.imgbox.com/cb/80/CKZPiyjx_o.png", duration: 10, title: "Skylander R25", desc: "Kendaraan New Armada Skylander R25 untuk Trainz.", background: "rgb(32 32 32)", viewMoreUrl: null },
+                { imageSrc: "/assets/media/images/blender render 419.png", duration: 10, title: "SHD 5", desc: "Versi ke 5 dari SHD Series, mencangkup interior dan eksterior yang lebih detail.", viewMoreUrl: "/pages/shd5/" },
                 { imageSrc: "/assets/media/images/shd42_4.png", duration: 10, title: "SHD 4.2", desc: "Versi ke 4.2 dari SHD Series, dari pembaruan skrip, aksesoris hingga modul basuri.", viewMoreUrl: "/pages/shd4.2/" },
                 { imageSrc: "/assets/media/images/shd41.jpg", duration: 10, title: "SHD 4", desc: "Versi ke 4 dari SHD Series, penambahan aksesoris dan pembaruan interior yang lebih detail.", viewMoreUrl: "/pages/shd4.0/" },
-			];
+            ];
+			const __addon_get_type = "release";
         </script>
         <script src="/assets/scripts/background_v2.js"></script>
         <script src="/assets/scripts/index_script.js"></script>
         <script src="/assets/scripts/header_v2.js"></script>
+        <script src="/assets/scripts/addons.js"></script>
 	</body>
 </html>
