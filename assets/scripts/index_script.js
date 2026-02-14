@@ -13,6 +13,16 @@ var heroSlideshowTime = 0;
 var heroBtnHover = false;
 var heroSlideshowTimeHalt = false;
 
+const nimg = [
+	"../assets/media/images/noimage_honoka.jpg",
+	"../assets/media/images/noimage_you.jpg",
+	"../assets/media/images/noimage_yoshiko.jpg",
+	"../assets/media/images/nimg/0.jpg",
+	"../assets/media/images/nimg/1.jpg",
+	"../assets/media/images/nimg/2.jpg",
+	"../assets/media/images/nimg/3.jpg"
+];
+
 if (document.getElementById("heroOpenLink")) heroOpenLink.onclick = _ => {
     const selected = heroContents[heroIdx];
     if (selected.viewMoreUrl) {

@@ -90,7 +90,7 @@ function sceneLoop() {
     dto = dtn;
 
     if (!__pause_background) {
-        bg_ctx.fillStyle = "#ffffff";
+        bg_ctx.fillStyle = "#f0f0f0";
         bg_ctx.fillRect(0,0,__scene_root.width,__scene_root.height);
         
         const screenScale = Math.min(document.querySelector("div.screen").clientWidth, document.querySelector("div.screen").clientHeight) / 640; // 800 is your base/reference screen size

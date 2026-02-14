@@ -42,6 +42,8 @@ function generateAddonList(items) {
 		maincontent.style.margin = "1rem";
 		container.append(maincontent);
 
+		if (v.thumbnail.length == 0) v.thumbnail.push(nimg[Math.floor(Math.random() * nimg.length)]);
+
 		const thumb = createSlideshow(v.thumbnail);
 		sidecontent.append(thumb);
 
@@ -63,7 +65,7 @@ function generateAddonList(items) {
 		buttonGroup.append(pageBtn);
 
 		const titlegroup = document.createElement("div");
-		titlegroup.classList = "row-group";
+		titlegroup.classList = "row-group break-on-mobile";
 		titlegroup.style.alignItems = "center";
 		maincontent.append(titlegroup);
 
@@ -77,13 +79,18 @@ function generateAddonList(items) {
 		// badges.classList = "badge-group";
 		// titlegroup.append(badges);
 
+		const badgesgroup = document.createElement("div");
+		badgesgroup.classList = "row-group";
+		// badgesgroup.style.alignItems = "center";
+		titlegroup.append(badgesgroup);
+
 		const badgeslist = [v.status, ...v.tags.map(v => toFirstUpperCase(v))];
 		badgeslist.forEach(v => {
 			const badge = document.createElement("span");
 			badge.classList = "badge";
 			badge.style.alignSelf = "unset";
 			badge.textContent = v;
-			titlegroup.append(badge);
+			badgesgroup.append(badge);
 
 			if (v == "Freeware") badge.classList.add("green");
 			if (v == "Featured") badge.classList.add("yellow");
@@ -153,7 +160,7 @@ function createSlideshow(images, classList = "", style = "") {
 	next_btn.classList = "right";
 	next_btn.append(createIconElement("chevron_right"));
 	control.append(next_btn);
-	container.append(control);
+	if (images.length > 1) container.append(control);
 	
 	function UpdateImage() {
 		images_container.style.transform = `translateX(${index * -100}%)`;

@@ -90,6 +90,44 @@ fetch("/assets/static/addons_list.json").then(async d => {
             wipsHeaderMenus.appendChild(link);
         }
     });
+    // mobile menus
+    addonsHeaderMenusMobile.innerHTML = "";
+    __data_addons.filter(p => p.type == "release" && p.tags.includes("featured")).forEach(v => {
+        if (v.url.page_url) {
+            const link = document.createElement("a");
+            link.href = v.url.page_url;
+
+            const icon = createIcon(v.icon);
+            icon.classList.add("icon");
+
+            const title = document.createElement("p");
+            title.textContent = v.title;
+
+            link.append(title, icon);
+            addonsHeaderMenusMobile.appendChild(link);
+        }
+    });
+    wipsHeaderMenusMobile.innerHTML = "";
+    __data_addons.filter(p => p.type == "wip" && p.tags.includes("featured")).forEach(v => {
+        if (v.url.page_url) {
+            const link = document.createElement("a");
+            link.href = v.url.page_url;
+
+            const icon = createIcon(v.icon);
+            icon.classList.add("icon");
+
+            const title = document.createElement("p");
+            title.textContent = v.title;
+
+            link.append(title, icon);
+            wipsHeaderMenusMobile.appendChild(link);
+        }
+    });
+});
+Array.from(document.querySelectorAll("#mobileFullscreenMenuBtn")).forEach(b => {
+    b.onclick = _ => {
+        document.querySelector("div.wrapper").classList.toggle("mobile-fullscreen-menu-visible");
+    };
 });
 
 (async _ => {

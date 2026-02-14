@@ -56,10 +56,28 @@
                             <img class="logo-accessory" data-logo-accessory="normal/png" alt="DR11 Addons Logo Accessory">
                         </div>
                     </a>
-                    <div class="row-group" style="margin: 0rem 1rem; width: 0px;">
-                        <div class="link-button" id="fullscreenBtn"><a><span class="material-symbols-rounded">fullscreen</span></a></div>
+                    <div class="row-group">
+                        <div class="link-button" id="mobileFullscreenMenuBtn"><a><span class="material-symbols-rounded">menu</span></a></div>
                     </div>
                 </header>
+
+				<!-- fullscreen menu -->
+				<div class="mobile-fullscreen-menu">
+					<div class="main">
+                        <a class="index" href="/"><p>Home</p><span class="material-symbols-rounded">arrow_outward</span></a>
+                        <a class="index" href="/addons"><p>Addons</p><span class="material-symbols-rounded">arrow_outward</span></a>
+                        <div class="col-group index-list" id="addonsHeaderMenusMobile">
+                        </div>
+                        <a class="index" href="/wip"><p>WIP Addons</p><span class="material-symbols-rounded">arrow_outward</span></a>
+                        <div class="col-group index-list" id="wipsHeaderMenusMobile">
+                        </div>
+                        <a class="index" href="/faq"><p>FAQ</p><span class="material-symbols-rounded">arrow_outward</span></a>
+                        <a class="index" href="/about"><p>About</p><span class="material-symbols-rounded">arrow_outward</span></a>
+						<div class="row-group">
+							<a id="fullscreenBtn"><span class="material-symbols-rounded">fullscreen</span></a>
+						</div>
+                    </div>
+				</div>
     
                 <main>
                     <div class="hero-container">
@@ -217,6 +235,10 @@
                                 <a class="button-main" href="https://saweria.co/aacreation" target="_parent"><p>Saweria</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
                                 <a class="button-main" style="--hover-bg: rgb(172, 0, 0);"><p>Trakteer</p><img src="/assets/media/images/icon/arrow.svg" class="arrow-icon" style="rotate: 90deg;"></a>
                             </div>
+                            <!-- <div class="button-group" style="margin: 0rem auto;">
+                                <button>Saweria</button>
+                                <button>Trakteer</button>
+                            </div> -->
                         </div>
                         
                         <hr style="flex: 0;" class="flat">
