@@ -6,7 +6,7 @@ const tabButtonElement = document.querySelector("div.tab-buttons");
 const tabPages = document.querySelector("div.tab-pages");
 var _category_index = 0;
 
-fetch("https://gist.githubusercontent.com/DoramisStudio/f87aa69570ed518603415bbe4493e781/raw/list.json?v=1", { cache: "no-cache", method: "GET" }).then(async r => {
+fetch("https://gist.githubusercontent.com/DoramisStudio/f87aa69570ed518603415bbe4493e781/raw/list.json?v=2", { cache: "no-cache", method: "GET" }).then(async r => {
 	const d = await r.json();
 
 	_categories = d.categories;
